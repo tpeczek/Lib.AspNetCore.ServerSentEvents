@@ -1,0 +1,32 @@
+﻿{
+  "title": "Lib.AspNetCore.ServerSentEvents",
+  "version": "1.0.0",
+  "description": "Lib.AspNetCore.ServerSentEvents is a library which provides Server-Sent Events (SSE) support for ASP.NET Core",
+  "authors": [ "Tomasz Pęczek" ],
+  "copyright": "Copyright © 2017 Tomasz Pęczek",
+  "packOptions": {
+    "tags": [ "aspnetcore", "sse", "server-sent", "events", "eventsource" ],
+    "projectUrl": "https://github.com/tpeczek/Lib.AspNetCore.ServerSentEvents",
+    "licenseUrl": "https://github.com/tpeczek/Lib.AspNetCore.ServerSentEvents/blob/master/LICENSE.md",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/tpeczek/Lib.AspNetCore.ServerSentEvents"
+    }
+  },
+  "buildOptions": {
+    "xmlDoc": true
+  },
+  "frameworks": {
+    "net451": {},
+    "netstandard1.6": {}
+  },
+  "dependencies": {
+    "Microsoft.AspNetCore.Http.Abstractions": "1.1.0",
+    "Microsoft.Extensions.DependencyInjection.Abstractions": "1.1.0"
+  },
+  "scripts": {
+    "postcompile": [
+      "dotnet pack --no-build --configuration %compile:Configuration%"
+    ]
+  }
+}
