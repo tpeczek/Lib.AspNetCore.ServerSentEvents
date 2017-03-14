@@ -11,14 +11,15 @@ Lib.AspNetCore.ServerSentEvents is available on [NuGet](https://www.nuget.org/pa
 PM>  Install-Package Lib.AspNetCore.ServerSentEvents
 ```
 
+## Implementation Details
+
+There is a blog post available describing implementation details:
+
+- [Server-Sent Events (SSE) support for ASP.NET Core](https://tpeczek.blogspot.com/2017/02/server-sent-events-sse-support-for.html)
+
 ## Demos
 
 There is a demo project available [here](https://github.com/tpeczek/Demo.AspNetCore.ServerSentEvents).
-
-## Donating
-Support this and my [other projects](https://github.com/tpeczek/) via [Gittip](https://www.gittip.com/tpeczek/).
-
-[![Support via Gittip](https://2.bp.blogspot.com/-hfTLKixXGvw/U-PmH5hGK4I/AAAAAAAAAf8/o94Go42VeZU/s1600/gittip.png)](https://www.gittip.com/tpeczek/)
 
 ## Copyright and License
 Copyright © 2017 Tomasz Pęczek
