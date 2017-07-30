@@ -15,7 +15,7 @@ PM>  Install-Package Lib.AspNetCore.ServerSentEvents
 
 There is a blog post available describing implementation details:
 
-- [Server-Sent Events (SSE) support for ASP.NET Core](http://tpeczek.com/2017/02/server-sent-events-sse-support-for.html)
+- [Server-Sent Events (SSE) support for ASP.NET Core](https://www.tpeczek.com/2017/02/server-sent-events-sse-support-for.html)
 
 ## Demos
 

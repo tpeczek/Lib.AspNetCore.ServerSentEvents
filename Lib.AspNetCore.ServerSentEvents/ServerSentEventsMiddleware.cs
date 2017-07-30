@@ -23,18 +23,8 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <param name="serverSentEventsService">The service which provides operations over Server-Sent Events protocol.</param>
         public ServerSentEventsMiddleware(RequestDelegate next, ServerSentEventsService serverSentEventsService)
         {
-            if (next == null)
-            {
-                throw new ArgumentNullException(nameof(next));
-            }
-
-            if (serverSentEventsService == null)
-            {
-                throw new ArgumentNullException(nameof(serverSentEventsService));
-            }
-
-            _next = next;
-            _serverSentEventsService = serverSentEventsService;
+            _next = next ?? throw new ArgumentNullException(nameof(next));
+            _serverSentEventsService = serverSentEventsService ?? throw new ArgumentNullException(nameof(serverSentEventsService));
         }
         #endregion
 
@@ -51,7 +41,7 @@ namespace Lib.AspNetCore.ServerSentEvents
                 context.Response.ContentType = Constants.SSE_CONTENT_TYPE;
                 context.Response.Body.Flush();
 
-                ServerSentEventsClient client = new ServerSentEventsClient(context.Response);
+                ServerSentEventsClient client = new ServerSentEventsClient(Guid.NewGuid(), context.User, context.Response);
 
                 if (_serverSentEventsService.ReconnectInterval.HasValue)
                 {
@@ -64,11 +54,11 @@ namespace Lib.AspNetCore.ServerSentEvents
                     await _serverSentEventsService.OnReconnectAsync(client, lastEventId);
                 }
 
-                Guid clientId = _serverSentEventsService.AddClient(client);
+                _serverSentEventsService.AddClient(client);
 
                 await context.RequestAborted.WaitAsync();
 
-                _serverSentEventsService.RemoveClient(clientId);
+                _serverSentEventsService.RemoveClient(client);
             }
             else
             {

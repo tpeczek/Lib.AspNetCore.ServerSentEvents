@@ -66,20 +66,16 @@ namespace Lib.AspNetCore.ServerSentEvents
             return TaskHelper.GetCompletedTask();
         }
  
-        internal Guid AddClient(ServerSentEventsClient client)
+        internal void AddClient(ServerSentEventsClient client)
         {
-            Guid clientId = Guid.NewGuid();
-
-            _clients.TryAdd(clientId, client);
-
-            return clientId;
+            _clients.TryAdd(client.Id, client);
         }
 
-        internal void RemoveClient(Guid clientId)
+        internal void RemoveClient(ServerSentEventsClient client)
         {
-            ServerSentEventsClient client;
+            client.IsConnected = false;
 
-            _clients.TryRemove(clientId, out client);
+            _clients.TryRemove(client.Id, out client);
         }
 
         private Task ForAllClientsAsync(Func<ServerSentEventsClient, Task> clientOperationAsync)
@@ -87,7 +83,10 @@ namespace Lib.AspNetCore.ServerSentEvents
             List<Task> clientsTasks = new List<Task>();
             foreach (ServerSentEventsClient client in _clients.Values)
             {
-                clientsTasks.Add(clientOperationAsync(client));
+                if (client.IsConnected)
+                {
+                    clientsTasks.Add(clientOperationAsync(client));
+                }
             }
 
             return Task.WhenAll(clientsTasks);
