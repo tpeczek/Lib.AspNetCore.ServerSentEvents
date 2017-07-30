@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
@@ -23,6 +24,29 @@ namespace Lib.AspNetCore.ServerSentEvents
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Gets the client based on the unique client identifier.
+        /// </summary>
+        /// <param name="clientId">The unique client identifier.</param>
+        /// <returns>The client.</returns>
+        public IServerSentEventsClient GetClient(Guid clientId)
+        {
+            ServerSentEventsClient client;
+
+            _clients.TryGetValue(clientId, out client);
+
+            return client;
+        }
+
+        /// <summary>
+        /// Gets all clients.
+        /// </summary>
+        /// <returns>The clients.</returns>
+        public IReadOnlyCollection<IServerSentEventsClient> GetClients()
+        {
+            return _clients.Values.ToArray();
+        }
+
         /// <summary>
         /// Changes the interval after which clients will attempt to reestablish failed connections.
         /// </summary>
