@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 using Lib.AspNetCore.ServerSentEvents.Internals;
 
 namespace Lib.AspNetCore.ServerSentEvents
@@ -38,8 +39,9 @@ namespace Lib.AspNetCore.ServerSentEvents
         {
             if (context.Request.Headers[Constants.ACCEPT_HTTP_HEADER] == Constants.SSE_CONTENT_TYPE)
             {
-                context.Response.ContentType = Constants.SSE_CONTENT_TYPE;
-                context.Response.Body.Flush();
+                DisableResponseBuffering(context);
+
+                await context.Response.AcceptSse();
 
                 ServerSentEventsClient client = new ServerSentEventsClient(Guid.NewGuid(), context.User, context.Response);
 
@@ -63,6 +65,15 @@ namespace Lib.AspNetCore.ServerSentEvents
             else
             {
                 await _next(context);
+            }
+        }
+
+        private void DisableResponseBuffering(HttpContext context)
+        {
+            IHttpBufferingFeature bufferingFeature = context.Features.Get<IHttpBufferingFeature>();
+            if (bufferingFeature != null)
+            {
+                bufferingFeature.DisableResponseBuffering();
             }
         }
         #endregion

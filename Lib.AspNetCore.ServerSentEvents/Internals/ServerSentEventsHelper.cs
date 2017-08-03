@@ -8,18 +8,22 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
     internal static class ServerSentEventsHelper
     {
         #region HttpResponse Extensions
+        internal static async Task AcceptSse(this HttpResponse response)
+        {
+            response.ContentType = Constants.SSE_CONTENT_TYPE;
+            await response.Body.FlushAsync();
+        }
+
         internal static async Task WriteSseRetryAsync(this HttpResponse response, uint reconnectInterval)
         {
             await response.WriteSseEventFieldAsync(Constants.SSE_RETRY_FIELD, reconnectInterval.ToString(CultureInfo.InvariantCulture));
             await response.WriteSseEventBoundaryAsync();
-            response.Body.Flush();
         }
 
         internal static async Task WriteSseEventAsync(this HttpResponse response, string text)
         {
             await response.WriteSseEventFieldAsync(Constants.SSE_DATA_FIELD, text);
             await response.WriteSseEventBoundaryAsync();
-            response.Body.Flush();
         }
 
         internal static async Task WriteSseEventAsync(this HttpResponse response, ServerSentEvent serverSentEvent)
@@ -43,8 +47,6 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             }
 
             await response.WriteSseEventBoundaryAsync();
-
-            response.Body.Flush();
         }
 
         private static Task WriteSseEventFieldAsync(this HttpResponse response, string field, string data)
