@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.4
+VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.ServerSentEvents", "Lib.AspNetCore.ServerSentEvents\Lib.AspNetCore.ServerSentEvents.csproj", "{A0373515-C536-4C8E-B7AD-5878F357556A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocFx.AspNetCore.ServerSentEvents", "DocFx.AspNetCore.ServerSentEvents\DocFx.AspNetCore.ServerSentEvents.csproj", "{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +17,15 @@ Global
 		{A0373515-C536-4C8E-B7AD-5878F357556A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0373515-C536-4C8E-B7AD-5878F357556A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0373515-C536-4C8E-B7AD-5878F357556A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {91E86DAF-4C0D-4A0C-8BC4-CD4745C8BAFB}
 	EndGlobalSection
 EndGlobal

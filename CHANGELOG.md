@@ -2,4 +2,4 @@
 ### Bug Fixes
 - Fix for events not reaching clients when response compression is enabled (.NET Framework).
 ### Additions and Changes
-- Added capabality of sending events to specific clients.
+- Added capability of sending events to specific clients.
