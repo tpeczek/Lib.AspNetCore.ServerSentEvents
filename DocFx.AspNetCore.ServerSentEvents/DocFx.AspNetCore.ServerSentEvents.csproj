@@ -6,7 +6,6 @@
     <None Remove="log.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="articles\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
   <ItemGroup>

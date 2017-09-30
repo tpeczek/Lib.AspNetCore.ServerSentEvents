@@ -22,7 +22,8 @@
         "files": [
           "api/*.yml",
           "toc.md",
-          "index.md"
+          "index.md",
+          "articles/getting-started.md"
         ]
       }
     ],
