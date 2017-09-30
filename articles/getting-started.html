@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Getting Started | Lib.AspNetCore.ServerSentEvents </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Getting Started | Lib.AspNetCore.ServerSentEvents ">
+    <meta name="generator" content="docfx 2.22.3.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/svg/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-12">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="getting-started">Getting Started</h1>
+
+<h2 id="configuration">Configuration</h2>
+<p>In order to add the Server-Sent Events (SSE) support to an application a required service and middleware must be registered. The library provides <a href="../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html">extensions</a> which make it really simple.</p>
+<pre><code class="lang-cs">public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+        services.AddServerSentEvents();
+
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app)
+    {
+        ...
+
+        app.MapServerSentEvents(&quot;/default-sse-endpoint&quot;);
+
+        ...
+    }
+}
+</code></pre><p>The <code>AddServerSendEvents()</code> method registers default service which provides operations over Server-Sent Events protocol, while <code>MapServerSentEvents()</code> maps this service to a specific endpoint. The <code>MapServerSentEvents()</code> method can be called multiple times for different endpoints but all of them will be mapped to same service which will make them indistinguishable from application perspective. In order to create distinguishable endpoints a delivered version of <a href="../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html"><code>Server​Sent​Events​Service</code></a> should be registered (it doesn&#39;t need to override any of the default service functionality). Below is an example of such configuration.</p>
+<pre><code class="lang-cs">internal interface INotificationsServerSentEventsService : IServerSentEventsService
+{ }
+
+internal class NotificationsServerSentEventsService : ServerSentEventsService, INotificationsServerSentEventsService
+{ }
+
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+        services.AddServerSentEvents();
+        services.AddServerSentEvents&lt;INotificationsServerSentEventsService, NotificationsServerSentEventsService&gt;();
+
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, IServiceProvider serviceProvider)
+    {
+        ...
+
+        app.MapServerSentEvents(&quot;/default-sse-endpoint&quot;);
+        app.MapServerSentEvents(&quot;/notifications-sse-endpoint&quot;, serviceProvider.GetService&lt;NotificationsServerSentEventsService&gt;());
+
+        ...
+    }
+}
+</code></pre><h2 id="sending-messages">Sending Messages</h2>
+<p>In order to send a message to an endpoint the instance of the service registered for that endpoint should be obtained. The easiest way is to rely on dependency injection.</p>
+<pre><code class="lang-cs">public class NotificationsController : Controller
+{
+    private readonly INotificationsServerSentEventsService _serverSentEventsService;
+
+    public NotificationsController(INotificationsServerSentEventsService serverSentEventsService)
+    {
+        _serverSentEventsService = serverSentEventsService;
+    }
+
+    ...
+}
+</code></pre><h3 id="sending-to-all-clients">Sending to all clients</h3>
+<p>Sending message to all clients is as simple as calling <code>IServerSentEventsService.SendEventAsync</code>. Under the hood the service will take care of distributing the message to all connected clients.</p>
+<h3 id="sending-to-specific-client">Sending to specific client</h3>
+<p>The <code>IServerSentEventsService.GetClients()</code> method returns list of all currently connected clients. Every client (represented by <a href="../api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html"><code>IServerSentEventsClient</code></a>) exposes <code>User</code> property and <code>SendEventAsync</code> method. The <code>User</code> property contains a <code>System.Security.Claims.ClaimsPrincipal</code> which can be used to filter a specific client. Additionally there is an <code>Id</code> property available which value can be stored and later passed to <code>IServerSentEventsService.GetClient()</code> in order to retrieve a specific client.</p>
+<h2 id="handling-auto-reconnect">Handling Auto Reconnect</h2>
+<p>Server-Sent Events provide auto reconnect and tracking of the last seen message functionality. If the connection is dropped, client will automatically reconnect to the server and optionally advertise the identifier of the last seen message. This allows for retransmission of lost messages. In order to use this mechanism the <code>OnReconnectAsync</code> method must be overridden when delivering from <code>Server​Sent​Events​Service</code>. When client reconnects the method will be called with <code>IServerSentEventsClient</code> representing the client and the identifier of last message which client has received.</p>
+<h3 id="changing-reconnect-interval">Changing Reconnect Interval</h3>
+<p>The interval after which client attempts to reconnect can be controlled by the application. In order to change the interval for specific endpoint it is enough to call <code>IServerSentEventsService.ChangeReconnectIntervalAsync</code>.</p>
+</article>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2017 Tomasz Pęczek
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
