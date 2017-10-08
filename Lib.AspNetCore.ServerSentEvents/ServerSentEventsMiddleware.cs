@@ -14,6 +14,8 @@ namespace Lib.AspNetCore.ServerSentEvents
         #region Fields
         private readonly RequestDelegate _next;
         private readonly ServerSentEventsService _serverSentEventsService;
+
+        private static readonly Task _completedTask = Task.FromResult<object>(null);
         #endregion
 
         #region Constructor
@@ -41,7 +43,7 @@ namespace Lib.AspNetCore.ServerSentEvents
             {
                 DisableResponseBuffering(context);
 
-                context.Response.Headers.Append(Constants.CONTENT_ENCODING_HEADER, Constants.IDENTITY_CONTENT_ENCODING);
+                HandleContentEncoding(context);
 
                 await context.Response.AcceptSse();
 
@@ -77,6 +79,19 @@ namespace Lib.AspNetCore.ServerSentEvents
             {
                 bufferingFeature.DisableResponseBuffering();
             }
+        }
+
+        private void HandleContentEncoding(HttpContext context)
+        {
+            context.Response.OnStarting(() =>
+            {
+                if (!context.Response.Headers.ContainsKey(Constants.CONTENT_ENCODING_HEADER))
+                {
+                    context.Response.Headers.Append(Constants.CONTENT_ENCODING_HEADER, Constants.IDENTITY_CONTENT_ENCODING);
+                }
+
+                return _completedTask;
+            });
         }
         #endregion
     }
