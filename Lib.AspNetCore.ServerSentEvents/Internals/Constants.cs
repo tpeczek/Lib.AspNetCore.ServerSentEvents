@@ -8,12 +8,12 @@
 
         internal static string SSE_CONTENT_TYPE = "text/event-stream";
 
-        internal static string SSE_RETRY_FIELD = "retry";
+        internal static string SSE_RETRY_FIELD = "retry: ";
 
-        internal static string SSE_ID_FIELD = "id";
+        internal static string SSE_ID_FIELD = "id: ";
 
-        internal static string SSE_EVENT_FIELD = "event";
+        internal static string SSE_EVENT_FIELD = "event: ";
 
-        internal static string SSE_DATA_FIELD = "data";
+        internal static string SSE_DATA_FIELD = "data: ";
     }
 }
