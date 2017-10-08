@@ -41,6 +41,8 @@ namespace Lib.AspNetCore.ServerSentEvents
             {
                 DisableResponseBuffering(context);
 
+                context.Response.Headers.Append(Constants.CONTENT_ENCODING_HEADER, Constants.IDENTITY_CONTENT_ENCODING);
+
                 await context.Response.AcceptSse();
 
                 ServerSentEventsClient client = new ServerSentEventsClient(Guid.NewGuid(), context.User, context.Response);
