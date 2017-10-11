@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Text;
+using System.Globalization;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
@@ -56,7 +58,9 @@ namespace Lib.AspNetCore.ServerSentEvents
         {
             ReconnectInterval = reconnectInterval;
 
-            return ForAllClientsAsync(client => client.ChangeReconnectIntervalAsync(reconnectInterval));
+            byte[] reconnectIntervalBytes = Encoding.UTF8.GetBytes(reconnectInterval.ToString(CultureInfo.InvariantCulture));
+
+            return ForAllClientsAsync(client => client.ChangeReconnectIntervalAsync(reconnectIntervalBytes));
         }
 
         /// <summary>
@@ -66,7 +70,9 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(string text)
         {
-            return ForAllClientsAsync(client => client.SendEventAsync(text));
+            byte[] data = Encoding.UTF8.GetBytes(text);
+
+            return ForAllClientsAsync(client => client.SendEventAsync(data));
         }
 
         /// <summary>

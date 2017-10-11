@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+using System.Globalization;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -50,9 +52,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(string text)
         {
-            CheckIsConnected();
-
-            return _response.WriteSseEventAsync(text);
+            return SendEventAsync(Encoding.UTF8.GetBytes(text));
         }
 
         /// <summary>
@@ -67,7 +67,19 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             return _response.WriteSseEventAsync(serverSentEvent);
         }
 
+        internal Task SendEventAsync(byte[] data)
+        {
+            CheckIsConnected();
+
+            return _response.WriteSseEventAsync(data);
+        }
+
         internal Task ChangeReconnectIntervalAsync(uint reconnectInterval)
+        {
+            return ChangeReconnectIntervalAsync(Encoding.UTF8.GetBytes(reconnectInterval.ToString(CultureInfo.InvariantCulture)));
+        }
+
+        internal Task ChangeReconnectIntervalAsync(byte[] reconnectInterval)
         {
             CheckIsConnected();
 
