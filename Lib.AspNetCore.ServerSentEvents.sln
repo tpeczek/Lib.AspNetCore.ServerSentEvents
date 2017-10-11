@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.26730.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.ServerSentEvents", "Lib.AspNetCore.ServerSentEvents\Lib.AspNetCore.ServerSentEvents.csproj", "{A0373515-C536-4C8E-B7AD-5878F357556A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocFx.AspNetCore.ServerSentEvents", "DocFx.AspNetCore.ServerSentEvents\DocFx.AspNetCore.ServerSentEvents.csproj", "{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocFx.AspNetCore.ServerSentEvents", "DocFx.AspNetCore.ServerSentEvents\DocFx.AspNetCore.ServerSentEvents.csproj", "{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmark.AspNetCore.ServerSentEvents", "Benchmark.AspNetCore.ServerSentEvents\Benchmark.AspNetCore.ServerSentEvents.csproj", "{C502D468-F253-4574-917B-E31C6EFC28F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C502D468-F253-4574-917B-E31C6EFC28F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C502D468-F253-4574-917B-E31C6EFC28F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C502D468-F253-4574-917B-E31C6EFC28F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C502D468-F253-4574-917B-E31C6EFC28F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
