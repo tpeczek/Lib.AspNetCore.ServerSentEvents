@@ -1,5 +1,4 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
@@ -34,23 +33,23 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             await response.WriteSseEventBoundaryAsync();
         }
 
-        internal static async Task WriteSseEventAsync(this HttpResponse response, ServerSentEvent serverSentEvent)
+        internal static async Task WriteSseEventAsync(this HttpResponse response, RawServerSentEvent serverSentEvent)
         {
-            if (!String.IsNullOrWhiteSpace(serverSentEvent.Id))
+            if (serverSentEvent.Id != null)
             {
-                await response.WriteSseEventFieldAsync(_sseIdField, Encoding.UTF8.GetBytes(serverSentEvent.Id));
+                await response.WriteSseEventFieldAsync(_sseIdField, serverSentEvent.Id);
             }
 
-            if (!String.IsNullOrWhiteSpace(serverSentEvent.Type))
+            if (serverSentEvent.Type != null)
             {
-                await response.WriteSseEventFieldAsync(_sseEventField, Encoding.UTF8.GetBytes(serverSentEvent.Type));
+                await response.WriteSseEventFieldAsync(_sseEventField, serverSentEvent.Type);
             }
 
             if (serverSentEvent.Data != null)
             {
-                foreach(string data in serverSentEvent.Data)
+                foreach(byte[] dataItem in serverSentEvent.Data)
                 {
-                    await response.WriteSseEventFieldAsync(_sseDataField, Encoding.UTF8.GetBytes(data));
+                    await response.WriteSseEventFieldAsync(_sseDataField, dataItem);
                 }
             }
 

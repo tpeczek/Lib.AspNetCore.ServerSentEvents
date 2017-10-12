@@ -62,9 +62,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(ServerSentEvent serverSentEvent)
         {
-            CheckIsConnected();
-
-            return _response.WriteSseEventAsync(serverSentEvent);
+            return SendEventAsync(new RawServerSentEvent(serverSentEvent));
         }
 
         internal Task SendEventAsync(byte[] data)
@@ -72,6 +70,13 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             CheckIsConnected();
 
             return _response.WriteSseEventAsync(data);
+        }
+
+        internal Task SendEventAsync(RawServerSentEvent serverSentEvent)
+        {
+            CheckIsConnected();
+
+            return _response.WriteSseEventAsync(serverSentEvent);
         }
 
         internal Task ChangeReconnectIntervalAsync(uint reconnectInterval)

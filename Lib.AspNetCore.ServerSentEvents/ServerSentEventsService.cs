@@ -82,7 +82,9 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(ServerSentEvent serverSentEvent)
         {
-            return ForAllClientsAsync(client => client.SendEventAsync(serverSentEvent));
+            RawServerSentEvent rawServerSentEvent = new RawServerSentEvent(serverSentEvent);
+
+            return ForAllClientsAsync(client => client.SendEventAsync(rawServerSentEvent));
         }
 
         /// <summary>
