@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ServerSentEventsService
    | Lib.AspNetCore.ServerSentEvents ">
-    <meta name="generator" content="docfx 2.22.3.0">
+    <meta name="generator" content="docfx 2.29.1.0">
     
     <link rel="shortcut icon" href="../resources/ico/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
+    
     
     
   </head>
@@ -72,21 +73,39 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ServerSentEventsService</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html">IServerSentEventsService</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.ServerSentEvents.html">Lib.AspNetCore.ServerSentEvents</a></h6>
   <h6><strong>Assembly</strong>: Lib.AspNetCore.ServerSentEvents.dll</h6>
   <h5 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ServerSentEventsService : Object, IServerSentEventsService</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService__ctor_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService__ctor" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor">ServerSentEventsService()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ServerSentEventsService()</code></pre>
+    <pre><code class="lang-csharp hljs">public class ServerSentEventsService : IServerSentEventsService</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -97,7 +116,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Nullable&lt;uint&gt; ReconnectInterval { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public uint ? ReconnectInterval { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -114,8 +133,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ReconnectInterval">IServerSentEventsService.ReconnectInterval</a></div>
   <h3 id="methods">Methods
   </h3>
   <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_ChangeReconnectIntervalAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync*"></a>
@@ -161,8 +178,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ChangeReconnectIntervalAsync_System_UInt32_">IServerSentEventsService.ChangeReconnectIntervalAsync(UInt32)</a></div>
   <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_GetClient_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClient*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_GetClient_System_Guid_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClient(System.Guid)">GetClient(Guid)</h4>
   <div class="markdown level1 summary"><p>Gets the client based on the unique client identifier.</p>
@@ -206,8 +221,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_GetClient_System_Guid_">IServerSentEventsService.GetClient(Guid)</a></div>
   <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_GetClients_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClients*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_GetClients" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClients">GetClients()</h4>
   <div class="markdown level1 summary"><p>Gets all clients.</p>
@@ -233,8 +246,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_GetClients">IServerSentEventsService.GetClients()</a></div>
   <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_OnReconnectAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnReconnectAsync*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_OnReconnectAsync_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnReconnectAsync(Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)">OnReconnectAsync(IServerSentEventsClient, String)</h4>
   <div class="markdown level1 summary"><p>When overriden in delivered class allows for recovery when client has reestablished the connection.</p>
@@ -284,8 +295,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnReconnectAsync_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_">IServerSentEventsService.OnReconnectAsync(IServerSentEventsClient, String)</a></div>
   <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)">SendEventAsync(ServerSentEvent)</h4>
   <div class="markdown level1 summary"><p>Sends event to all clients.</p>
@@ -329,8 +338,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_">IServerSentEventsService.SendEventAsync(ServerSentEvent)</a></div>
   <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String)">SendEventAsync(String)</h4>
   <div class="markdown level1 summary"><p>Sends event to all clients.</p>
@@ -374,8 +381,10 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_">IServerSentEventsService.SendEventAsync(String)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html">IServerSentEventsService</a>
+  </div>
 </article>
           </div>
         </div>
@@ -388,7 +397,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2017 Tomasz Pęczek
+            Copyright © 2017 - 2018 Tomasz Pęczek
             
           </div>
         </div>

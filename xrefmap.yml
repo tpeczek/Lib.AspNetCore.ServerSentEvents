@@ -223,18 +223,6 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.ServerSentEvent
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEvent
   nameWithType: ServerSentEvent
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEvent.#ctor
-  name: ServerSentEvent()
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html#Lib_AspNetCore_ServerSentEvents_ServerSentEvent__ctor
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEvent.#ctor
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEvent.ServerSentEvent()
-  nameWithType: ServerSentEvent.ServerSentEvent()
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEvent.#ctor*
-  name: ServerSentEvent
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html#Lib_AspNetCore_ServerSentEvents_ServerSentEvent__ctor_
-  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEvent.#ctor
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEvent.ServerSentEvent
-  nameWithType: ServerSentEvent.ServerSentEvent
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEvent.Data
   name: Data
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html#Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Data
@@ -370,18 +358,6 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService
   nameWithType: ServerSentEventsService
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor
-  name: ServerSentEventsService()
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService__ctor
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ServerSentEventsService()
-  nameWithType: ServerSentEventsService.ServerSentEventsService()
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor*
-  name: ServerSentEventsService
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService__ctor_
-  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ServerSentEventsService
-  nameWithType: ServerSentEventsService.ServerSentEventsService
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32)
   name: ChangeReconnectIntervalAsync(UInt32)
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_ChangeReconnectIntervalAsync_System_UInt32_

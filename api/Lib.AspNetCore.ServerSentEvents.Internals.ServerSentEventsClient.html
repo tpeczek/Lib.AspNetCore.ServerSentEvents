@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ServerSentEventsClient
    | Lib.AspNetCore.ServerSentEvents ">
-    <meta name="generator" content="docfx 2.22.3.0">
+    <meta name="generator" content="docfx 2.29.1.0">
     
     <link rel="shortcut icon" href="../resources/ico/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc.html">
     <meta property="docfx:tocrel" content="toc.html">
+    
     
     
   </head>
@@ -72,11 +73,39 @@
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ServerSentEventsClient</span></div>
   </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.ServerSentEvents.Internals.html">Lib.AspNetCore.ServerSentEvents.Internals</a></h6>
   <h6><strong>Assembly</strong>: Lib.AspNetCore.ServerSentEvents.dll</h6>
   <h5 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class ServerSentEventsClient : Object, IServerSentEventsClient</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class ServerSentEventsClient : IServerSentEventsClient</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -104,8 +133,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_Id">IServerSentEventsClient.Id</a></div>
   <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_IsConnected_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.IsConnected*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_IsConnected" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.IsConnected">IsConnected</h4>
   <div class="markdown level1 summary"><p>Gets the value indicating if client is connected.</p>
@@ -130,8 +157,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_IsConnected">IServerSentEventsClient.IsConnected</a></div>
   <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_User_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.User*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_User" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.User">User</h4>
   <div class="markdown level1 summary"><p>Gets or sets the System.Security.Claims.ClaimsPrincipal for user associated with the client.</p>
@@ -156,8 +181,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_User">IServerSentEventsClient.User</a></div>
   <h3 id="methods">Methods
   </h3>
   <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync*"></a>
@@ -203,8 +226,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_">IServerSentEventsClient.SendEventAsync(ServerSentEvent)</a></div>
   <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_System_String_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String)">SendEventAsync(String)</h4>
   <div class="markdown level1 summary"><p>Sends event to client.</p>
@@ -248,8 +269,10 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="implements">Implements</h5>
-      <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SendEventAsync_System_String_">IServerSentEventsClient.SendEventAsync(String)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>
+  </div>
 </article>
           </div>
         </div>
@@ -262,7 +285,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2017 Tomasz Pęczek
+            Copyright © 2017 - 2018 Tomasz Pęczek
             
           </div>
         </div>
