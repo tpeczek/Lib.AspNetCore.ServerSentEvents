@@ -112,12 +112,14 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         private Task ForAllClientsAsync(Func<ServerSentEventsClient, Task> clientOperationAsync)
         {
-            List<Task> clientsTasks = new List<Task>();
+            int clientTaskIndex = 0;
+            Task[] clientsTasks = new Task[_clients.Values.Count];
+
             foreach (ServerSentEventsClient client in _clients.Values)
             {
                 if (client.IsConnected)
                 {
-                    clientsTasks.Add(clientOperationAsync(client));
+                    clientsTasks[clientTaskIndex++] = clientOperationAsync(client);
                 }
             }
 

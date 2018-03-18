@@ -9,6 +9,7 @@ using Benchmark.AspNetCore.ServerSentEvents.Infrastructure;
 
 namespace Benchmark.AspNetCore.ServerSentEvents.Benchmarks
 {
+    [MemoryDiagnoser]
     public class ServerSentEventsServiceBenchmarks
     {
         #region Fields

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Lib.AspNetCore.ServerSentEvents.Internals
 {
-    internal class RawServerSentEvent
+    internal readonly struct RawServerSentEvent
     {
         #region Properties
         internal byte[] Id { get; }
@@ -16,6 +16,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
 
         #region Constructor
         internal RawServerSentEvent(ServerSentEvent serverSentEvent)
+            : this()
         {
             if (!String.IsNullOrWhiteSpace(serverSentEvent.Id))
             {

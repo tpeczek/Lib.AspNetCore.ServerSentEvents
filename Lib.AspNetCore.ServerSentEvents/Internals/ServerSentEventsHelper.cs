@@ -47,9 +47,9 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
 
             if (serverSentEvent.Data != null)
             {
-                foreach(byte[] dataItem in serverSentEvent.Data)
+                for (int i = 0; i < serverSentEvent.Data.Count; i++)
                 {
-                    await response.WriteSseEventFieldAsync(_sseDataField, dataItem);
+                    await response.WriteSseEventFieldAsync(_sseDataField, serverSentEvent.Data[i]);
                 }
             }
 
