@@ -15,6 +15,7 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Benchmarks
         #region Fields
         private const int MULTIPLE_CLIENTS_COUNT = 10000;
 
+        private readonly ServerSentEventsClient _serverSentEventsClient;
         private readonly ServerSentEventsService _serverSentEventsService;
         private readonly ServerSentEvent _event = new ServerSentEvent
         {
@@ -27,6 +28,8 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Benchmarks
         #region Constructor
         public ServerSentEventsServiceBenchmarks()
         {
+            _serverSentEventsClient = new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), new NoOpHttpResponse());
+
             _serverSentEventsService = new ServerSentEventsService();
             for (int i = 0; i < MULTIPLE_CLIENTS_COUNT; i++)
             {
@@ -37,13 +40,19 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Benchmarks
 
         #region Benchmarks
         [Benchmark]
-        public Task SendEventAsync()
+        public void SendEventAsync_SingleEvent_SingleClient()
+        {
+            _serverSentEventsClient.SendEvent(_event);
+        }
+
+        [Benchmark]
+        public Task SendEventAsync_SingleEvent_MultipleClients()
         {
             return _serverSentEventsService.SendEventAsync(_event);
         }
 
         [Benchmark]
-        public Task ChangeReconnectIntervalAsync()
+        public Task ChangeReconnectIntervalAsync_MultipleClients()
         {
             return _serverSentEventsService.ChangeReconnectIntervalAsync(5000);
         }
