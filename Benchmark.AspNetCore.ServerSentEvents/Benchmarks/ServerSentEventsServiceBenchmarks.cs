@@ -15,13 +15,16 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Benchmarks
         #region Fields
         private const int MULTIPLE_CLIENTS_COUNT = 10000;
 
+        private const string EVENT_TYPE = "Benchmark";
+        private const string EVENT_DATA = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+
         private readonly ServerSentEventsClient _serverSentEventsClient;
         private readonly ServerSentEventsService _serverSentEventsService;
         private readonly ServerSentEvent _event = new ServerSentEvent
         {
             Id = Guid.NewGuid().ToString(),
-            Type = "Benchmark",
-            Data = new List<string> { "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." }
+            Type = EVENT_TYPE,
+            Data = new List<string> { EVENT_DATA }
         };
         #endregion
 
@@ -40,9 +43,27 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Benchmarks
 
         #region Benchmarks
         [Benchmark]
-        public void SendEventAsync_SingleEvent_SingleClient()
+        public Task SendEventAsync_SingleData_SingleClient()
         {
-            _serverSentEventsClient.SendEvent(_event);
+            return _serverSentEventsClient.SendEventAsync(EVENT_DATA);
+        }
+
+        [Benchmark]
+        public Task SendEventAsync_SingleEvent_SingleClient()
+        {
+            return _serverSentEventsClient.SendEventAsync(_event);
+        }
+
+        [Benchmark]
+        public Task ChangeReconnectIntervalAsync_SingleClient()
+        {
+            return _serverSentEventsClient.ChangeReconnectIntervalAsync(5000);
+        }
+
+        [Benchmark]
+        public Task SendEventAsync_SingleData_MultipleClients()
+        {
+            return _serverSentEventsService.SendEventAsync(EVENT_DATA);
         }
 
         [Benchmark]

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
-using System.Globalization;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
@@ -58,9 +56,9 @@ namespace Lib.AspNetCore.ServerSentEvents
         {
             ReconnectInterval = reconnectInterval;
 
-            byte[] reconnectIntervalBytes = Encoding.UTF8.GetBytes(reconnectInterval.ToString(CultureInfo.InvariantCulture));
+            ServerSentEventBytes reconnectIntervalBytes = ServerSentEventsHelper.GetReconnectIntervalBytes(reconnectInterval);
 
-            return ForAllClientsAsync(client => client.ChangeReconnectIntervalAsync(reconnectIntervalBytes));
+            return ForAllClientsAsync(client => client.SendAsync(reconnectIntervalBytes));
         }
 
         /// <summary>
@@ -70,9 +68,9 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(string text)
         {
-            byte[] data = Encoding.UTF8.GetBytes(text);
+            ServerSentEventBytes serverSentEventBytes = ServerSentEventsHelper.GetEventBytes(text);
 
-            return ForAllClientsAsync(client => client.SendEventAsync(data));
+            return ForAllClientsAsync(client => client.SendAsync(serverSentEventBytes));
         }
 
         /// <summary>
@@ -82,9 +80,9 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(ServerSentEvent serverSentEvent)
         {
-            RawServerSentEvent rawServerSentEvent = new RawServerSentEvent(serverSentEvent);
+            ServerSentEventBytes serverSentEventBytes = ServerSentEventsHelper.GetEventBytes(serverSentEvent);
 
-            return ForAllClientsAsync(client => client.SendEventAsync(rawServerSentEvent));
+            return ForAllClientsAsync(client => client.SendAsync(serverSentEventBytes));
         }
 
         /// <summary>

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Globalization;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -52,7 +50,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(string text)
         {
-            return SendEventAsync(Encoding.UTF8.GetBytes(text));
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(text));
         }
 
         /// <summary>
@@ -62,33 +60,19 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(ServerSentEvent serverSentEvent)
         {
-            return SendEventAsync(new RawServerSentEvent(serverSentEvent));
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent));
         }
 
-        internal Task SendEventAsync(byte[] data)
+        internal Task SendAsync(ServerSentEventBytes serverSentEvent)
         {
             CheckIsConnected();
 
-            return _response.WriteSseEventAsync(data);
-        }
-
-        internal Task SendEventAsync(RawServerSentEvent serverSentEvent)
-        {
-            CheckIsConnected();
-
-            return _response.WriteSseEventAsync(serverSentEvent);
+            return _response.WriteAsync(serverSentEvent);
         }
 
         internal Task ChangeReconnectIntervalAsync(uint reconnectInterval)
         {
-            return ChangeReconnectIntervalAsync(Encoding.UTF8.GetBytes(reconnectInterval.ToString(CultureInfo.InvariantCulture)));
-        }
-
-        internal Task ChangeReconnectIntervalAsync(byte[] reconnectInterval)
-        {
-            CheckIsConnected();
-
-            return _response.WriteSseRetryAsync(reconnectInterval);
+            return SendAsync(ServerSentEventsHelper.GetReconnectIntervalBytes(reconnectInterval));
         }
 
         private void CheckIsConnected()
