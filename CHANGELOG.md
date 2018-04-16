@@ -1,3 +1,7 @@
+## Lib.AspNetCore.ServerSentEvents 1.3.0
+### Additions and Changes
+- General performance improvements.
+
 ## Lib.AspNetCore.ServerSentEvents 1.2.0
 ### Additions and Changes
 - SendEventAsync performance improvements.
