@@ -8,14 +8,13 @@ namespace Lib.AspNetCore.ServerSentEvents
 {
     /// <summary>
     /// Middleware which provides support for Server-Sent Events protocol.
+    /// <typeparam name="TServerSentEventsService">The type of <see cref="ServerSentEventsService"/> which will be used by the middleware instance.</typeparam>
     /// </summary>
-    public class ServerSentEventsMiddleware
+    public class ServerSentEventsMiddleware<TServerSentEventsService> where TServerSentEventsService : ServerSentEventsService
     {
         #region Fields
         private readonly RequestDelegate _next;
-        private readonly ServerSentEventsService _serverSentEventsService;
-
-        private static readonly Task _completedTask = Task.FromResult<object>(null);
+        private readonly TServerSentEventsService _serverSentEventsService;
         #endregion
 
         #region Constructor
@@ -24,7 +23,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// </summary>
         /// <param name="next">The next delegate in the pipeline.</param>
         /// <param name="serverSentEventsService">The service which provides operations over Server-Sent Events protocol.</param>
-        public ServerSentEventsMiddleware(RequestDelegate next, ServerSentEventsService serverSentEventsService)
+        public ServerSentEventsMiddleware(RequestDelegate next, TServerSentEventsService serverSentEventsService)
         {
             _next = next ?? throw new ArgumentNullException(nameof(next));
             _serverSentEventsService = serverSentEventsService ?? throw new ArgumentNullException(nameof(serverSentEventsService));
@@ -90,7 +89,7 @@ namespace Lib.AspNetCore.ServerSentEvents
                     context.Response.Headers.Append(Constants.CONTENT_ENCODING_HEADER, Constants.IDENTITY_CONTENT_ENCODING);
                 }
 
-                return _completedTask;
+                return Task.CompletedTask;
             });
         }
         #endregion
