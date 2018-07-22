@@ -68,9 +68,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(string text)
         {
-            ServerSentEventBytes serverSentEventBytes = ServerSentEventsHelper.GetEventBytes(text);
-
-            return ForAllClientsAsync(client => client.SendAsync(serverSentEventBytes));
+            return SendEventAsync(ServerSentEventsHelper.GetEventBytes(text));
         }
 
         /// <summary>
@@ -80,9 +78,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(ServerSentEvent serverSentEvent)
         {
-            ServerSentEventBytes serverSentEventBytes = ServerSentEventsHelper.GetEventBytes(serverSentEvent);
-
-            return ForAllClientsAsync(client => client.SendAsync(serverSentEventBytes));
+            return SendEventAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent));
         }
 
         /// <summary>
@@ -106,6 +102,11 @@ namespace Lib.AspNetCore.ServerSentEvents
             client.IsConnected = false;
 
             _clients.TryRemove(client.Id, out client);
+        }
+
+        internal Task SendEventAsync(ServerSentEventBytes serverSentEventBytes)
+        {
+            return ForAllClientsAsync(client => client.SendAsync(serverSentEventBytes));
         }
 
         private Task ForAllClientsAsync(Func<ServerSentEventsClient, Task> clientOperationAsync)

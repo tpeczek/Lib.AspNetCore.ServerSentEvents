@@ -1,7 +1,8 @@
 ﻿using System;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Lib.AspNetCore.ServerSentEvents
 {
@@ -18,9 +19,18 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The collection of service descriptors.</returns>
         public static IServiceCollection AddServerSentEvents(this IServiceCollection services)
         {
-            services.AddServerSentEvents<IServerSentEventsService, ServerSentEventsService>();
+            return services.AddServerSentEvents<IServerSentEventsService, ServerSentEventsService>((serverSentEventsServiceOptions) => { });
+        }
 
-            return services;
+        /// <summary>
+        /// Registers default service which provides operations over Server-Sent Events protocol.
+        /// </summary>
+        /// <param name="services">The collection of service descriptors.</param>
+        /// <param name="configureOptions">A delegate to configure the ServerSentEventsServiceOptions.</param>
+        /// <returns>The collection of service descriptors.</returns>
+        public static IServiceCollection AddServerSentEvents(this IServiceCollection services, Action<ServerSentEventsServiceOptions<ServerSentEventsService>> configureOptions)
+        {
+            return services.AddServerSentEvents<IServerSentEventsService, ServerSentEventsService>(configureOptions);
         }
 
         /// <summary>
@@ -34,8 +44,36 @@ namespace Lib.AspNetCore.ServerSentEvents
             where TIServerSentEventsService : class, IServerSentEventsService
             where TServerSentEventsService : ServerSentEventsService, TIServerSentEventsService
         {
+            return services.AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>((serverSentEventsServiceOptions) => { });
+        }
+
+        /// <summary>
+        /// Registers custom service which provides operations over Server-Sent Events protocol.
+        /// </summary>
+        /// <typeparam name="TIServerSentEventsService">The type of service contract.</typeparam>
+        /// <typeparam name="TServerSentEventsService">The type of service implementation.</typeparam>
+        /// <param name="services">The collection of service descriptors.</param>
+        /// <param name="configureOptions">A delegate to configure the ServerSentEventsServiceOptions.</param>
+        /// <returns>The collection of service descriptors.</returns>
+        public static IServiceCollection AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>(this IServiceCollection services, Action<ServerSentEventsServiceOptions<TServerSentEventsService>> configureOptions)
+            where TIServerSentEventsService : class, IServerSentEventsService
+            where TServerSentEventsService : ServerSentEventsService, TIServerSentEventsService
+        {
+            if (services == null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
+
+            if (configureOptions == null)
+            {
+                throw new ArgumentNullException(nameof(configureOptions));
+            }
+
             services.AddSingleton<TServerSentEventsService>();
             services.AddSingleton<TIServerSentEventsService>(serviceProvider => serviceProvider.GetService<TServerSentEventsService>());
+
+            services.Configure(configureOptions);
+            services.AddSingleton<IHostedService, ServerSentEventsKeepaliveService<TServerSentEventsService>>();
 
             return services;
         }
