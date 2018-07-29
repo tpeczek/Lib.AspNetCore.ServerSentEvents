@@ -14,6 +14,8 @@
 
         internal const string SSE_RETRY_FIELD = "retry: ";
 
+        internal const string SSE_COMMENT_FIELD = ": ";
+
         internal const string SSE_ID_FIELD = "id: ";
 
         internal const string SSE_EVENT_FIELD = "event: ";

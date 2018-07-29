@@ -14,6 +14,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         private const int CRLF_LENGTH = 2;
 
         private static byte[] _sseRetryField = Encoding.UTF8.GetBytes(Constants.SSE_RETRY_FIELD);
+        private static byte[] _sseCommentField = Encoding.UTF8.GetBytes(Constants.SSE_COMMENT_FIELD);
         private static byte[] _sseIdField = Encoding.UTF8.GetBytes(Constants.SSE_ID_FIELD);
         private static byte[] _sseEventField = Encoding.UTF8.GetBytes(Constants.SSE_EVENT_FIELD);
         private static byte[] _sseDataField = Encoding.UTF8.GetBytes(Constants.SSE_DATA_FIELD);
@@ -37,6 +38,17 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
 
             byte[] bytes = new byte[GetFieldMaxBytesCount(_sseRetryField, reconnectIntervalStringified) + CRLF_LENGTH];
             int bytesCount = GetFieldBytes(_sseRetryField, reconnectIntervalStringified, bytes, 0);
+
+            bytes[bytesCount++] = CR;
+            bytes[bytesCount++] = LF;
+
+            return new ServerSentEventBytes(bytes, bytesCount);
+        }
+
+        internal static ServerSentEventBytes GetCommentBytes(string comment)
+        {
+            byte[] bytes = new byte[GetFieldMaxBytesCount(_sseCommentField, comment) + CRLF_LENGTH];
+            int bytesCount = GetFieldBytes(_sseCommentField, comment, bytes, 0);
 
             bytes[bytesCount++] = CR;
             bytes[bytesCount++] = LF;
