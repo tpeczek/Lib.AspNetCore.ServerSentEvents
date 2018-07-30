@@ -1,3 +1,10 @@
+## Lib.AspNetCore.ServerSentEvents 2.0.0
+### Additions and Changes
+- Upgraded to .NET Standard 2.0 and ASP.NET Core 2.0.
+- Added generic versions of UseServerSentEvents and MapServerSentEvents.
+- Marked obsolete versions of UseServerSentEvents and MapServerSentEvents which take instance of ServerSentEventsService as parameter.
+- Added support for keepalives
+
 ## Lib.AspNetCore.ServerSentEvents 1.3.0
 ### Additions and Changes
 - General performance improvements.

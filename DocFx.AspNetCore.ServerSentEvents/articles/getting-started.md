@@ -53,7 +53,7 @@ public class Startup
         ...
 			
 		app.MapServerSentEvents("/default-sse-endpoint");
-		app.MapServerSentEvents("/notifications-sse-endpoint", serviceProvider.GetService<NotificationsServerSentEventsService>());
+		app.MapServerSentEvents<NotificationsServerSentEventsService>("/notifications-sse-endpoint");
 			
 		...
     }
@@ -93,3 +93,27 @@ Server-Sent Events provide auto reconnect and tracking of the last seen message 
 ### Changing Reconnect Interval
 
 The interval after which client attempts to reconnect can be controlled by the application. In order to change the interval for specific endpoint it is enough to call `IServerSentEventsService.ChangeReconnectIntervalAsync`.
+
+## Keepalives
+
+Keepalives are supported in three [modes](../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.html). By default the will be automatically send if ANCM is detected, but both the mode and interval can be changed per `ServerSentEventsService` type.
+
+```cs
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+		services.AddServerSentEvents<INotificationsServerSentEventsService, NotificationsServerSentEventsService>(options =>
+        {
+            options.KeepaliveMode = ServerSentEventsKeepaliveMode.Always;
+            options.KeepaliveInterval = 15;
+        });
+
+		...
+    }
+
+    ...
+}
+```
