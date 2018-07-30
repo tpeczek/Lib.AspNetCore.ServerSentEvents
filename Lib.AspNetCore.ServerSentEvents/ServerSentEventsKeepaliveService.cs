@@ -76,9 +76,9 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         private static bool IsBehindAncm()
         {
-            return !String.IsNullOrEmpty(Environment.GetEnvironmentVariable($"ASPNETCORE_PORT"))
-                && !String.IsNullOrEmpty(Environment.GetEnvironmentVariable($"ASPNETCORE_APPL_PATH"))
-                && !String.IsNullOrEmpty(Environment.GetEnvironmentVariable($"ASPNETCORE_TOKEN"));
+            return !String.IsNullOrEmpty(Environment.GetEnvironmentVariable("ASPNETCORE_PORT"))
+                && !String.IsNullOrEmpty(Environment.GetEnvironmentVariable("ASPNETCORE_APPL_PATH"))
+                && !String.IsNullOrEmpty(Environment.GetEnvironmentVariable("ASPNETCORE_TOKEN"));
         }
 
         public virtual void Dispose()
