@@ -11,6 +11,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         where TServerSentEventsService : ServerSentEventsService
     {
         #region Fields
+        private readonly bool _isBehindAncm = IsBehindAncm();
         private readonly static ServerSentEventBytes _keepaliveServerSentEventBytes = ServerSentEventsHelper.GetCommentBytes("KEEPALIVE");
 
         private readonly CancellationTokenSource _stoppingCts = new CancellationTokenSource();
@@ -32,7 +33,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         #region Methods
         public virtual Task StartAsync(CancellationToken cancellationToken)
         {
-            if (_options.KeepaliveMode == ServerSentEventsKeepaliveMode.Always)
+            if ((_options.KeepaliveMode == ServerSentEventsKeepaliveMode.Always) || ((_options.KeepaliveMode == ServerSentEventsKeepaliveMode.BehindAncm) && _isBehindAncm))
             {
                 _executingTask = ExecuteAsync(_stoppingCts.Token);
 
@@ -71,6 +72,13 @@ namespace Lib.AspNetCore.ServerSentEvents
 
                 await Task.Delay(TimeSpan.FromSeconds(_options.KeepaliveInterval), stoppingToken);
             }
+        }
+
+        private static bool IsBehindAncm()
+        {
+            return !String.IsNullOrEmpty(Environment.GetEnvironmentVariable($"ASPNETCORE_PORT"))
+                && !String.IsNullOrEmpty(Environment.GetEnvironmentVariable($"ASPNETCORE_APPL_PATH"))
+                && !String.IsNullOrEmpty(Environment.GetEnvironmentVariable($"ASPNETCORE_TOKEN"));
         }
 
         public virtual void Dispose()

@@ -13,12 +13,12 @@ namespace Lib.AspNetCore.ServerSentEvents
         private int _keepaliveInterval = DEFAULT_KEEPALIVE_INTERVAL;
 
         /// <summary>
-        /// Gets or sets the keepalive event sending mode.
+        /// Gets or sets the keepalive sending mode.
         /// </summary>
-        public ServerSentEventsKeepaliveMode KeepaliveMode { get; set; } = ServerSentEventsKeepaliveMode.Never;
+        public ServerSentEventsKeepaliveMode KeepaliveMode { get; set; } = ServerSentEventsKeepaliveMode.BehindAncm;
 
         /// <summary>
-        /// Gets or sets the keepalive event interval (in seconds).
+        /// Gets or sets the keepalive interval (in seconds).
         /// </summary>
         public int KeepaliveInterval
         {

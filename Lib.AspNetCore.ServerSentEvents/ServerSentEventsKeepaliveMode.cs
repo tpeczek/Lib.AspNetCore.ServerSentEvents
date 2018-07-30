@@ -1,17 +1,21 @@
 ﻿namespace Lib.AspNetCore.ServerSentEvents
 {
     /// <summary>
-    /// The keepalive event sending mode.
+    /// The keepalive sending mode.
     /// </summary>
     public enum ServerSentEventsKeepaliveMode
     {
         /// <summary>
-        /// Always send keepalive event.
+        /// Always send keepalive.
         /// </summary>
         Always,
         /// <summary>
-        /// Never send keepalive event.
+        /// Never send keepalive.
         /// </summary>
-        Never
+        Never,
+        /// <summary>
+        /// Send keepalive if ANCM is detected.
+        /// </summary>
+        BehindAncm
     }
 }
