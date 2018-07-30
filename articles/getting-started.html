@@ -8,7 +8,7 @@
     <title>Getting Started | Lib.AspNetCore.ServerSentEvents </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Getting Started | Lib.AspNetCore.ServerSentEvents ">
-    <meta name="generator" content="docfx 2.29.1.0">
+    <meta name="generator" content="docfx 2.36.2.0">
     
     <link rel="shortcut icon" href="../resources/ico/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -20,7 +20,7 @@
     
     
   </head>
-  <body data-spy="scroll" data-target="#affix">
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
     <div id="wrapper">
       <header>
         
@@ -100,7 +100,7 @@ public class Startup
         ...
 
         app.MapServerSentEvents(&quot;/default-sse-endpoint&quot;);
-        app.MapServerSentEvents(&quot;/notifications-sse-endpoint&quot;, serviceProvider.GetService&lt;NotificationsServerSentEventsService&gt;());
+        app.MapServerSentEvents&lt;NotificationsServerSentEventsService&gt;(&quot;/notifications-sse-endpoint&quot;);
 
         ...
     }
@@ -126,7 +126,26 @@ public class Startup
 <p>Server-Sent Events provide auto reconnect and tracking of the last seen message functionality. If the connection is dropped, client will automatically reconnect to the server and optionally advertise the identifier of the last seen message. This allows for retransmission of lost messages. In order to use this mechanism the <code>OnReconnectAsync</code> method must be overridden when delivering from <code>Server​Sent​Events​Service</code>. When client reconnects the method will be called with <code>IServerSentEventsClient</code> representing the client and the identifier of last message which client has received.</p>
 <h3 id="changing-reconnect-interval">Changing Reconnect Interval</h3>
 <p>The interval after which client attempts to reconnect can be controlled by the application. In order to change the interval for specific endpoint it is enough to call <code>IServerSentEventsService.ChangeReconnectIntervalAsync</code>.</p>
-</article>
+<h2 id="keepalives">Keepalives</h2>
+<p>Keepalives are supported in three <a href="../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.html">modes</a>. By default the will be automatically send if ANCM is detected, but both the mode and interval can be changed per <code>ServerSentEventsService</code> type.</p>
+<pre><code class="lang-cs">public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+        services.AddServerSentEvents&lt;INotificationsServerSentEventsService, NotificationsServerSentEventsService&gt;(options =&gt;
+        {
+            options.KeepaliveMode = ServerSentEventsKeepaliveMode.Always;
+            options.KeepaliveInterval = 15;
+        });
+
+        ...
+    }
+
+    ...
+}
+</code></pre></article>
           </div>
         </div>
       </div>
