@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
 using Lib.AspNetCore.ServerSentEvents.Internals;
+using Microsoft.AspNetCore.Http;
 
 namespace Lib.AspNetCore.ServerSentEvents
 {
@@ -98,9 +99,9 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// </summary>
         /// <param name="client">The client who is establishing the connection.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public virtual Task OnConnectAsync(IServerSentEventsClient client)
+        public virtual Task OnConnectAsync(IServerSentEventsClient client, HttpContext httpContext)
         {
-            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client));
+            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client, httpContext));
 
             return TaskHelper.GetCompletedTask();
         }
@@ -111,9 +112,9 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <param name="client">The client who is reestablishing the connection.</param>
         /// <param name="lastEventId">The identifier of last event which client has received.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public virtual Task OnReconnectAsync(IServerSentEventsClient client, string lastEventId)
+        public virtual Task OnReconnectAsync(IServerSentEventsClient client, HttpContext httpContext, string lastEventId)
         {
-            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client, lastEventId));
+            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client, httpContext, lastEventId));
 
             return TaskHelper.GetCompletedTask();
         }

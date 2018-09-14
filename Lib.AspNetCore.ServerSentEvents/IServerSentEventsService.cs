@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -68,7 +69,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// </summary>
         /// <param name="client">The client who is establishing the connection.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task OnConnectAsync(IServerSentEventsClient client);
+        Task OnConnectAsync(IServerSentEventsClient client, HttpContext httpContext);
 
         /// <summary>
         /// Method which is called when client is reestablishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
@@ -76,7 +77,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <param name="client">The client who is reestablishing the connection.</param>
         /// <param name="lastEventId">The identifier of last event which client has received.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task OnReconnectAsync(IServerSentEventsClient client, string lastEventId);
+        Task OnReconnectAsync(IServerSentEventsClient client, HttpContext httpContext, string lastEventId);
 
         /// <summary>
         /// Method which is called when client is disconnecting. The base implementation raises the <see cref="ClientDisconnected"/> event.
