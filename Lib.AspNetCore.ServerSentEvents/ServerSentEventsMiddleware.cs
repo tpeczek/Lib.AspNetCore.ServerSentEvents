@@ -92,11 +92,11 @@ namespace Lib.AspNetCore.ServerSentEvents
             string lastEventId = context.Request.Headers[Constants.LAST_EVENT_ID_HTTP_HEADER];
             if (!String.IsNullOrWhiteSpace(lastEventId))
             {
-                await _serverSentEventsService.OnReconnectAsync(client, context, lastEventId);
+                await _serverSentEventsService.OnReconnectAsync(client, context.Request, lastEventId);
             }
             else
             {
-                await _serverSentEventsService.OnConnectAsync(client, context);
+                await _serverSentEventsService.OnConnectAsync(client, context.Request);
             }
 
             _serverSentEventsService.AddClient(client);

@@ -98,10 +98,11 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
         /// </summary>
         /// <param name="client">The client who is establishing the connection.</param>
+        /// <param name="httpRequest">The httpRequest of the request which initiated this event.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public virtual Task OnConnectAsync(IServerSentEventsClient client, HttpContext httpContext)
+        public virtual Task OnConnectAsync(IServerSentEventsClient client, HttpRequest httpRequest)
         {
-            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client, httpContext));
+            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client, httpRequest));
 
             return TaskHelper.GetCompletedTask();
         }
@@ -110,11 +111,12 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Method which is called when client is reestablishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
         /// </summary>
         /// <param name="client">The client who is reestablishing the connection.</param>
+        /// <param name="httpRequest">The httpRequest of the request which initiated this event.</param>
         /// <param name="lastEventId">The identifier of last event which client has received.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public virtual Task OnReconnectAsync(IServerSentEventsClient client, HttpContext httpContext, string lastEventId)
+        public virtual Task OnReconnectAsync(IServerSentEventsClient client, HttpRequest httpRequest, string lastEventId)
         {
-            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client, httpContext, lastEventId));
+            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client, httpRequest, lastEventId));
 
             return TaskHelper.GetCompletedTask();
         }

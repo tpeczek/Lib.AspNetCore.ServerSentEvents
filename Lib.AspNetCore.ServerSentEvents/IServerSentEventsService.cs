@@ -68,16 +68,18 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
         /// </summary>
         /// <param name="client">The client who is establishing the connection.</param>
+        /// <param name="httpRequest">The httpRequest of the request.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task OnConnectAsync(IServerSentEventsClient client, HttpContext httpContext);
+        Task OnConnectAsync(IServerSentEventsClient client, HttpRequest httpRequest);
 
         /// <summary>
         /// Method which is called when client is reestablishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
         /// </summary>
         /// <param name="client">The client who is reestablishing the connection.</param>
+        /// <param name="httpRequest">The httpRequest of the request.</param>
         /// <param name="lastEventId">The identifier of last event which client has received.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task OnReconnectAsync(IServerSentEventsClient client, HttpContext httpContext, string lastEventId);
+        Task OnReconnectAsync(IServerSentEventsClient client, HttpRequest httpRequest, string lastEventId);
 
         /// <summary>
         /// Method which is called when client is disconnecting. The base implementation raises the <see cref="ClientDisconnected"/> event.
