@@ -9,6 +9,11 @@ namespace Lib.AspNetCore.ServerSentEvents
     {
         #region Properties
         /// <summary>
+        /// Gets the request which has been made in order to establish the connection.
+        /// </summary>
+        public HttpRequest Request { get; }
+
+        /// <summary>
         /// Gets the client who has connected.
         /// </summary>
         public IServerSentEventsClient Client { get; }
@@ -17,25 +22,35 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Gets the identifier of last event which client has received (available if client has reconnected).
         /// </summary>
         public string LastEventId { get; }
-
-        /// <summary>
-        /// Gets the HttpContext of the request which initiated this event.
-        /// </summary>
-        public HttpRequest HttpRequest { get; }
         #endregion
 
         #region Constructor
         /// <summary>
         /// Initializes new instance of data.
         /// </summary>
+        /// <param name="request">The request which has been made in order to establish the connection.</param>
         /// <param name="client">The client who has connected.</param>
-        /// <param name="httpRequest">The httpRequest of the request which initiated this event.</param>
-        /// <param name="lastEventId">The identifier of last event which client has received.</param>
-        public ServerSentEventsClientConnectedArgs(IServerSentEventsClient client, HttpRequest httpRequest, string lastEventId = null)
+        public ServerSentEventsClientConnectedArgs(HttpRequest request, IServerSentEventsClient client)
             : this()
         {
+
+            Request = request;
             Client = client;
-            HttpRequest = httpRequest;
+            LastEventId = null;
+        }
+
+        /// <summary>
+        /// Initializes new instance of data.
+        /// </summary>
+        /// <param name="request">The request which has been made in order to establish the connection.</param>
+        /// <param name="client">The client who has connected.</param>
+        /// <param name="lastEventId">The identifier of last event which client has received.</param>
+        public ServerSentEventsClientConnectedArgs(HttpRequest request, IServerSentEventsClient client, string lastEventId)
+            : this()
+        {
+
+            Request = request;
+            Client = client;
             LastEventId = lastEventId;
         }
         #endregion

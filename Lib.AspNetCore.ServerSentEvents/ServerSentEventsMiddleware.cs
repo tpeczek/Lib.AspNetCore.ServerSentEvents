@@ -53,11 +53,11 @@ namespace Lib.AspNetCore.ServerSentEvents
                     await client.ChangeReconnectIntervalAsync(_serverSentEventsService.ReconnectInterval.Value);
                 }
 
-                await ConnectClientAsync(context, client);
+                await ConnectClientAsync(context.Request, client);
 
                 await context.RequestAborted.WaitAsync();
 
-                await DisconnectClientAsync(client);
+                await DisconnectClientAsync(context.Request, client);
             }
             else
             {
@@ -87,26 +87,26 @@ namespace Lib.AspNetCore.ServerSentEvents
             });
         }
 
-        private async Task ConnectClientAsync(HttpContext context, ServerSentEventsClient client)
+        private async Task ConnectClientAsync(HttpRequest request, ServerSentEventsClient client)
         {
-            string lastEventId = context.Request.Headers[Constants.LAST_EVENT_ID_HTTP_HEADER];
+            string lastEventId = request.Headers[Constants.LAST_EVENT_ID_HTTP_HEADER];
             if (!String.IsNullOrWhiteSpace(lastEventId))
             {
-                await _serverSentEventsService.OnReconnectAsync(client, context.Request, lastEventId);
+                await _serverSentEventsService.OnReconnectAsync(request, client, lastEventId);
             }
             else
             {
-                await _serverSentEventsService.OnConnectAsync(client, context.Request);
+                await _serverSentEventsService.OnConnectAsync(request, client);
             }
 
             _serverSentEventsService.AddClient(client);
         }
 
-        private async Task DisconnectClientAsync(ServerSentEventsClient client)
+        private async Task DisconnectClientAsync(HttpRequest request, ServerSentEventsClient client)
         {
             _serverSentEventsService.RemoveClient(client);
 
-            await _serverSentEventsService.OnDisconnectAsync(client);
+            await _serverSentEventsService.OnDisconnectAsync(request, client);
         }
         #endregion
     }

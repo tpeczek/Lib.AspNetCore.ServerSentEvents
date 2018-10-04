@@ -97,40 +97,41 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <summary>
         /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
         /// </summary>
+        /// <param name="request">The request which has been made in order to establish the connection.</param>
         /// <param name="client">The client who is establishing the connection.</param>
-        /// <param name="httpRequest">The httpRequest of the request which initiated this event.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public virtual Task OnConnectAsync(IServerSentEventsClient client, HttpRequest httpRequest)
+        public virtual Task OnConnectAsync(HttpRequest request, IServerSentEventsClient client)
         {
-            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client, httpRequest));
+            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(request, client));
 
-            return TaskHelper.GetCompletedTask();
+            return Task.CompletedTask;
         }
 
         /// <summary>
         /// Method which is called when client is reestablishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
         /// </summary>
+        /// <param name="request">The request which has been made in order to establish the connection.</param>
         /// <param name="client">The client who is reestablishing the connection.</param>
-        /// <param name="httpRequest">The httpRequest of the request which initiated this event.</param>
         /// <param name="lastEventId">The identifier of last event which client has received.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public virtual Task OnReconnectAsync(IServerSentEventsClient client, HttpRequest httpRequest, string lastEventId)
+        public virtual Task OnReconnectAsync(HttpRequest request, IServerSentEventsClient client, string lastEventId)
         {
-            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(client, httpRequest, lastEventId));
+            ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(request, client, lastEventId));
 
-            return TaskHelper.GetCompletedTask();
+            return Task.CompletedTask;
         }
 
         /// <summary>
         /// Method which is called when client is disconnecting. The base implementation raises the <see cref="ClientDisconnected"/> event.
         /// </summary>
+        /// <param name="request">The original request which has been made in order to establish the connection.</param>
         /// <param name="client">The client who is disconnecting.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public virtual Task OnDisconnectAsync(IServerSentEventsClient client)
+        public virtual Task OnDisconnectAsync(HttpRequest request, IServerSentEventsClient client)
         {
-            ClientDisconnected?.Invoke(this, new ServerSentEventsClientDisconnectedArgs(client));
+            ClientDisconnected?.Invoke(this, new ServerSentEventsClientDisconnectedArgs(request, client));
 
-            return TaskHelper.GetCompletedTask();
+            return Task.CompletedTask;
         }
 
         internal void AddClient(ServerSentEventsClient client)
