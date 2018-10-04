@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,6 +10,18 @@ namespace Lib.AspNetCore.ServerSentEvents
     /// </summary>
     public interface IServerSentEventsService
     {
+        #region Events
+        /// <summary>
+        /// Occurs when client has connected.
+        /// </summary>
+        event EventHandler<ServerSentEventsClientConnectedArgs> ClientConnected;
+
+        /// <summary>
+        /// Occurs when client has disconnected.
+        /// </summary>
+        event EventHandler<ServerSentEventsClientDisconnectedArgs> ClientDisconnected;
+        #endregion
+
         #region Properties
         /// <summary>
         /// Gets the interval after which clients will attempt to reestablish failed connections.
@@ -52,12 +65,28 @@ namespace Lib.AspNetCore.ServerSentEvents
         Task SendEventAsync(ServerSentEvent serverSentEvent);
 
         /// <summary>
-        /// When overriden in delivered class allows for recovery when client has reestablished the connection.
+        /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
         /// </summary>
-        /// <param name="client">The client who has reestablished the connection.</param>
+        /// <param name="client">The client who is establishing the connection.</param>
+        /// <param name="httpRequest">The httpRequest of the request.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task OnConnectAsync(IServerSentEventsClient client, HttpRequest httpRequest);
+
+        /// <summary>
+        /// Method which is called when client is reestablishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
+        /// </summary>
+        /// <param name="client">The client who is reestablishing the connection.</param>
+        /// <param name="httpRequest">The httpRequest of the request.</param>
         /// <param name="lastEventId">The identifier of last event which client has received.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        Task OnReconnectAsync(IServerSentEventsClient client, string lastEventId);
+        Task OnReconnectAsync(IServerSentEventsClient client, HttpRequest httpRequest, string lastEventId);
+
+        /// <summary>
+        /// Method which is called when client is disconnecting. The base implementation raises the <see cref="ClientDisconnected"/> event.
+        /// </summary>
+        /// <param name="client">The client who is disconnecting.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task OnDisconnectAsync(IServerSentEventsClient client);
         #endregion
     }
 }
