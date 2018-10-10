@@ -153,18 +153,27 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         private Task ForAllClientsAsync(Func<ServerSentEventsClient, Task> clientOperationAsync)
         {
-            int clientTaskIndex = 0;
-            Task[] clientsTasks = new Task[_clients.Values.Count];
+            List<Task> clientsTasks = null;
 
             foreach (ServerSentEventsClient client in _clients.Values)
             {
                 if (client.IsConnected)
                 {
-                    clientsTasks[clientTaskIndex++] = clientOperationAsync(client);
+                    Task operationTask = clientOperationAsync(client);
+
+                    if (operationTask.Status != TaskStatus.RanToCompletion)
+                    {
+                        if (clientsTasks is null)
+                        {
+                            clientsTasks = new List<Task>();
+                        }
+
+                        clientsTasks.Add(operationTask);
+                    }
                 }
             }
 
-            return Task.WhenAll(clientsTasks);
+            return (clientsTasks is null) ? Task.CompletedTask : Task.WhenAll(clientsTasks);
         }
         #endregion
     }
