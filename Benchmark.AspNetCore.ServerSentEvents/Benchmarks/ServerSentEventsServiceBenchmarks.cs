@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Security.Claims;
 using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
 using Lib.AspNetCore.ServerSentEvents;
@@ -57,7 +58,7 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Benchmarks
         [Benchmark]
         public Task ChangeReconnectIntervalAsync_SingleClient()
         {
-            return _serverSentEventsClient.ChangeReconnectIntervalAsync(5000);
+            return _serverSentEventsClient.ChangeReconnectIntervalAsync(5000, CancellationToken.None);
         }
 
         [Benchmark]

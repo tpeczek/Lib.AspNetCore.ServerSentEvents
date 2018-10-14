@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Globalization;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
@@ -27,9 +28,9 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             return response.Body.FlushAsync();
         }
 
-        internal static Task WriteAsync(this HttpResponse response, ServerSentEventBytes serverSentEvent)
+        internal static Task WriteAsync(this HttpResponse response, ServerSentEventBytes serverSentEvent, CancellationToken cancellationToken)
         {
-            return response.Body.WriteAsync(serverSentEvent.Bytes, 0, serverSentEvent.BytesCount);
+            return response.Body.WriteAsync(serverSentEvent.Bytes, 0, serverSentEvent.BytesCount, cancellationToken);
         }
 
         internal static ServerSentEventBytes GetReconnectIntervalBytes(uint reconnectInterval)

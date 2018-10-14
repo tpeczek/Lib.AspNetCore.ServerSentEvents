@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Security.Claims;
 using Microsoft.AspNetCore.Http;
 
 namespace Lib.AspNetCore.ServerSentEvents.Internals
@@ -50,7 +51,18 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(string text)
         {
-            return SendAsync(ServerSentEventsHelper.GetEventBytes(text));
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(text), CancellationToken.None);
+        }
+
+        /// <summary>
+        /// Sends event to client.
+        /// </summary>
+        /// <param name="text">The simple text event.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task SendEventAsync(string text, CancellationToken cancellationToken)
+        {
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(text), cancellationToken);
         }
 
         /// <summary>
@@ -60,19 +72,30 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(ServerSentEvent serverSentEvent)
         {
-            return SendAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent));
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent), CancellationToken.None);
         }
 
-        internal Task SendAsync(ServerSentEventBytes serverSentEvent)
+        /// <summary>
+        /// Sends event to client.
+        /// </summary>
+        /// <param name="serverSentEvent">The event.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken)
+        {
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent), cancellationToken);
+        }
+
+        internal Task SendAsync(ServerSentEventBytes serverSentEvent, CancellationToken cancellationToken)
         {
             CheckIsConnected();
 
-            return _response.WriteAsync(serverSentEvent);
+            return _response.WriteAsync(serverSentEvent, cancellationToken);
         }
 
-        internal Task ChangeReconnectIntervalAsync(uint reconnectInterval)
+        internal Task ChangeReconnectIntervalAsync(uint reconnectInterval, CancellationToken cancellationToken)
         {
-            return SendAsync(ServerSentEventsHelper.GetReconnectIntervalBytes(reconnectInterval));
+            return SendAsync(ServerSentEventsHelper.GetReconnectIntervalBytes(reconnectInterval), cancellationToken);
         }
 
         private void CheckIsConnected()

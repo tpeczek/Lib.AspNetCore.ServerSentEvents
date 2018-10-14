@@ -1,6 +1,7 @@
 ﻿using System;
-using System.Security.Claims;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Security.Claims;
 
 namespace Lib.AspNetCore.ServerSentEvents
 {
@@ -37,9 +38,25 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <summary>
         /// Sends event to client.
         /// </summary>
+        /// <param name="text">The simple text event.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(string text, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Sends event to client.
+        /// </summary>
         /// <param name="serverSentEvent">The event.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task SendEventAsync(ServerSentEvent serverSentEvent);
+
+        /// <summary>
+        /// Sends event to client.
+        /// </summary>
+        /// <param name="serverSentEvent">The event.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken);
         #endregion
     }
 }

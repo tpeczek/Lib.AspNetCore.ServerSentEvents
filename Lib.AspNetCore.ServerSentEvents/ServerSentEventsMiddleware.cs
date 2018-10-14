@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
@@ -50,7 +51,7 @@ namespace Lib.AspNetCore.ServerSentEvents
 
                 if (_serverSentEventsService.ReconnectInterval.HasValue)
                 {
-                    await client.ChangeReconnectIntervalAsync(_serverSentEventsService.ReconnectInterval.Value);
+                    await client.ChangeReconnectIntervalAsync(_serverSentEventsService.ReconnectInterval.Value, CancellationToken.None);
                 }
 
                 await ConnectClientAsync(context.Request, client);

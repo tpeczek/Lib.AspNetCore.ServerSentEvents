@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Http;
@@ -51,6 +52,14 @@ namespace Lib.AspNetCore.ServerSentEvents
         Task ChangeReconnectIntervalAsync(uint reconnectInterval);
 
         /// <summary>
+        /// Changes the interval after which clients will attempt to reestablish failed connections.
+        /// </summary>
+        /// <param name="reconnectInterval">The reconnect interval.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task ChangeReconnectIntervalAsync(uint reconnectInterval, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Sends event to all clients.
         /// </summary>
         /// <param name="text">The simple text event.</param>
@@ -60,9 +69,25 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <summary>
         /// Sends event to all clients.
         /// </summary>
+        /// <param name="text">The simple text event.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(string text, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Sends event to all clients.
+        /// </summary>
         /// <param name="serverSentEvent">The event.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task SendEventAsync(ServerSentEvent serverSentEvent);
+
+        /// <summary>
+        /// Sends event to all clients.
+        /// </summary>
+        /// <param name="serverSentEvent">The event.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken);
 
         /// <summary>
         /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
