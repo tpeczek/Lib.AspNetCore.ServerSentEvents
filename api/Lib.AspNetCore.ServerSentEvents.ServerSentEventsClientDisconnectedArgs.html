@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;
+    <title>Struct ServerSentEventsClientDisconnectedArgs
    | Lib.AspNetCore.ServerSentEvents </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;
+    <meta name="title" content="Struct ServerSentEventsClientDisconnectedArgs
    | Lib.AspNetCore.ServerSentEvents ">
     <meta name="generator" content="docfx 2.36.2.0">
     
@@ -60,131 +60,112 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1">
+            <article class="content wrap" id="_content" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs">
   
   
-  <h1 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1" class="text-break">Class ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;
+  <h1 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs" class="text-break">Struct ServerSentEventsClientDisconnectedArgs
   </h1>
-  <div class="markdown level0 summary"><p>Middleware which provides support for Server-Sent Events protocol.
-<typeparam name="TServerSentEventsService">The type of <a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html">ServerSentEventsService</a> which will be used by the middleware instance.</typeparam></p>
+  <div class="markdown level0 summary"><p>Provides data for the <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ClientDisconnected">ClientDisconnected</a> event.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;</span></div>
-  </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">System.Object.Equals(System.Object)</span>
+      <span class="xref">System.ValueType.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.ValueType.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.ValueType.ToString()</span>
     </div>
     <div>
       <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
     </div>
     <div>
-      <span class="xref">System.Object.GetHashCode()</span>
-    </div>
-    <div>
       <span class="xref">System.Object.GetType()</span>
-    </div>
-    <div>
-      <span class="xref">System.Object.MemberwiseClone()</span>
     </div>
     <div>
       <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
     </div>
-    <div>
-      <span class="xref">System.Object.ToString()</span>
-    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.ServerSentEvents.html">Lib.AspNetCore.ServerSentEvents</a></h6>
   <h6><strong>Assembly</strong>: Lib.AspNetCore.ServerSentEvents.dll</h6>
-  <h5 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_syntax">Syntax</h5>
+  <h5 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;
-    where TServerSentEventsService : ServerSentEventsService</code></pre>
+    <pre><code class="lang-csharp hljs">public struct ServerSentEventsClientDisconnectedArgs</code></pre>
   </div>
-  <h5 class="typeParameters">Type Parameters</h5>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs__ctor_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.#ctor*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs__ctor_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.#ctor(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)">ServerSentEventsClientDisconnectedArgs(HttpRequest, IServerSentEventsClient)</h4>
+  <div class="markdown level1 summary"><p>Initializes new instance of data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ServerSentEventsClientDisconnectedArgs(HttpRequest request, IServerSentEventsClient client)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
+        <th>Type</th>
         <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="parametername">TServerSentEventsService</span></td>
+        <td><span class="xref">Microsoft.AspNetCore.Http.HttpRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>The original request which has been made in order to establish the connection.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a></td>
+        <td><span class="parametername">client</span></td>
+        <td><p>The client who has disconnected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs_Client_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.Client*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs_Client" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.Client">Client</h4>
+  <div class="markdown level1 summary"><p>Gets the client who has disconnected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IServerSentEventsClient Client { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="constructors">Constructors
-  </h3>
-  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1__ctor_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1__ctor_Microsoft_AspNetCore_Http_RequestDelegate__0_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,`0)">ServerSentEventsMiddleware(RequestDelegate, TServerSentEventsService)</h4>
-  <div class="markdown level1 summary"><p>Initializes new instance of middleware.</p>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs_Request_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.Request*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs_Request" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.Request">Request</h4>
+  <div class="markdown level1 summary"><p>Gets the original request which has been made in order to establish the connection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ServerSentEventsMiddleware(RequestDelegate next, TServerSentEventsService serverSentEventsService)</code></pre>
+    <pre><code class="lang-csharp hljs">public HttpRequest Request { get; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Http.RequestDelegate</span></td>
-        <td><span class="parametername">next</span></td>
-        <td><p>The next delegate in the pipeline.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">TServerSentEventsService</span></td>
-        <td><span class="parametername">serverSentEventsService</span></td>
-        <td><p>The service which provides operations over Server-Sent Events protocol.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_Invoke_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_Invoke_Microsoft_AspNetCore_Http_HttpContext_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(Microsoft.AspNetCore.Http.HttpContext)">Invoke(HttpContext)</h4>
-  <div class="markdown level1 summary"><p>Process an individual request.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task Invoke(HttpContext context)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Http.HttpContext</span></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The context.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -194,9 +175,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
-        <td><p>The task object representing the asynchronous operation.</p>
-</td>
+        <td><span class="xref">Microsoft.AspNetCore.Http.HttpRequest</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

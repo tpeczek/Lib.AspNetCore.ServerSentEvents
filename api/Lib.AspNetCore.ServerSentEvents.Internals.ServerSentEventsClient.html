@@ -77,11 +77,35 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.ServerSentEvents.Internals.html">Lib.AspNetCore.ServerSentEvents.Internals</a></h6>
   <h6><strong>Assembly</strong>: Lib.AspNetCore.ServerSentEvents.dll</h6>
   <h5 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class ServerSentEventsClient : object, IServerSentEventsClient</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class ServerSentEventsClient : IServerSentEventsClient</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -104,7 +128,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Guid</span></td>
+        <td><span class="xref">System.Guid</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -152,7 +176,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ClaimsPrincipal</span></td>
+        <td><span class="xref">System.Security.Claims.ClaimsPrincipal</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -196,7 +220,56 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)">SendEventAsync(ServerSentEvent, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Sends event to client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html">ServerSentEvent</a></td>
+        <td><span class="parametername">serverSentEvent</span></td>
+        <td><p>The event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token to cancel operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
@@ -239,7 +312,56 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_System_String_System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String,System.Threading.CancellationToken)">SendEventAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Sends event to client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task SendEventAsync(string text, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The simple text event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token to cancel operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
