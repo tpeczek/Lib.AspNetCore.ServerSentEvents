@@ -88,7 +88,11 @@ The `IServerSentEventsService.GetClients()` method returns list of all currently
 
 ## Handling Auto Reconnect
 
-Server-Sent Events provide auto reconnect and tracking of the last seen message functionality. If the connection is dropped, client will automatically reconnect to the server and optionally advertise the identifier of the last seen message. This allows for retransmission of lost messages. In order to use this mechanism the `OnReconnectAsync` method must be overridden when delivering from `Server​Sent​Events​Service`. When client reconnects the method will be called with `IServerSentEventsClient` representing the client and the identifier of last message which client has received.
+Server-Sent Events provide auto reconnect and tracking of the last seen message functionality. If the connection is dropped, client will automatically reconnect to the server and optionally advertise the identifier of the last seen message. This allows for retransmission of lost messages.
+
+In order to use this mechanism one can subscribe to `IServerSentEventsService.ClientConnected` event. When client reconnects the event will be raised and `ServerSentEventsClientConnectedArgs.LastEventId` will provide an identifier of last message which client has received. At this point `ServerSentEventsClientConnectedArgs.Client` can be used to send any missed messages.
+
+Alternative approach is to override `OnReconnectAsync` method when delivering from `Server​Sent​Events​Service`. When client reconnects the method will be called with `IServerSentEventsClient` representing the client and an identifier of last message which client has received. When overriding `OnReconnectAsync` the base implementation should be called as it's responsible for triggering `ClientConnected` event.
 
 ### Changing Reconnect Interval
 

@@ -1,3 +1,9 @@
+## Lib.AspNetCore.ServerSentEvents 3.0.0
+### Additions and Changes
+- Added support for client connected and disconnected events.
+- Improved support for CancellationToken in asynchronous operations.
+- Hot synchronous path performance improvements.
+
 ## Lib.AspNetCore.ServerSentEvents 2.0.0
 ### Additions and Changes
 - Upgraded to .NET Standard 2.0 and ASP.NET Core 2.0.

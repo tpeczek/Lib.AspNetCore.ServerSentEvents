@@ -25,6 +25,7 @@ There are some blog posts available which describe implementation details and so
 
 - [Server-Sent Events (SSE) support for ASP.NET Core](https://www.tpeczek.com/2017/02/server-sent-events-sse-support-for.html)
 - [Server-Sent Events (or WebSockets) broadcasting in load balancing scenario with Redis](https://www.tpeczek.com/2017/09/server-sent-events-or-websockets.html)
+- [Server-Sent Events and ASP.NET Core - You may need keep alives](https://www.tpeczek.com/2018/08/server-sent-events-and-aspnet-core-you_9.html)
 
 ## Donating
 
