@@ -3,6 +3,10 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization.Policy;
+using Microsoft.Extensions.Options;
 using Lib.AspNetCore.ServerSentEvents.Internals;
 
 namespace Lib.AspNetCore.ServerSentEvents
@@ -15,7 +19,11 @@ namespace Lib.AspNetCore.ServerSentEvents
     {
         #region Fields
         private readonly RequestDelegate _next;
+        private readonly IAuthorizationPolicyProvider _policyProvider;
         private readonly TServerSentEventsService _serverSentEventsService;
+        private readonly ServerSentEventsOptions _serverSentEventsOptions;
+
+        private AuthorizationPolicy _authorizationPolicy;
         #endregion
 
         #region Constructor
@@ -23,11 +31,15 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Initializes new instance of middleware.
         /// </summary>
         /// <param name="next">The next delegate in the pipeline.</param>
+        /// <param name="policyProvider">The service which can provide an <see cref="AuthorizationPolicy" />.</param>
         /// <param name="serverSentEventsService">The service which provides operations over Server-Sent Events protocol.</param>
-        public ServerSentEventsMiddleware(RequestDelegate next, TServerSentEventsService serverSentEventsService)
+        /// <param name="serverSentEventsOptions"></param>
+        public ServerSentEventsMiddleware(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, TServerSentEventsService serverSentEventsService, IOptions<ServerSentEventsOptions> serverSentEventsOptions)
         {
             _next = next ?? throw new ArgumentNullException(nameof(next));
+            _policyProvider = policyProvider ?? throw new ArgumentNullException(nameof(policyProvider));
             _serverSentEventsService = serverSentEventsService ?? throw new ArgumentNullException(nameof(serverSentEventsService));
+            _serverSentEventsOptions = serverSentEventsOptions?.Value ?? throw new ArgumentNullException(nameof(serverSentEventsOptions));
         }
         #endregion
 
@@ -36,11 +48,17 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Process an individual request.
         /// </summary>
         /// <param name="context">The context.</param>
+        /// <param name="policyEvaluator">The service which can evaluate an <see cref="AuthorizationPolicy" />.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
-        public async Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context, IPolicyEvaluator policyEvaluator)
         {
             if (context.Request.Headers[Constants.ACCEPT_HTTP_HEADER] == Constants.SSE_CONTENT_TYPE)
             {
+                if (!await AuthorizeAsync(context, policyEvaluator))
+                {
+                    return;
+                }
+
                 DisableResponseBuffering(context);
 
                 HandleContentEncoding(context);
@@ -63,6 +81,71 @@ namespace Lib.AspNetCore.ServerSentEvents
             else
             {
                 await _next(context);
+            }
+        }
+
+        private async Task<bool> AuthorizeAsync(HttpContext context, IPolicyEvaluator policyEvaluator)
+        {
+            bool authorized = false;
+
+            if (_serverSentEventsOptions.Authorization is null)
+            {
+                authorized = true;
+            }
+            else
+            {
+                if (_authorizationPolicy is null)
+                {
+                    _authorizationPolicy = await AuthorizationPolicy.CombineAsync(_policyProvider, new[] { _serverSentEventsOptions.Authorization });
+                }
+
+                AuthenticateResult authenticateResult = await policyEvaluator.AuthenticateAsync(_authorizationPolicy, context);
+                PolicyAuthorizationResult authorizeResult = await policyEvaluator.AuthorizeAsync(_authorizationPolicy, authenticateResult, context, null);
+
+                if (authorizeResult.Challenged)
+                {
+                    await ChallengeAsync(context);
+                }
+                else if (authorizeResult.Forbidden)
+                {
+                    await ForbidAsync(context);
+                }
+                else
+                {
+                    authorized = true;
+                }
+            }
+
+            return authorized;
+        }
+
+        private async Task ChallengeAsync(HttpContext context)
+        {
+            if (_authorizationPolicy.AuthenticationSchemes.Count > 0)
+            {
+                foreach (string authenticationScheme in _authorizationPolicy.AuthenticationSchemes)
+                {
+                    await context.ChallengeAsync(authenticationScheme);
+                }
+            }
+            else
+            {
+                await context.ChallengeAsync();
+            }
+        }
+
+        private async Task ForbidAsync(HttpContext context)
+        {
+            if (_authorizationPolicy.AuthenticationSchemes.Count > 0)
+            {
+                foreach (string authenticationScheme in _authorizationPolicy.AuthenticationSchemes)
+                {
+                    await context.ForbidAsync(authenticationScheme);
+                }
+            }
+            else
+            {
+                await context.ForbidAsync();
             }
         }
 
