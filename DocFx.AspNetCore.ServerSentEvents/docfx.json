@@ -23,7 +23,8 @@
           "api/*.yml",
           "toc.md",
           "index.md",
-          "articles/getting-started.md"
+          "articles/getting-started.md",
+          "articles/authorization.md"
         ]
       }
     ],
