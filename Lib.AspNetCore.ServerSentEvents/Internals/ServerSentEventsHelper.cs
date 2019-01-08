@@ -22,9 +22,12 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         #endregion
 
         #region Methods
-        internal static Task AcceptAsync(this HttpResponse response)
+        internal static Task AcceptAsync(this HttpResponse response, Action<HttpResponse> onPrepareAccept)
         {
             response.ContentType = Constants.SSE_CONTENT_TYPE;
+
+            onPrepareAccept(response);
+
             return response.Body.FlushAsync();
         }
 

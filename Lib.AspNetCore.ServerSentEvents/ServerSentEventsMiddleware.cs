@@ -63,7 +63,7 @@ namespace Lib.AspNetCore.ServerSentEvents
 
                 HandleContentEncoding(context);
 
-                await context.Response.AcceptAsync();
+                await context.Response.AcceptAsync(_serverSentEventsOptions.OnPrepareAccept);
 
                 ServerSentEventsClient client = new ServerSentEventsClient(Guid.NewGuid(), context.User, context.Response);
 
