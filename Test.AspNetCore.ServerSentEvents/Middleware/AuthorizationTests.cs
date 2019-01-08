@@ -33,23 +33,13 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
             return policyProviderMock.Object;
         }
 
-        private ServerSentEventsService PrepareServerSentEventsService()
-        {
-            Mock<ServerSentEventsService> serverSentEventsServiceMock = new Mock<ServerSentEventsService>()
-            {
-                CallBase = false
-            };
-
-            return serverSentEventsServiceMock.Object;
-        }
-
         private ServerSentEventsMiddleware<ServerSentEventsService> PrepareServerSentEventsMiddleware(ServerSentEventsAuthorization authorization = null)
         {
             return new ServerSentEventsMiddleware<ServerSentEventsService>
             (
                 NOOP_REQUEST_DELEGATE,
                 PrepareAuthorizationPolicyProvider(),
-                PrepareServerSentEventsService(),
+                Mock.Of<ServerSentEventsService>(),
                 Options.Create(new ServerSentEventsOptions { Authorization = authorization })
             );
         }
