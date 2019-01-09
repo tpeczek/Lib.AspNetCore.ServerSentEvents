@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;
+    <title>Class ServerSentEventsAuthorization
    | Lib.AspNetCore.ServerSentEvents </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;
+    <meta name="title" content="Class ServerSentEventsAuthorization
    | Lib.AspNetCore.ServerSentEvents ">
     <meta name="generator" content="docfx 2.36.2.0">
     
@@ -60,19 +60,22 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1">
+            <article class="content wrap" id="_content" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization">
   
   
-  <h1 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1" class="text-break">Class ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;
+  <h1 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization" class="text-break">Class ServerSentEventsAuthorization
   </h1>
-  <div class="markdown level0 summary"><p>Middleware which provides support for Server-Sent Events protocol.
-<typeparam name="TServerSentEventsService">The type of <a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html">ServerSentEventsService</a> which will be used by the middleware instance.</typeparam></p>
+  <div class="markdown level0 summary"><p>Defines authorization rules for Server-Sent Events endpoint.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;</span></div>
+    <div class="level1"><span class="xref">ServerSentEventsAuthorization</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">Microsoft.AspNetCore.Authorization.IAuthorizeData</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -100,108 +103,46 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.ServerSentEvents.html">Lib.AspNetCore.ServerSentEvents</a></h6>
   <h6><strong>Assembly</strong>: Lib.AspNetCore.ServerSentEvents.dll</h6>
-  <h5 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_syntax">Syntax</h5>
+  <h5 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;
-    where TServerSentEventsService : ServerSentEventsService</code></pre>
+    <pre><code class="lang-csharp hljs">public class ServerSentEventsAuthorization : IAuthorizeData</code></pre>
   </div>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TServerSentEventsService</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="constructors">Constructors
+  <h3 id="properties">Properties
   </h3>
-  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1__ctor_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1__ctor_Microsoft_AspNetCore_Http_RequestDelegate_Microsoft_AspNetCore_Authorization_IAuthorizationPolicyProvider__0_Microsoft_Extensions_Options_IOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions__" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider,`0,Microsoft.Extensions.Options.IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions})">ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions&lt;ServerSentEventsOptions&gt;)</h4>
-  <div class="markdown level1 summary"><p>Initializes new instance of middleware.</p>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_AuthenticationSchemes_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.AuthenticationSchemes*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_AuthenticationSchemes" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.AuthenticationSchemes">AuthenticationSchemes</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a comma delimited list of schemes from which user information is constructed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ServerSentEventsMiddleware(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, TServerSentEventsService serverSentEventsService, IOptions&lt;ServerSentEventsOptions&gt; serverSentEventsOptions)</code></pre>
+    <pre><code class="lang-csharp hljs">public string AuthenticationSchemes { get; set; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
         <th>Type</th>
-        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Http.RequestDelegate</span></td>
-        <td><span class="parametername">next</span></td>
-        <td><p>The next delegate in the pipeline.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider</span></td>
-        <td><span class="parametername">policyProvider</span></td>
-        <td><p>The service which can provide an <span class="xref">Microsoft.AspNetCore.Authorization.AuthorizationPolicy</span>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">TServerSentEventsService</span></td>
-        <td><span class="parametername">serverSentEventsService</span></td>
-        <td><p>The service which provides operations over Server-Sent Events protocol.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Microsoft.Extensions.Options.IOptions</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html">ServerSentEventsOptions</a>&gt;</td>
-        <td><span class="parametername">serverSentEventsOptions</span></td>
+        <td><span class="xref">System.String</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-  </h3>
-  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_Invoke_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_Invoke_Microsoft_AspNetCore_Http_HttpContext_Microsoft_AspNetCore_Authorization_Policy_IPolicyEvaluator_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator)">Invoke(HttpContext, IPolicyEvaluator)</h4>
-  <div class="markdown level1 summary"><p>Process an individual request.</p>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Default_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Default*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Default" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Default">Default</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html">ServerSentEventsAuthorization</a> instance which will result in using the default authorization policy.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task Invoke(HttpContext context, IPolicyEvaluator policyEvaluator)</code></pre>
+    <pre><code class="lang-csharp hljs">public static ServerSentEventsAuthorization Default { get; }</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Http.HttpContext</span></td>
-        <td><span class="parametername">context</span></td>
-        <td><p>The context.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator</span></td>
-        <td><span class="parametername">policyEvaluator</span></td>
-        <td><p>The service which can evaluate an <span class="xref">Microsoft.AspNetCore.Authorization.AuthorizationPolicy</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
+  <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -211,12 +152,63 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span></td>
-        <td><p>The task object representing the asynchronous operation.</p>
-</td>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html">ServerSentEventsAuthorization</a></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Policy_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Policy*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Policy" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Policy">Policy</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the policy name that determines access to the endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Policy { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Roles_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Roles*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Roles" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Roles">Roles</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a comma delimited list of roles that are allowed to access the endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Roles { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Microsoft.AspNetCore.Authorization.IAuthorizeData</span>
+  </div>
 </article>
           </div>
         </div>

@@ -383,13 +383,68 @@
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)">MapServerSentEvents(IApplicationBuilder, PathString, ServerSentEventsOptions)</h4>
+  <div class="markdown level1 summary"><p>Adds the middleware which provides support for Server-Sent Events protocol to the branch of pipeline with default service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IApplicationBuilder MapServerSentEvents(this IApplicationBuilder app, PathString pathMatch, ServerSentEventsOptions options)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><span class="parametername">app</span></td>
+        <td><p>The pipeline builder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Http.PathString</span></td>
+        <td><span class="parametername">pathMatch</span></td>
+        <td><p>The request path to match.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html">ServerSentEventsOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The options.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><p>The pipeline builder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)">MapServerSentEvents(IApplicationBuilder, PathString, ServerSentEventsService)</h4>
   <div class="markdown level1 summary"><p>Adds the middleware which provides support for Server-Sent Events protocol to the branch of pipeline with custom service.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method will soon be deprecated. Use MapServerSentEvents&lt;TServerSentEventsService&gt; instead.&quot;)]
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method will soon be removed. Use MapServerSentEvents&lt;TServerSentEventsService&gt; instead.&quot;)]
 public static IApplicationBuilder MapServerSentEvents(this IApplicationBuilder app, PathString pathMatch, ServerSentEventsService serverSentEventsService)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -504,6 +559,78 @@ public static IApplicationBuilder MapServerSentEvents(this IApplicationBuilder a
       </tr>
     </tbody>
   </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)">MapServerSentEvents&lt;TServerSentEventsService&gt;(IApplicationBuilder, PathString, ServerSentEventsOptions)</h4>
+  <div class="markdown level1 summary"><p>Adds the middleware which provides support for Server-Sent Events protocol to the branch of pipeline with custom service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IApplicationBuilder MapServerSentEvents&lt;TServerSentEventsService&gt;(this IApplicationBuilder app, PathString pathMatch, ServerSentEventsOptions options)
+    where TServerSentEventsService : ServerSentEventsService</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><span class="parametername">app</span></td>
+        <td><p>The pipeline builder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Http.PathString</span></td>
+        <td><span class="parametername">pathMatch</span></td>
+        <td><p>The request path to match.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html">ServerSentEventsOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The options.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><p>The pipeline builder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TServerSentEventsService</span></td>
+        <td><p>The type of custom <a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html">ServerSentEventsService</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder)">UseServerSentEvents(IApplicationBuilder)</h4>
   <div class="markdown level1 summary"><p>Adds the middleware which provides support for Server-Sent Events protocol to the pipeline with default service.</p>
@@ -548,13 +675,62 @@ public static IApplicationBuilder MapServerSentEvents(this IApplicationBuilder a
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)">UseServerSentEvents(IApplicationBuilder, ServerSentEventsOptions)</h4>
+  <div class="markdown level1 summary"><p>Adds the middleware which provides support for Server-Sent Events protocol to the pipeline with default service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IApplicationBuilder UseServerSentEvents(this IApplicationBuilder app, ServerSentEventsOptions options)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><span class="parametername">app</span></td>
+        <td><p>The pipeline builder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html">ServerSentEventsOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The options.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><p>The pipeline builder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)">UseServerSentEvents(IApplicationBuilder, ServerSentEventsService)</h4>
   <div class="markdown level1 summary"><p>Adds the middleware which provides support for Server-Sent Events protocol to the pipeline with custom service.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method will soon be deprecated. Use UseServerSentEvents&lt;TServerSentEventsService&gt; instead.&quot;)]
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This method will soon be removed. Use UseServerSentEvents&lt;TServerSentEventsService&gt; instead.&quot;)]
 public static IApplicationBuilder UseServerSentEvents(this IApplicationBuilder app, ServerSentEventsService serverSentEventsService)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
@@ -657,6 +833,72 @@ public static IApplicationBuilder UseServerSentEvents(this IApplicationBuilder a
       </tr>
     </tbody>
   </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)">UseServerSentEvents&lt;TServerSentEventsService&gt;(IApplicationBuilder, ServerSentEventsOptions)</h4>
+  <div class="markdown level1 summary"><p>Adds the middleware which provides support for Server-Sent Events protocol to the pipeline with custom service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static IApplicationBuilder UseServerSentEvents&lt;TServerSentEventsService&gt;(this IApplicationBuilder app, ServerSentEventsOptions options)
+    where TServerSentEventsService : ServerSentEventsService</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><span class="parametername">app</span></td>
+        <td><p>The pipeline builder.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html">ServerSentEventsOptions</a></td>
+        <td><span class="parametername">options</span></td>
+        <td><p>The options.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Microsoft.AspNetCore.Builder.IApplicationBuilder</span></td>
+        <td><p>The pipeline builder.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TServerSentEventsService</span></td>
+        <td><p>The type of custom <a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html">ServerSentEventsService</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
 </article>
           </div>
         </div>
@@ -669,7 +911,7 @@ public static IApplicationBuilder UseServerSentEvents(this IApplicationBuilder a
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2017 - 2018 Tomasz Pęczek
+            Copyright © 2017 - 2019 Tomasz Pęczek
             
           </div>
         </div>

@@ -1,0 +1,164 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Authorization | Lib.AspNetCore.ServerSentEvents </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Authorization | Lib.AspNetCore.ServerSentEvents ">
+    <meta name="generator" content="docfx 2.36.2.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/svg/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-12">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="authorization">Authorization</h1>
+
+<p>It&#39;s possible to provide authorization requirements for a Server-Sent Events endpoint.</p>
+<h2 id="simple-authorization">Simple authorization</h2>
+<p>Authorization for a Server-Sent Events endpoint is controlled through the <code>ServerSentEventsOptions.Authorization</code> and its various properties. At its simplest, setting the <code>ServerSentEventsOptions.Authorization</code> to <code>ServerSentEventsAuthorization.Default</code> limits access to any authenticated user.</p>
+<pre><code class="lang-cs">public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+        services.AddServerSentEvents();
+
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+
+        app.MapServerSentEvents(&quot;/default-sse-endpoint&quot;, new ServerSentEventsOptions
+        {
+            Authorization = ServerSentEventsAuthorization.Default
+        });
+
+        ...
+    }
+}
+</code></pre><h2 id="adding-role-checks">Adding role checks</h2>
+<p>To limit access to users who are a member of a specific role, it&#39;s enough to set <code>ServerSentEventsOptions.Authorization.Roles</code>.</p>
+<pre><code class="lang-cs">public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+        services.AddServerSentEvents();
+
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+
+        app.MapServerSentEvents(&quot;/default-sse-endpoint&quot;, new ServerSentEventsOptions
+        {
+            Authorization = new ServerSentEventsAuthorization { Roles = &quot;Employee&quot; }
+        });
+
+        ...
+    }
+}
+</code></pre><p>Multiple roles can be specified as a comma separated list.</p>
+<h2 id="adding-claims-checks">Adding claims checks</h2>
+<p>To limit access to users who possess specific claims (optionally with specific values), the developer must build and register a policy expressing the claims requirements. Then the policy can be applied by using the <code>Policy</code> property on the <code>ServerSentEventsOptions.Authorization</code> to specify the policy name.</p>
+<pre><code class="lang-cs">public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+        services.AddServerSentEvents();
+
+        services.AddAuthorization(options =&gt;
+        {
+            options.AddPolicy(&quot;EmployeeOnly&quot;, policy =&gt; policy.RequireClaim(&quot;EmployeeNumber&quot;));
+        });
+
+        ...
+    }
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+
+        app.MapServerSentEvents(&quot;/default-sse-endpoint&quot;, new ServerSentEventsOptions
+        {
+            Authorization = new ServerSentEventsAuthorization { Policy = &quot;EmployeeOnly&quot; }
+        });
+
+        ...
+    }
+}
+</code></pre><h2 id="adding-custom-requirements">Adding custom requirements</h2>
+<p>If needed, the full power of policy-based authorization can be utilized by implementing <code>IAuthorizationRequirement</code> and <code>AuthorizationHandler&lt;TRequirement&gt;</code> or <code>IAuthorizationHandler</code>, building and registering a policy, and appling it by using the <code>Policy</code> property on the <code>ServerSentEventsOptions.Authorization</code>. More information can be found <a href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/policies">here</a>.</p>
+</article>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2017 - 2019 Tomasz Pęczek
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

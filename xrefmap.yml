@@ -356,6 +356,64 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEvent.Type
   nameWithType: ServerSentEvent.Type
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization
+  name: ServerSentEventsAuthorization
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html
+  commentId: T:Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization
+  nameWithType: ServerSentEventsAuthorization
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.AuthenticationSchemes
+  name: AuthenticationSchemes
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_AuthenticationSchemes
+  commentId: P:Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.AuthenticationSchemes
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.AuthenticationSchemes
+  nameWithType: ServerSentEventsAuthorization.AuthenticationSchemes
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.AuthenticationSchemes*
+  name: AuthenticationSchemes
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_AuthenticationSchemes_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.AuthenticationSchemes
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.AuthenticationSchemes
+  nameWithType: ServerSentEventsAuthorization.AuthenticationSchemes
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Default
+  name: Default
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Default
+  commentId: P:Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Default
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Default
+  nameWithType: ServerSentEventsAuthorization.Default
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Default*
+  name: Default
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Default_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Default
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Default
+  nameWithType: ServerSentEventsAuthorization.Default
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Policy
+  name: Policy
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Policy
+  commentId: P:Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Policy
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Policy
+  nameWithType: ServerSentEventsAuthorization.Policy
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Policy*
+  name: Policy
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Policy_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Policy
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Policy
+  nameWithType: ServerSentEventsAuthorization.Policy
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Roles
+  name: Roles
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Roles
+  commentId: P:Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Roles
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Roles
+  nameWithType: ServerSentEventsAuthorization.Roles
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Roles*
+  name: Roles
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsAuthorization_Roles_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Roles
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.Roles
+  nameWithType: ServerSentEventsAuthorization.Roles
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs
   name: ServerSentEventsClientConnectedArgs
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.html
@@ -498,14 +556,15 @@ references:
   fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService)
   nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>
   nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,`0)
-  name: ServerSentEventsMiddleware(RequestDelegate, TServerSentEventsService)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1__ctor_Microsoft_AspNetCore_Http_RequestDelegate__0_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,`0)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware<TServerSentEventsService>.ServerSentEventsMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, TServerSentEventsService)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, TServerSentEventsService)
-  nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>.ServerSentEventsMiddleware(RequestDelegate, TServerSentEventsService)
-  nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware(RequestDelegate, TServerSentEventsService)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider,`0,Microsoft.Extensions.Options.IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions})
+  name: ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions<ServerSentEventsOptions>)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1__ctor_Microsoft_AspNetCore_Http_RequestDelegate_Microsoft_AspNetCore_Authorization_IAuthorizationPolicyProvider__0_Microsoft_Extensions_Options_IOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider,`0,Microsoft.Extensions.Options.IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions})
+  name.vb: ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions(Of ServerSentEventsOptions))
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware<TServerSentEventsService>.ServerSentEventsMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider, TServerSentEventsService, Microsoft.Extensions.Options.IOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider, TServerSentEventsService, Microsoft.Extensions.Options.IOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions))
+  nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>.ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions<ServerSentEventsOptions>)
+  nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions(Of ServerSentEventsOptions))
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor*
   name: ServerSentEventsMiddleware
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1__ctor_
@@ -515,14 +574,14 @@ references:
   fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware
   nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>.ServerSentEventsMiddleware
   nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(Microsoft.AspNetCore.Http.HttpContext)
-  name: Invoke(HttpContext)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_Invoke_Microsoft_AspNetCore_Http_HttpContext_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(Microsoft.AspNetCore.Http.HttpContext)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware<TServerSentEventsService>.Invoke(Microsoft.AspNetCore.Http.HttpContext)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).Invoke(Microsoft.AspNetCore.Http.HttpContext)
-  nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>.Invoke(HttpContext)
-  nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService).Invoke(HttpContext)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator)
+  name: Invoke(HttpContext, IPolicyEvaluator)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_Invoke_Microsoft_AspNetCore_Http_HttpContext_Microsoft_AspNetCore_Authorization_Policy_IPolicyEvaluator_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware<TServerSentEventsService>.Invoke(Microsoft.AspNetCore.Http.HttpContext, Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).Invoke(Microsoft.AspNetCore.Http.HttpContext, Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator)
+  nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>.Invoke(HttpContext, IPolicyEvaluator)
+  nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService).Invoke(HttpContext, IPolicyEvaluator)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke*
   name: Invoke
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_Invoke_
@@ -584,6 +643,12 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString)
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString)
   nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder, PathString)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  name: MapServerSentEvents(IApplicationBuilder, PathString, ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder, PathString, ServerSentEventsOptions)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)
   name: MapServerSentEvents(IApplicationBuilder, PathString, ServerSentEventsService)
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_
@@ -606,12 +671,27 @@ references:
   fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString)
   nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents<TServerSentEventsService>(IApplicationBuilder, PathString)
   nameWithType.vb: ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, PathString)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  name: MapServerSentEvents<TServerSentEventsService>(IApplicationBuilder, PathString, ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  name.vb: MapServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, PathString, ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents<TServerSentEventsService>(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents<TServerSentEventsService>(IApplicationBuilder, PathString, ServerSentEventsOptions)
+  nameWithType.vb: ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, PathString, ServerSentEventsOptions)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder)
   name: UseServerSentEvents(IApplicationBuilder)
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_
   commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder)
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder)
   nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  name: UseServerSentEvents(IApplicationBuilder, ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder, ServerSentEventsOptions)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)
   name: UseServerSentEvents(IApplicationBuilder, ServerSentEventsService)
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_
@@ -634,6 +714,60 @@ references:
   fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(Microsoft.AspNetCore.Builder.IApplicationBuilder)
   nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents<TServerSentEventsService>(IApplicationBuilder)
   nameWithType.vb: ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  name: UseServerSentEvents<TServerSentEventsService>(IApplicationBuilder, ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  name.vb: UseServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents<TServerSentEventsService>(Microsoft.AspNetCore.Builder.IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(Microsoft.AspNetCore.Builder.IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents<TServerSentEventsService>(IApplicationBuilder, ServerSentEventsOptions)
+  nameWithType.vb: ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, ServerSentEventsOptions)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions
+  name: ServerSentEventsOptions
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html
+  commentId: T:Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions
+  nameWithType: ServerSentEventsOptions
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.#ctor
+  name: ServerSentEventsOptions()
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions__ctor
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.#ctor
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.ServerSentEventsOptions()
+  nameWithType: ServerSentEventsOptions.ServerSentEventsOptions()
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.#ctor*
+  name: ServerSentEventsOptions
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions__ctor_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.#ctor
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.ServerSentEventsOptions
+  nameWithType: ServerSentEventsOptions.ServerSentEventsOptions
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.Authorization
+  name: Authorization
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_Authorization
+  commentId: P:Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.Authorization
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.Authorization
+  nameWithType: ServerSentEventsOptions.Authorization
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.Authorization*
+  name: Authorization
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_Authorization_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.Authorization
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.Authorization
+  nameWithType: ServerSentEventsOptions.Authorization
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.OnPrepareAccept
+  name: OnPrepareAccept
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_OnPrepareAccept
+  commentId: P:Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.OnPrepareAccept
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.OnPrepareAccept
+  nameWithType: ServerSentEventsOptions.OnPrepareAccept
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.OnPrepareAccept*
+  name: OnPrepareAccept
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_OnPrepareAccept_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.OnPrepareAccept
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.OnPrepareAccept
+  nameWithType: ServerSentEventsOptions.OnPrepareAccept
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService
   name: ServerSentEventsService
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html
