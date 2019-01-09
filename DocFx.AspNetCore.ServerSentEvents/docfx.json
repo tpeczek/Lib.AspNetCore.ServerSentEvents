@@ -24,7 +24,8 @@
           "toc.md",
           "index.md",
           "articles/getting-started.md",
-          "articles/authorization.md"
+          "articles/authorization.md",
+          "articles/advanced.md"
         ]
       }
     ],
