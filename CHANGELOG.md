@@ -1,3 +1,8 @@
+## Lib.AspNetCore.ServerSentEvents 3.1.0
+### Additions and Changes
+- Added support for authorization.
+- Added support for setting HTTP response headers for accept response.
+
 ## Lib.AspNetCore.ServerSentEvents 3.0.0
 ### Additions and Changes
 - Added support for client connected and disconnected events.
