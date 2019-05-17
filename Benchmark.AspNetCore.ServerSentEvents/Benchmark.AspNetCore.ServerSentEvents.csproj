@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.10.14" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.11.5" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lib.AspNetCore.ServerSentEvents\Lib.AspNetCore.ServerSentEvents.csproj" />

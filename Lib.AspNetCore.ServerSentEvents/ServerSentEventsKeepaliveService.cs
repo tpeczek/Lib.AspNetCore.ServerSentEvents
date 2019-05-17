@@ -68,7 +68,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                await _serverSentEventsService.SendEventAsync(_keepaliveServerSentEventBytes, CancellationToken.None);
+                await _serverSentEventsService.SendAsync(_keepaliveServerSentEventBytes, CancellationToken.None);
 
                 await Task.Delay(TimeSpan.FromSeconds(_options.KeepaliveInterval), stoppingToken);
             }

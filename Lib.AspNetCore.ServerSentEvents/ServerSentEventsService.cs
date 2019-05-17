@@ -83,7 +83,7 @@ namespace Lib.AspNetCore.ServerSentEvents
 
             ServerSentEventBytes reconnectIntervalBytes = ServerSentEventsHelper.GetReconnectIntervalBytes(reconnectInterval);
 
-            return ForAllClientsAsync(client => client.SendAsync(reconnectIntervalBytes, cancellationToken), cancellationToken);
+            return SendAsync(reconnectIntervalBytes, cancellationToken);
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(string text)
         {
-            return SendEventAsync(ServerSentEventsHelper.GetEventBytes(text), CancellationToken.None);
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(text), CancellationToken.None);
         }
 
         /// <summary>
@@ -104,7 +104,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(string text, CancellationToken cancellationToken)
         {
-            return SendEventAsync(ServerSentEventsHelper.GetEventBytes(text), cancellationToken);
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(text), cancellationToken);
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(ServerSentEvent serverSentEvent)
         {
-            return SendEventAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent), CancellationToken.None);
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent), CancellationToken.None);
         }
 
         /// <summary>
@@ -125,7 +125,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken)
         {
-            return SendEventAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent), cancellationToken);
+            return SendAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent), cancellationToken);
         }
 
         /// <summary>
@@ -180,12 +180,7 @@ namespace Lib.AspNetCore.ServerSentEvents
             _clients.TryRemove(client.Id, out client);
         }
 
-        internal Task SendEventAsync(ServerSentEventBytes serverSentEventBytes, CancellationToken cancellationToken)
-        {
-            return ForAllClientsAsync(client => client.SendAsync(serverSentEventBytes, cancellationToken), cancellationToken);
-        }
-
-        private Task ForAllClientsAsync(Func<ServerSentEventsClient, Task> clientOperationAsync, CancellationToken cancellationToken)
+        internal Task SendAsync(ServerSentEventBytes serverSentEventBytes, CancellationToken cancellationToken)
         {
             List<Task> clientsTasks = null;
 
@@ -195,7 +190,7 @@ namespace Lib.AspNetCore.ServerSentEvents
                 {
                     cancellationToken.ThrowIfCancellationRequested();
 
-                    Task operationTask = clientOperationAsync(client);
+                    Task operationTask = client.SendAsync(serverSentEventBytes, cancellationToken);
 
                     if (operationTask.Status != TaskStatus.RanToCompletion)
                     {
