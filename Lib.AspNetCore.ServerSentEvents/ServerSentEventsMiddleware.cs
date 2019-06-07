@@ -160,15 +160,19 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         private void HandleContentEncoding(HttpContext context)
         {
-            context.Response.OnStarting(() =>
-            {
-                if (!context.Response.Headers.ContainsKey(Constants.CONTENT_ENCODING_HEADER))
-                {
-                    context.Response.Headers.Append(Constants.CONTENT_ENCODING_HEADER, Constants.IDENTITY_CONTENT_ENCODING);
-                }
+            context.Response.OnStarting(ResponseOnStartingCallback, context);
+        }
 
-                return Task.CompletedTask;
-            });
+        private static Task ResponseOnStartingCallback(object context)
+        {
+            HttpResponse response = ((HttpContext)context).Response;
+
+            if (!response.Headers.ContainsKey(Constants.CONTENT_ENCODING_HEADER))
+            {
+                response.Headers.Append(Constants.CONTENT_ENCODING_HEADER, Constants.IDENTITY_CONTENT_ENCODING);
+            }
+
+            return Task.CompletedTask;
         }
 
         private async Task ConnectClientAsync(HttpRequest request, ServerSentEventsClient client)
