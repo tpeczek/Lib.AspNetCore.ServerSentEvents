@@ -31,7 +31,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             return response.Body.FlushAsync();
         }
 
-        internal static Task WriteAsync(this HttpResponse response, ServerSentEventBytes serverSentEvent, CancellationToken cancellationToken)
+        internal static Task WriteAsync(this HttpResponse response, in ServerSentEventBytes serverSentEvent, CancellationToken cancellationToken)
         {
             return response.Body.WriteAsync(serverSentEvent.Bytes, 0, serverSentEvent.BytesCount, cancellationToken);
         }
