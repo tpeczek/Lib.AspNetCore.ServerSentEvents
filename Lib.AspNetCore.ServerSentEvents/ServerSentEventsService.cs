@@ -4,8 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.Concurrent;
-using Lib.AspNetCore.ServerSentEvents.Internals;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Options;
+using Lib.AspNetCore.ServerSentEvents.Internals;
 
 namespace Lib.AspNetCore.ServerSentEvents
 {
@@ -28,6 +29,35 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         #region Fields
         private readonly ConcurrentDictionary<Guid, ServerSentEventsClient> _clients = new ConcurrentDictionary<Guid, ServerSentEventsClient>();
+        #endregion
+
+        #region Constructors
+        /// <summary>
+        /// Initializes new instance of <see cref="ServerSentEventsService"/>.
+        /// </summary>
+        public ServerSentEventsService()
+        { }
+
+        /// <summary>
+        /// Initializes new instance of <see cref="ServerSentEventsService"/>.
+        /// </summary>
+        /// <param name="options">The options for the instance.</param>
+        public ServerSentEventsService(IOptions<ServerSentEventsServiceOptions<ServerSentEventsService>> options)
+        {
+            ServerSentEventsServiceOptions<ServerSentEventsService> serviceOptions = options?.Value;
+            if ((serviceOptions != null) && ((serviceOptions.OnClientConnected != null) || (serviceOptions.OnClientDisconnected != null)))
+            {
+                if (serviceOptions.OnClientConnected != null)
+                {
+                    ClientConnected += (sender, args) => serviceOptions.OnClientConnected((IServerSentEventsService)sender, args);
+                }
+
+                if (serviceOptions.OnClientDisconnected != null)
+                {
+                    ClientDisconnected += (sender, args) => serviceOptions.OnClientDisconnected((IServerSentEventsService)sender, args);
+                }
+            }
+        }
         #endregion
 
         #region Properties
@@ -70,7 +100,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         {
             return ChangeReconnectIntervalAsync(reconnectInterval, CancellationToken.None);
         }
-
+    
         /// <summary>
         /// Changes the interval after which clients will attempt to reestablish failed connections.
         /// </summary>

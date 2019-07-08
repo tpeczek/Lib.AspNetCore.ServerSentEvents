@@ -34,5 +34,16 @@ namespace Lib.AspNetCore.ServerSentEvents
                 _keepaliveInterval = value;
             }
         }
+
+        /// <summary>
+        /// Called when client has connected.
+        /// This can be used to add client to groups.
+        /// </summary>
+        public Action<IServerSentEventsService, ServerSentEventsClientConnectedArgs> OnClientConnected { get; set; }
+
+        /// <summary>
+        /// Called when client has disconnected.
+        /// </summary>
+        public Action<IServerSentEventsService, ServerSentEventsClientDisconnectedArgs> OnClientDisconnected { get; set; }
     }
 }

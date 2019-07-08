@@ -73,10 +73,11 @@ namespace Lib.AspNetCore.ServerSentEvents
             services.AddAuthorization();
             services.AddAuthorizationPolicyEvaluator();
 
+            services.Configure(configureOptions);
+
             services.AddSingleton<TServerSentEventsService>();
             services.AddSingleton<TIServerSentEventsService>(serviceProvider => serviceProvider.GetService<TServerSentEventsService>());
 
-            services.Configure(configureOptions);
             services.AddSingleton<IHostedService, ServerSentEventsKeepaliveService<TServerSentEventsService>>();
 
             return services;
