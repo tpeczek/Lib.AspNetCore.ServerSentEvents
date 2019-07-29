@@ -29,6 +29,8 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         #region Fields
         private readonly ConcurrentDictionary<Guid, ServerSentEventsClient> _clients = new ConcurrentDictionary<Guid, ServerSentEventsClient>();
+
+        private readonly Dictionary<string, ConcurrentDictionary<Guid, ServerSentEventsClient>> _groups = new Dictionary<string, ConcurrentDictionary<Guid, ServerSentEventsClient>>();
         #endregion
 
         #region Constructors
@@ -127,6 +129,17 @@ namespace Lib.AspNetCore.ServerSentEvents
         }
 
         /// <summary>
+        /// Sends event to clients in group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="text">The simple text event.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task SendEventAsync(string groupName, string text)
+        {
+            return SendAsync(groupName, ServerSentEventsHelper.GetEventBytes(text), CancellationToken.None);
+        }
+
+        /// <summary>
         /// Sends event to all clients.
         /// </summary>
         /// <param name="text">The simple text event.</param>
@@ -135,6 +148,18 @@ namespace Lib.AspNetCore.ServerSentEvents
         public Task SendEventAsync(string text, CancellationToken cancellationToken)
         {
             return SendAsync(ServerSentEventsHelper.GetEventBytes(text), cancellationToken);
+        }
+
+        /// <summary>
+        /// Sends event to clients in group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="text">The simple text event.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task SendEventAsync(string groupName, string text, CancellationToken cancellationToken)
+        {
+            return SendAsync(groupName, ServerSentEventsHelper.GetEventBytes(text), cancellationToken);
         }
 
         /// <summary>
@@ -148,6 +173,17 @@ namespace Lib.AspNetCore.ServerSentEvents
         }
 
         /// <summary>
+        /// Sends event to clients in group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="serverSentEvent">The event.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task SendEventAsync(string groupName, ServerSentEvent serverSentEvent)
+        {
+            return SendAsync(groupName, ServerSentEventsHelper.GetEventBytes(serverSentEvent), CancellationToken.None);
+        }
+
+        /// <summary>
         /// Sends event to all clients.
         /// </summary>
         /// <param name="serverSentEvent">The event.</param>
@@ -156,6 +192,18 @@ namespace Lib.AspNetCore.ServerSentEvents
         public Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken)
         {
             return SendAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent), cancellationToken);
+        }
+
+        /// <summary>
+        /// Sends event to clients in group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="serverSentEvent">The event.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        public Task SendEventAsync(string groupName, ServerSentEvent serverSentEvent, CancellationToken cancellationToken)
+        {
+            return SendAsync(groupName, ServerSentEventsHelper.GetEventBytes(serverSentEvent), cancellationToken);
         }
 
         /// <summary>
@@ -212,9 +260,24 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         internal Task SendAsync(ServerSentEventBytes serverSentEventBytes, CancellationToken cancellationToken)
         {
+            return SendAsync(_clients.Values, serverSentEventBytes, cancellationToken);
+        }
+
+        internal Task SendAsync(string groupName, ServerSentEventBytes serverSentEventBytes, CancellationToken cancellationToken)
+        {
+            if (_groups.ContainsKey(groupName))
+            {
+                return SendAsync(_groups[groupName].Values, serverSentEventBytes, cancellationToken);
+            }
+
+            return Task.CompletedTask;
+        }
+
+        internal Task SendAsync(ICollection<ServerSentEventsClient> clients, ServerSentEventBytes serverSentEventBytes, CancellationToken cancellationToken)
+        {
             List<Task> clientsTasks = null;
 
-            foreach (ServerSentEventsClient client in _clients.Values)
+            foreach (ServerSentEventsClient client in clients)
             {
                 if (client.IsConnected)
                 {
