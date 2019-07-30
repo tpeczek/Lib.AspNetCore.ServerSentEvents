@@ -28,9 +28,10 @@ namespace Lib.AspNetCore.ServerSentEvents
         #endregion
 
         #region Fields
-        private readonly ConcurrentDictionary<Guid, ServerSentEventsClient> _clients = new ConcurrentDictionary<Guid, ServerSentEventsClient>();
+        private readonly ConcurrentDictionary<Guid, IServerSentEventsClient> _clients = new ConcurrentDictionary<Guid, IServerSentEventsClient>();
 
-        private readonly Dictionary<string, ConcurrentDictionary<Guid, ServerSentEventsClient>> _groups = new Dictionary<string, ConcurrentDictionary<Guid, ServerSentEventsClient>>();
+        private readonly SemaphoreSlim _groupsSemaphore = new SemaphoreSlim(1, 1);
+        private readonly Dictionary<string, ConcurrentDictionary<Guid, IServerSentEventsClient>> _groups = new Dictionary<string, ConcurrentDictionary<Guid, IServerSentEventsClient>>();
         #endregion
 
         #region Constructors
@@ -77,7 +78,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The client.</returns>
         public IServerSentEventsClient GetClient(Guid clientId)
         {
-            ServerSentEventsClient client;
+            IServerSentEventsClient client;
 
             _clients.TryGetValue(clientId, out client);
 
@@ -91,6 +92,21 @@ namespace Lib.AspNetCore.ServerSentEvents
         public IReadOnlyCollection<IServerSentEventsClient> GetClients()
         {
             return _clients.Values.ToArray();
+        }
+
+        /// <summary>
+        /// Adds a client to the specified group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="client">The client to add to a group.</param>
+        public async Task AddToGroupAsync(string groupName, IServerSentEventsClient client)
+        {
+            if (!_groups.ContainsKey(groupName))
+            {
+                await CreateGroupAsync(groupName);
+            }
+
+            _groups[groupName].TryAdd(client.Id, client);
         }
 
         /// <summary>
@@ -255,7 +271,28 @@ namespace Lib.AspNetCore.ServerSentEvents
         {
             client.IsConnected = false;
 
-            _clients.TryRemove(client.Id, out client);
+            _clients.TryRemove(client.Id, out _);
+
+            foreach(ConcurrentDictionary<Guid, IServerSentEventsClient> group in _groups.Values)
+            {
+                group.TryRemove(client.Id, out _);
+            }
+        }
+
+        private async Task CreateGroupAsync(string groupName)
+        {
+            await _groupsSemaphore.WaitAsync();
+            try
+            {
+                if (!_groups.ContainsKey(groupName))
+                {
+                    _groups.Add(groupName, new ConcurrentDictionary<Guid, IServerSentEventsClient>());
+                }
+            }
+            finally
+            {
+                _groupsSemaphore.Release();
+            }
         }
 
         internal Task SendAsync(ServerSentEventBytes serverSentEventBytes, CancellationToken cancellationToken)
@@ -273,7 +310,7 @@ namespace Lib.AspNetCore.ServerSentEvents
             return Task.CompletedTask;
         }
 
-        internal Task SendAsync(ICollection<ServerSentEventsClient> clients, ServerSentEventBytes serverSentEventBytes, CancellationToken cancellationToken)
+        internal Task SendAsync(ICollection<IServerSentEventsClient> clients, ServerSentEventBytes serverSentEventBytes, CancellationToken cancellationToken)
         {
             List<Task> clientsTasks = null;
 

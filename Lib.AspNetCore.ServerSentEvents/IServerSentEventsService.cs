@@ -45,6 +45,13 @@ namespace Lib.AspNetCore.ServerSentEvents
         IReadOnlyCollection<IServerSentEventsClient> GetClients();
 
         /// <summary>
+        /// Adds a client to the specified group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="client">The client to add to a group.</param>
+        Task AddToGroupAsync(string groupName, IServerSentEventsClient client);
+
+        /// <summary>
         /// Changes the interval after which clients will attempt to reestablish failed connections.
         /// </summary>
         /// <param name="reconnectInterval">The reconnect interval.</param>
