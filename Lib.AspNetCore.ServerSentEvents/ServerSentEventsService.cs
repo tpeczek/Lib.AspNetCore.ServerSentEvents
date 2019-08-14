@@ -31,6 +31,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         private readonly ConcurrentDictionary<Guid, IServerSentEventsClient> _clients = new ConcurrentDictionary<Guid, IServerSentEventsClient>();
 
         private readonly SemaphoreSlim _groupsSemaphore = new SemaphoreSlim(1, 1);
+        private static readonly IReadOnlyCollection<IServerSentEventsClient> _emptyGroup = new IServerSentEventsClient[0];
         private readonly Dictionary<string, ConcurrentDictionary<Guid, IServerSentEventsClient>> _groups = new Dictionary<string, ConcurrentDictionary<Guid, IServerSentEventsClient>>();
         #endregion
 
@@ -92,6 +93,21 @@ namespace Lib.AspNetCore.ServerSentEvents
         public IReadOnlyCollection<IServerSentEventsClient> GetClients()
         {
             return _clients.Values.ToArray();
+        }
+
+        /// <summary>
+        /// Gets clients in the specified group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <returns>The clients in the specified group.</returns>
+        public IReadOnlyCollection<IServerSentEventsClient> GetClients(string groupName)
+        {
+            if (_groups.ContainsKey(groupName))
+            {
+                return _groups[groupName].Values.ToArray();
+            }
+
+            return _emptyGroup;
         }
 
         /// <summary>

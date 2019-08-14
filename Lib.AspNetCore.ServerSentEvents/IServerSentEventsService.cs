@@ -45,6 +45,13 @@ namespace Lib.AspNetCore.ServerSentEvents
         IReadOnlyCollection<IServerSentEventsClient> GetClients();
 
         /// <summary>
+        /// Gets clients in the specified group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <returns>The clients in the specified group.</returns>
+        IReadOnlyCollection<IServerSentEventsClient> GetClients(string groupName);
+
+        /// <summary>
         /// Adds a client to the specified group.
         /// </summary>
         /// <param name="groupName">The group name.</param>
