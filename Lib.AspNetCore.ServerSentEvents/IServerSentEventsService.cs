@@ -81,6 +81,14 @@ namespace Lib.AspNetCore.ServerSentEvents
         Task SendEventAsync(string text);
 
         /// <summary>
+        /// Sends event to all clients.
+        /// </summary>
+        /// <param name="text">The simple text event.</param>
+        /// <param name="clientPredicate">The function to test each client for a condition.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(string text, Func<IServerSentEventsClient, bool> clientPredicate);
+
+        /// <summary>
         /// Sends event to clients in group.
         /// </summary>
         /// <param name="groupName">The group name.</param>
@@ -89,12 +97,30 @@ namespace Lib.AspNetCore.ServerSentEvents
         Task SendEventAsync(string groupName, string text);
 
         /// <summary>
+        /// Sends event to clients in group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="text">The simple text event.</param>
+        /// <param name="clientPredicate">The function to test each client for a condition.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(string groupName, string text, Func<IServerSentEventsClient, bool> clientPredicate);
+
+        /// <summary>
         /// Sends event to all clients.
         /// </summary>
         /// <param name="text">The simple text event.</param>
         /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task SendEventAsync(string text, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Sends event to all clients.
+        /// </summary>
+        /// <param name="text">The simple text event.</param>
+        /// <param name="clientPredicate">The function to test each client for a condition.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(string text, Func<IServerSentEventsClient, bool> clientPredicate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Sends event to clients in group.
@@ -106,11 +132,29 @@ namespace Lib.AspNetCore.ServerSentEvents
         Task SendEventAsync(string groupName, string text, CancellationToken cancellationToken);
 
         /// <summary>
+        /// Sends event to clients in group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="text">The simple text event.</param>
+        /// <param name="clientPredicate">The function to test each client for a condition.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(string groupName, string text, Func<IServerSentEventsClient, bool> clientPredicate, CancellationToken cancellationToken);
+
+        /// <summary>
         /// Sends event to all clients.
         /// </summary>
         /// <param name="serverSentEvent">The event.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task SendEventAsync(ServerSentEvent serverSentEvent);
+
+        /// <summary>
+        /// Sends event to all clients.
+        /// </summary>
+        /// <param name="serverSentEvent">The event.</param>
+        /// <param name="clientPredicate">The function to test each client for a condition.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(ServerSentEvent serverSentEvent, Func<IServerSentEventsClient, bool> clientPredicate);
 
         /// <summary>
         /// Sends event to clients in group.
@@ -121,12 +165,30 @@ namespace Lib.AspNetCore.ServerSentEvents
         Task SendEventAsync(string groupName, ServerSentEvent serverSentEvent);
 
         /// <summary>
+        /// Sends event to clients in group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="serverSentEvent">The event.</param>
+        /// <param name="clientPredicate">The function to test each client for a condition.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(string groupName, ServerSentEvent serverSentEvent, Func<IServerSentEventsClient, bool> clientPredicate);
+
+        /// <summary>
         /// Sends event to all clients.
         /// </summary>
         /// <param name="serverSentEvent">The event.</param>
         /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Sends event to all clients.
+        /// </summary>
+        /// <param name="serverSentEvent">The event.</param>
+        /// <param name="clientPredicate">The function to test each client for a condition.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(ServerSentEvent serverSentEvent, Func<IServerSentEventsClient, bool> clientPredicate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Sends event to clients in group.
@@ -136,6 +198,16 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task SendEventAsync(string groupName, ServerSentEvent serverSentEvent, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Sends event to clients in group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="serverSentEvent">The event.</param>
+        /// <param name="clientPredicate">The function to test each client for a condition.</param>
+        /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
+        /// <returns>The task object representing the asynchronous operation.</returns>
+        Task SendEventAsync(string groupName, ServerSentEvent serverSentEvent, Func<IServerSentEventsClient, bool> clientPredicate, CancellationToken cancellationToken);
 
         /// <summary>
         /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
