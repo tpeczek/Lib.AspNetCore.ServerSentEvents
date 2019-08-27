@@ -114,15 +114,22 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Adds a client to the specified group.
         /// </summary>
         /// <param name="groupName">The group name.</param>
-        /// <param name="client">The client to add to a group.</param>
-        public async Task AddToGroupAsync(string groupName, IServerSentEventsClient client)
+        /// /// <param name="client">The client to add to a group.</param>
+        /// <returns>The task object representing the result of asynchronous operation</returns>
+        public async Task<ServerSentEventsAddToGroupResult> AddToGroupAsync(string groupName, IServerSentEventsClient client)
         {
+            ServerSentEventsAddToGroupResult result = ServerSentEventsAddToGroupResult.AddedToExistingGroup;
+
             if (!_groups.ContainsKey(groupName))
             {
                 await CreateGroupAsync(groupName);
+
+                result = ServerSentEventsAddToGroupResult.AddedToNewGroup;
             }
 
             _groups[groupName].TryAdd(client.Id, client);
+
+            return result;
         }
 
         /// <summary>
