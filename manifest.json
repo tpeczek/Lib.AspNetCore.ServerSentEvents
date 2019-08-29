@@ -12,7 +12,7 @@
           "hash": "p6foSs+P++c+4RFQutzNdQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -21,10 +21,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html",
-          "hash": "1DgBWCGep7eudmv50HwjcA=="
+          "hash": "0ZzDqrEjJKjiIgdae6K9Hw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -36,7 +36,7 @@
           "hash": "HspCicg1b/3BwlYE579xiA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -48,7 +48,7 @@
           "hash": "NyrBYtYn+dpcRsq7qIxMzw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -60,7 +60,19 @@
           "hash": "Uprw3wXuLgHwpySCLfRYAA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAddToGroupResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAddToGroupResult.html",
+          "hash": "u8zbig5Fnsh1jyOzwGqVrQ=="
+        }
+      },
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -72,7 +84,7 @@
           "hash": "dUoy2852oWi7z97kgsbsDA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -84,7 +96,7 @@
           "hash": "n2OvsdB4sNHvA66Cf5gDBA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -96,7 +108,7 @@
           "hash": "DspFPNsDRzDgO9x+YiKpvA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -108,7 +120,7 @@
           "hash": "HTwAREBvzvsjnNPURWt8uQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -120,7 +132,7 @@
           "hash": "ZMvFunS3rRH2tAnsdsqFJw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -132,7 +144,7 @@
           "hash": "FBTnbmOmWvZdpMMHUfjw1Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -144,7 +156,7 @@
           "hash": "9egCAAmfyc6+3ZBtEl9wZg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -153,10 +165,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html",
-          "hash": "4ejaYfwzt0b/Yl/HLrdAbQ=="
+          "hash": "KTvqVvVOr8FNBIeXbknUfw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -168,7 +180,7 @@
           "hash": "gNF/LVHEtYQRM09GlAkFRQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -177,10 +189,10 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.html",
-          "hash": "zuCJ8/PFGOfK3MFtu92oSA=="
+          "hash": "N64OQUx67ly5ZkrHb6jaBw=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -189,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "DD/ABnLF0Tz89XzKw/vshg=="
+          "hash": "98sFMQleIKKYAQAAcFbznw=="
         }
       },
       "is_incremental": false,
@@ -204,7 +216,7 @@
           "hash": "A2fTLLCi3KHbaLEHj06c5g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -216,7 +228,7 @@
           "hash": "fdbxCcJX6R0t+Znp1b3dpQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -231,7 +243,7 @@
           "hash": "83RXClw9FmKATq0s5Uok5Q=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -243,7 +255,7 @@
           "hash": "Thu6Hlz+PpBp/e1bcxf0zQ=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -287,8 +299,7 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
+        "can_incremental": true,
         "incrementalPhase": "build"
       },
       "processors": {
@@ -297,25 +308,25 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }
     },
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
         "incrementalPhase": "postProcessing"
       },
       "processors": {}
