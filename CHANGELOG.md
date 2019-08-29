@@ -1,8 +1,13 @@
+## Lib.AspNetCore.ServerSentEvents 3.3.0
+### Additions and Changes
+- Added method for getting clients in a specified group.
+- Added SendEventAsync overload which takes a predicate against IServerSentEventsClient as a parameter.
+
 ## Lib.AspNetCore.ServerSentEvents 3.2.0
 ### Additions and Changes
 - Exposed way to provide actions for ClientConnected and ClientDisconnected events through ServerSentEventsServiceOptions.
-- Added method for adding to group
-- Added methods for sending to group
+- Added method for adding to group.
+- Added methods for sending to group.
 
 ## Lib.AspNetCore.ServerSentEvents 3.1.0
 ### Additions and Changes
