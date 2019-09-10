@@ -151,11 +151,19 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         private void DisableResponseBuffering(HttpContext context)
         {
+#if NETCOREAPP3_0
+            IHttpResponseBodyFeature responseBodyFeature = context.Features.Get<IHttpResponseBodyFeature>();
+            if (responseBodyFeature != null)
+            {
+                responseBodyFeature.DisableBuffering();
+            }
+#else
             IHttpBufferingFeature bufferingFeature = context.Features.Get<IHttpBufferingFeature>();
             if (bufferingFeature != null)
             {
                 bufferingFeature.DisableResponseBuffering();
             }
+#endif
         }
 
         private void HandleContentEncoding(HttpContext context)
