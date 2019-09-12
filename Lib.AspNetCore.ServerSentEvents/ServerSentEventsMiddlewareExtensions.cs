@@ -209,50 +209,5 @@ namespace Lib.AspNetCore.ServerSentEvents
             return app.Map(pathMatch, branchedApp => branchedApp.UseServerSentEvents<TServerSentEventsService>(options));
         }
         #endregion
-
-        #region Obsolete Methods
-        /// <summary>
-        /// Adds the middleware which provides support for Server-Sent Events protocol to the pipeline with custom service.
-        /// </summary>
-        /// <param name="app">The pipeline builder.</param>
-        /// <param name="serverSentEventsService">The custom service.</param>
-        /// <returns>The pipeline builder.</returns>
-        [Obsolete("This method will soon be removed. Use UseServerSentEvents<TServerSentEventsService> instead.")]
-        public static IApplicationBuilder UseServerSentEvents(this IApplicationBuilder app, ServerSentEventsService serverSentEventsService)
-        {
-            if (app == null)
-            {
-                throw new ArgumentNullException(nameof(app));
-            }
-
-            if (serverSentEventsService == null)
-            {
-                throw new ArgumentNullException(nameof(serverSentEventsService));
-            }
-
-            Type serverSentEventsServiceType = serverSentEventsService.GetType();
-            Type serverSentEventsMiddlewareType = typeof(ServerSentEventsMiddleware<>).MakeGenericType(serverSentEventsServiceType);
-
-            return app.UseMiddleware(serverSentEventsMiddlewareType, Options.Create(new ServerSentEventsOptions()));
-        }
-
-        /// <summary>
-        /// Adds the middleware which provides support for Server-Sent Events protocol to the branch of pipeline with custom service.
-        /// </summary>
-        /// <param name="app">The pipeline builder.</param>
-        /// <param name="pathMatch">The request path to match.</param>
-        /// <param name="serverSentEventsService">The custom service.</param>
-        /// <returns>The pipeline builder.</returns>
-        [Obsolete("This method will soon be removed. Use MapServerSentEvents<TServerSentEventsService> instead.")]
-        public static IApplicationBuilder MapServerSentEvents(this IApplicationBuilder app, PathString pathMatch, ServerSentEventsService serverSentEventsService)
-        {
-            if (app == null)
-            {
-                throw new ArgumentNullException(nameof(app));
-            }
-
-            return app.Map(pathMatch, branchedApp => branchedApp.UseServerSentEvents(serverSentEventsService));
-        }
-        #endregion
     }
 }

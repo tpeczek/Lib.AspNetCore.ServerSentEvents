@@ -3,9 +3,9 @@
     <Description>Lib.AspNetCore.ServerSentEvents is a library which provides Server-Sent Events (SSE) support for ASP.NET Core</Description>
     <Copyright>Copyright © 2017 - 2019 Tomasz Pęczek</Copyright>
     <VersionPrefix>4.0.0</VersionPrefix>
-    <VersionSuffix>preview</VersionSuffix>
+    <VersionSuffix>preview2</VersionSuffix>
     <Authors>Tomasz Pęczek</Authors>
-    <TargetFrameworks>netcoreapp2.0;netcoreapp3.0;net461</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp3.0;net461</TargetFrameworks>
     <AssemblyTitle>Lib.AspNetCore.ServerSentEvents</AssemblyTitle>
     <AssemblyName>Lib.AspNetCore.ServerSentEvents</AssemblyName>
     <PackageId>Lib.AspNetCore.ServerSentEvents</PackageId>
@@ -23,12 +23,12 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'netcoreapp3.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="[2.0.0,3.0.0)" />
-    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="[2.0.0,3.0.0)" />
-    <PackageReference Include="Microsoft.AspNetCore.Authorization.Policy" Version="[2.0.0,3.0.0)" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="[2.0.0,3.0.0)" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="[2.0.0,3.0.0)" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[2.0.0,3.0.0)" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="[2.1.0,3.0.0)" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="[2.1.0,3.0.0)" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization.Policy" Version="[2.1.0,3.0.0)" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="[2.1.0,3.0.0)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="[2.1.0,3.0.0)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[2.1.0,3.0.0)" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
