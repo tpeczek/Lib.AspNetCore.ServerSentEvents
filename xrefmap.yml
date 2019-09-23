@@ -51,11 +51,11 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   nameWithType: ServerSentEventsClient.SendEventAsync(ServerSentEvent)
-- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
   name: SendEventAsync(ServerSentEvent, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, CancellationToken)
   nameWithType: ServerSentEventsClient.SendEventAsync(ServerSentEvent, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String)
   name: SendEventAsync(String)
@@ -63,11 +63,11 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String)
   fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String)
   nameWithType: ServerSentEventsClient.SendEventAsync(String)
-- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String,System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String,CancellationToken)
   name: SendEventAsync(String, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_System_String_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String, System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_System_String_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String, CancellationToken)
   nameWithType: ServerSentEventsClient.SendEventAsync(String, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync*
   name: SendEventAsync
@@ -127,11 +127,11 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   nameWithType: IServerSentEventsClient.SendEventAsync(ServerSentEvent)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
   name: SendEventAsync(ServerSentEvent, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, CancellationToken)
   nameWithType: IServerSentEventsClient.SendEventAsync(ServerSentEvent, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(System.String)
   name: SendEventAsync(String)
@@ -139,11 +139,11 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(System.String)
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(System.String)
   nameWithType: IServerSentEventsClient.SendEventAsync(String)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(System.String,System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(System.String,CancellationToken)
   name: SendEventAsync(String, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SendEventAsync_System_String_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(System.String,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(System.String, System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SendEventAsync_System_String_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(System.String,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(System.String, CancellationToken)
   nameWithType: IServerSentEventsClient.SendEventAsync(String, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync*
   name: SendEventAsync
@@ -190,11 +190,11 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32)
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32)
   nameWithType: IServerSentEventsService.ChangeReconnectIntervalAsync(UInt32)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,CancellationToken)
   name: ChangeReconnectIntervalAsync(UInt32, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ChangeReconnectIntervalAsync_System_UInt32_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32, System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ChangeReconnectIntervalAsync_System_UInt32_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32, CancellationToken)
   nameWithType: IServerSentEventsService.ChangeReconnectIntervalAsync(UInt32, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync*
   name: ChangeReconnectIntervalAsync
@@ -215,11 +215,11 @@ references:
   commentId: E:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ClientDisconnected
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ClientDisconnected
   nameWithType: IServerSentEventsService.ClientDisconnected
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient(System.Guid)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient(Guid)
   name: GetClient(Guid)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_GetClient_System_Guid_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient(System.Guid)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient(System.Guid)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_GetClient_Guid_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient(Guid)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient(Guid)
   nameWithType: IServerSentEventsService.GetClient(Guid)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient*
   name: GetClient
@@ -247,11 +247,11 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClients
   nameWithType: IServerSentEventsService.GetClients
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   name: OnConnectAsync(HttpRequest, IServerSentEventsClient)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnConnectAsync_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync(Microsoft.AspNetCore.Http.HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnConnectAsync_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync(HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   nameWithType: IServerSentEventsService.OnConnectAsync(HttpRequest, IServerSentEventsClient)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync*
   name: OnConnectAsync
@@ -260,11 +260,11 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync
   nameWithType: IServerSentEventsService.OnConnectAsync
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   name: OnDisconnectAsync(HttpRequest, IServerSentEventsClient)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnDisconnectAsync_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync(Microsoft.AspNetCore.Http.HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnDisconnectAsync_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync(HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   nameWithType: IServerSentEventsService.OnDisconnectAsync(HttpRequest, IServerSentEventsClient)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync*
   name: OnDisconnectAsync
@@ -273,11 +273,11 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync
   nameWithType: IServerSentEventsService.OnDisconnectAsync
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
   name: OnReconnectAsync(HttpRequest, IServerSentEventsClient, String)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnReconnectAsync_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync(Microsoft.AspNetCore.Http.HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.String)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnReconnectAsync_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync(HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.String)
   nameWithType: IServerSentEventsService.OnReconnectAsync(HttpRequest, IServerSentEventsClient, String)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync*
   name: OnReconnectAsync
@@ -305,120 +305,120 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   nameWithType: IServerSentEventsService.SendEventAsync(ServerSentEvent)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  name: SendEventAsync(ServerSentEvent, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, CancellationToken)
+  nameWithType: IServerSentEventsService.SendEventAsync(ServerSentEvent, CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name: SendEventAsync(ServerSentEvent, Func<IServerSentEventsClient, Boolean>)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name.vb: SendEventAsync(ServerSentEvent, Func(Of IServerSentEventsClient, Boolean))
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
   nameWithType: IServerSentEventsService.SendEventAsync(ServerSentEvent, Func<IServerSentEventsClient, Boolean>)
   nameWithType.vb: IServerSentEventsService.SendEventAsync(ServerSentEvent, Func(Of IServerSentEventsClient, Boolean))
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name: SendEventAsync(ServerSentEvent, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name.vb: SendEventAsync(ServerSentEvent, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, System.Threading.CancellationToken)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), System.Threading.CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, CancellationToken)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), CancellationToken)
   nameWithType: IServerSentEventsService.SendEventAsync(ServerSentEvent, Func<IServerSentEventsClient, Boolean>, CancellationToken)
   nameWithType.vb: IServerSentEventsService.SendEventAsync(ServerSentEvent, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  name: SendEventAsync(ServerSentEvent, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Threading.CancellationToken)
-  nameWithType: IServerSentEventsService.SendEventAsync(ServerSentEvent, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String)
   name: SendEventAsync(String)
   href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_
   commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String)
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String)
   nameWithType: IServerSentEventsService.SendEventAsync(String)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,CancellationToken)
+  name: SendEventAsync(String, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, CancellationToken)
+  nameWithType: IServerSentEventsService.SendEventAsync(String, CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  name: SendEventAsync(String, Func<IServerSentEventsClient, Boolean>)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  name.vb: SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean))
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
+  nameWithType: IServerSentEventsService.SendEventAsync(String, Func<IServerSentEventsClient, Boolean>)
+  nameWithType.vb: IServerSentEventsService.SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean))
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
+  name: SendEventAsync(String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
+  name.vb: SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, CancellationToken)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), CancellationToken)
+  nameWithType: IServerSentEventsService.SendEventAsync(String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
+  nameWithType.vb: IServerSentEventsService.SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   name: SendEventAsync(String, ServerSentEvent)
   href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_
   commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   nameWithType: IServerSentEventsService.SendEventAsync(String, ServerSentEvent)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  name: SendEventAsync(String, ServerSentEvent, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, CancellationToken)
+  nameWithType: IServerSentEventsService.SendEventAsync(String, ServerSentEvent, CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name: SendEventAsync(String, ServerSentEvent, Func<IServerSentEventsClient, Boolean>)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name.vb: SendEventAsync(String, ServerSentEvent, Func(Of IServerSentEventsClient, Boolean))
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
   nameWithType: IServerSentEventsService.SendEventAsync(String, ServerSentEvent, Func<IServerSentEventsClient, Boolean>)
   nameWithType.vb: IServerSentEventsService.SendEventAsync(String, ServerSentEvent, Func(Of IServerSentEventsClient, Boolean))
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name: SendEventAsync(String, ServerSentEvent, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name.vb: SendEventAsync(String, ServerSentEvent, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, System.Threading.CancellationToken)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), System.Threading.CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, CancellationToken)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), CancellationToken)
   nameWithType: IServerSentEventsService.SendEventAsync(String, ServerSentEvent, Func<IServerSentEventsClient, Boolean>, CancellationToken)
   nameWithType.vb: IServerSentEventsService.SendEventAsync(String, ServerSentEvent, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  name: SendEventAsync(String, ServerSentEvent, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Threading.CancellationToken)
-  nameWithType: IServerSentEventsService.SendEventAsync(String, ServerSentEvent, CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
-  name: SendEventAsync(String, Func<IServerSentEventsClient, Boolean>)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
-  name.vb: SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean))
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
-  nameWithType: IServerSentEventsService.SendEventAsync(String, Func<IServerSentEventsClient, Boolean>)
-  nameWithType.vb: IServerSentEventsService.SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean))
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
-  name: SendEventAsync(String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
-  name.vb: SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, System.Threading.CancellationToken)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), System.Threading.CancellationToken)
-  nameWithType: IServerSentEventsService.SendEventAsync(String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  nameWithType.vb: IServerSentEventsService.SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String)
   name: SendEventAsync(String, String)
   href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_
   commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String)
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String)
   nameWithType: IServerSentEventsService.SendEventAsync(String, String)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,CancellationToken)
+  name: SendEventAsync(String, String, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, CancellationToken)
+  nameWithType: IServerSentEventsService.SendEventAsync(String, String, CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name: SendEventAsync(String, String, Func<IServerSentEventsClient, Boolean>)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name.vb: SendEventAsync(String, String, Func(Of IServerSentEventsClient, Boolean))
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
   nameWithType: IServerSentEventsService.SendEventAsync(String, String, Func<IServerSentEventsClient, Boolean>)
   nameWithType.vb: IServerSentEventsService.SendEventAsync(String, String, Func(Of IServerSentEventsClient, Boolean))
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name: SendEventAsync(String, String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name.vb: SendEventAsync(String, String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, System.Threading.CancellationToken)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), System.Threading.CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, CancellationToken)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), CancellationToken)
   nameWithType: IServerSentEventsService.SendEventAsync(String, String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
   nameWithType.vb: IServerSentEventsService.SendEventAsync(String, String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,System.Threading.CancellationToken)
-  name: SendEventAsync(String, String, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.String, System.Threading.CancellationToken)
-  nameWithType: IServerSentEventsService.SendEventAsync(String, String, CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.Threading.CancellationToken)
-  name: SendEventAsync(String, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String, System.Threading.CancellationToken)
-  nameWithType: IServerSentEventsService.SendEventAsync(String, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*
   name: SendEventAsync
   href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_
@@ -553,17 +553,17 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs
   nameWithType: ServerSentEventsClientConnectedArgs
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.#ctor(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.#ctor(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   name: ServerSentEventsClientConnectedArgs(HttpRequest, IServerSentEventsClient)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientConnectedArgs__ctor_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.#ctor(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.ServerSentEventsClientConnectedArgs(Microsoft.AspNetCore.Http.HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientConnectedArgs__ctor_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.#ctor(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.ServerSentEventsClientConnectedArgs(HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   nameWithType: ServerSentEventsClientConnectedArgs.ServerSentEventsClientConnectedArgs(HttpRequest, IServerSentEventsClient)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.#ctor(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.#ctor(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
   name: ServerSentEventsClientConnectedArgs(HttpRequest, IServerSentEventsClient, String)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientConnectedArgs__ctor_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.#ctor(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.ServerSentEventsClientConnectedArgs(Microsoft.AspNetCore.Http.HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.String)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientConnectedArgs__ctor_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.#ctor(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.ServerSentEventsClientConnectedArgs(HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.String)
   nameWithType: ServerSentEventsClientConnectedArgs.ServerSentEventsClientConnectedArgs(HttpRequest, IServerSentEventsClient, String)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.#ctor*
   name: ServerSentEventsClientConnectedArgs
@@ -617,11 +617,11 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs
   nameWithType: ServerSentEventsClientDisconnectedArgs
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.#ctor(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.#ctor(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   name: ServerSentEventsClientDisconnectedArgs(HttpRequest, IServerSentEventsClient)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs__ctor_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.#ctor(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.ServerSentEventsClientDisconnectedArgs(Microsoft.AspNetCore.Http.HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsClientDisconnectedArgs__ctor_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.#ctor(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.ServerSentEventsClientDisconnectedArgs(HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   nameWithType: ServerSentEventsClientDisconnectedArgs.ServerSentEventsClientDisconnectedArgs(HttpRequest, IServerSentEventsClient)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.#ctor*
   name: ServerSentEventsClientDisconnectedArgs
@@ -656,6 +656,49 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.Request
   nameWithType: ServerSentEventsClientDisconnectedArgs.Request
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions
+  name: ServerSentEventsEndpointRouteBuilderExtensions
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.html
+  commentId: T:Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions
+  nameWithType: ServerSentEventsEndpointRouteBuilderExtensions
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(IEndpointRouteBuilder,System.String)
+  name: MapServerSentEvents(IEndpointRouteBuilder, String)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsEndpointRouteBuilderExtensions_MapServerSentEvents_IEndpointRouteBuilder_System_String_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(IEndpointRouteBuilder,System.String)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(IEndpointRouteBuilder, System.String)
+  nameWithType: ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(IEndpointRouteBuilder, String)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(IEndpointRouteBuilder,System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  name: MapServerSentEvents(IEndpointRouteBuilder, String, ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsEndpointRouteBuilderExtensions_MapServerSentEvents_IEndpointRouteBuilder_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(IEndpointRouteBuilder,System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(IEndpointRouteBuilder, System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  nameWithType: ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(IEndpointRouteBuilder, String, ServerSentEventsOptions)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents*
+  name: MapServerSentEvents
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsEndpointRouteBuilderExtensions_MapServerSentEvents_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents
+  nameWithType: ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents``1(IEndpointRouteBuilder,System.String)
+  name: MapServerSentEvents<TServerSentEventsService>(IEndpointRouteBuilder, String)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsEndpointRouteBuilderExtensions_MapServerSentEvents__1_IEndpointRouteBuilder_System_String_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents``1(IEndpointRouteBuilder,System.String)
+  name.vb: MapServerSentEvents(Of TServerSentEventsService)(IEndpointRouteBuilder, String)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents<TServerSentEventsService>(IEndpointRouteBuilder, System.String)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(Of TServerSentEventsService)(IEndpointRouteBuilder, System.String)
+  nameWithType: ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents<TServerSentEventsService>(IEndpointRouteBuilder, String)
+  nameWithType.vb: ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(Of TServerSentEventsService)(IEndpointRouteBuilder, String)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents``1(IEndpointRouteBuilder,System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  name: MapServerSentEvents<TServerSentEventsService>(IEndpointRouteBuilder, String, ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsEndpointRouteBuilderExtensions_MapServerSentEvents__1_IEndpointRouteBuilder_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents``1(IEndpointRouteBuilder,System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  name.vb: MapServerSentEvents(Of TServerSentEventsService)(IEndpointRouteBuilder, String, ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents<TServerSentEventsService>(IEndpointRouteBuilder, System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(Of TServerSentEventsService)(IEndpointRouteBuilder, System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  nameWithType: ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents<TServerSentEventsService>(IEndpointRouteBuilder, String, ServerSentEventsOptions)
+  nameWithType.vb: ServerSentEventsEndpointRouteBuilderExtensions.MapServerSentEvents(Of TServerSentEventsService)(IEndpointRouteBuilder, String, ServerSentEventsOptions)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode
   name: ServerSentEventsKeepaliveMode
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.html
@@ -689,13 +732,13 @@ references:
   fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService)
   nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>
   nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider,`0,Microsoft.Extensions.Options.IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions})
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(RequestDelegate,IAuthorizationPolicyProvider,`0,IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions})
   name: ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions<ServerSentEventsOptions>)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1__ctor_Microsoft_AspNetCore_Http_RequestDelegate_Microsoft_AspNetCore_Authorization_IAuthorizationPolicyProvider__0_Microsoft_Extensions_Options_IOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions__
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider,`0,Microsoft.Extensions.Options.IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions})
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1__ctor_RequestDelegate_IAuthorizationPolicyProvider__0_IOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor(RequestDelegate,IAuthorizationPolicyProvider,`0,IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions})
   name.vb: ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions(Of ServerSentEventsOptions))
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware<TServerSentEventsService>.ServerSentEventsMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider, TServerSentEventsService, Microsoft.Extensions.Options.IOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware(Microsoft.AspNetCore.Http.RequestDelegate, Microsoft.AspNetCore.Authorization.IAuthorizationPolicyProvider, TServerSentEventsService, Microsoft.Extensions.Options.IOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions))
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware<TServerSentEventsService>.ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions))
   nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>.ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions<ServerSentEventsOptions>)
   nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware(RequestDelegate, IAuthorizationPolicyProvider, TServerSentEventsService, IOptions(Of ServerSentEventsOptions))
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.#ctor*
@@ -707,12 +750,12 @@ references:
   fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware
   nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>.ServerSentEventsMiddleware
   nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService).ServerSentEventsMiddleware
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(HttpContext,IPolicyEvaluator)
   name: Invoke(HttpContext, IPolicyEvaluator)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_Invoke_Microsoft_AspNetCore_Http_HttpContext_Microsoft_AspNetCore_Authorization_Policy_IPolicyEvaluator_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(Microsoft.AspNetCore.Http.HttpContext,Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware<TServerSentEventsService>.Invoke(Microsoft.AspNetCore.Http.HttpContext, Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).Invoke(Microsoft.AspNetCore.Http.HttpContext, Microsoft.AspNetCore.Authorization.Policy.IPolicyEvaluator)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddleware_1_Invoke_HttpContext_IPolicyEvaluator_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke(HttpContext,IPolicyEvaluator)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware<TServerSentEventsService>.Invoke(HttpContext, IPolicyEvaluator)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware(Of TServerSentEventsService).Invoke(HttpContext, IPolicyEvaluator)
   nameWithType: ServerSentEventsMiddleware<TServerSentEventsService>.Invoke(HttpContext, IPolicyEvaluator)
   nameWithType.vb: ServerSentEventsMiddleware(Of TServerSentEventsService).Invoke(HttpContext, IPolicyEvaluator)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware`1.Invoke*
@@ -730,19 +773,19 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions
   nameWithType: ServerSentEventsMiddlewareExtensions
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection)
   name: AddServerSentEvents(IServiceCollection)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_AddServerSentEvents_Microsoft_Extensions_DependencyInjection_IServiceCollection_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_AddServerSentEvents_IServiceCollection_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection)
   nameWithType: ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsService}})
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection,Action{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsService}})
   name: AddServerSentEvents(IServiceCollection, Action<ServerSentEventsServiceOptions<ServerSentEventsService>>)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_AddServerSentEvents_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService___
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsService}})
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_AddServerSentEvents_IServiceCollection_Action_Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService___
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection,Action{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsService}})
   name.vb: AddServerSentEvents(IServiceCollection, Action(Of ServerSentEventsServiceOptions(Of ServerSentEventsService)))
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsService>>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)))
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection, Action<Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsService>>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection, Action(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)))
   nameWithType: ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection, Action<ServerSentEventsServiceOptions<ServerSentEventsService>>)
   nameWithType.vb: ServerSentEventsMiddlewareExtensions.AddServerSentEvents(IServiceCollection, Action(Of ServerSentEventsServiceOptions(Of ServerSentEventsService)))
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents*
@@ -752,42 +795,36 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents
   nameWithType: ServerSentEventsMiddlewareExtensions.AddServerSentEvents
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents``2(IServiceCollection)
   name: AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>(IServiceCollection)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_AddServerSentEvents__2_Microsoft_Extensions_DependencyInjection_IServiceCollection_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents``2(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_AddServerSentEvents__2_IServiceCollection_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents``2(IServiceCollection)
   name.vb: AddServerSentEvents(Of TIServerSentEventsService, TServerSentEventsService)(IServiceCollection)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>(Microsoft.Extensions.DependencyInjection.IServiceCollection)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Of TIServerSentEventsService, TServerSentEventsService)(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>(IServiceCollection)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Of TIServerSentEventsService, TServerSentEventsService)(IServiceCollection)
   nameWithType: ServerSentEventsMiddlewareExtensions.AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>(IServiceCollection)
   nameWithType.vb: ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Of TIServerSentEventsService, TServerSentEventsService)(IServiceCollection)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{``1}})
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents``2(IServiceCollection,Action{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{``1}})
   name: AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>(IServiceCollection, Action<ServerSentEventsServiceOptions<TServerSentEventsService>>)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_AddServerSentEvents__2_Microsoft_Extensions_DependencyInjection_IServiceCollection_System_Action_Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions___1___
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents``2(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{``1}})
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_AddServerSentEvents__2_IServiceCollection_Action_Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions___1___
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents``2(IServiceCollection,Action{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{``1}})
   name.vb: AddServerSentEvents(Of TIServerSentEventsService, TServerSentEventsService)(IServiceCollection, Action(Of ServerSentEventsServiceOptions(Of TServerSentEventsService)))
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action<Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions<TServerSentEventsService>>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Of TIServerSentEventsService, TServerSentEventsService)(Microsoft.Extensions.DependencyInjection.IServiceCollection, System.Action(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of TServerSentEventsService)))
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>(IServiceCollection, Action<Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions<TServerSentEventsService>>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Of TIServerSentEventsService, TServerSentEventsService)(IServiceCollection, Action(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of TServerSentEventsService)))
   nameWithType: ServerSentEventsMiddlewareExtensions.AddServerSentEvents<TIServerSentEventsService, TServerSentEventsService>(IServiceCollection, Action<ServerSentEventsServiceOptions<TServerSentEventsService>>)
   nameWithType.vb: ServerSentEventsMiddlewareExtensions.AddServerSentEvents(Of TIServerSentEventsService, TServerSentEventsService)(IServiceCollection, Action(Of ServerSentEventsServiceOptions(Of TServerSentEventsService)))
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder,PathString)
   name: MapServerSentEvents(IApplicationBuilder, PathString)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_IApplicationBuilder_PathString_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder,PathString)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder, PathString)
   nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder, PathString)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder,PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   name: MapServerSentEvents(IApplicationBuilder, PathString, ServerSentEventsOptions)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_IApplicationBuilder_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder,PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder, PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder, PathString, ServerSentEventsOptions)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)
-  name: MapServerSentEvents(IApplicationBuilder, PathString, ServerSentEventsService)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)
-  nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents(IApplicationBuilder, PathString, ServerSentEventsService)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents*
   name: MapServerSentEvents
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents_
@@ -795,42 +832,36 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents
   nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(IApplicationBuilder,PathString)
   name: MapServerSentEvents<TServerSentEventsService>(IApplicationBuilder, PathString)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents__1_IApplicationBuilder_PathString_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(IApplicationBuilder,PathString)
   name.vb: MapServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, PathString)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents<TServerSentEventsService>(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents<TServerSentEventsService>(IApplicationBuilder, PathString)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, PathString)
   nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents<TServerSentEventsService>(IApplicationBuilder, PathString)
   nameWithType.vb: ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, PathString)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(IApplicationBuilder,PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   name: MapServerSentEvents<TServerSentEventsService>(IApplicationBuilder, PathString, ServerSentEventsOptions)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_Microsoft_AspNetCore_Http_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Http.PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_MapServerSentEvents__1_IApplicationBuilder_PathString_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents``1(IApplicationBuilder,PathString,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   name.vb: MapServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, PathString, ServerSentEventsOptions)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents<TServerSentEventsService>(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(Microsoft.AspNetCore.Builder.IApplicationBuilder, Microsoft.AspNetCore.Http.PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents<TServerSentEventsService>(IApplicationBuilder, PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, PathString, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   nameWithType: ServerSentEventsMiddlewareExtensions.MapServerSentEvents<TServerSentEventsService>(IApplicationBuilder, PathString, ServerSentEventsOptions)
   nameWithType.vb: ServerSentEventsMiddlewareExtensions.MapServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, PathString, ServerSentEventsOptions)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder)
   name: UseServerSentEvents(IApplicationBuilder)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_IApplicationBuilder_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder)
   nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   name: UseServerSentEvents(IApplicationBuilder, ServerSentEventsOptions)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder, ServerSentEventsOptions)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)
-  name: UseServerSentEvents(IApplicationBuilder, ServerSentEventsService)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_Microsoft_AspNetCore_Builder_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Microsoft.AspNetCore.Builder.IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)
-  nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents(IApplicationBuilder, ServerSentEventsService)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents*
   name: UseServerSentEvents
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents_
@@ -838,22 +869,22 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents
   nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(IApplicationBuilder)
   name: UseServerSentEvents<TServerSentEventsService>(IApplicationBuilder)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents__1_IApplicationBuilder_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(IApplicationBuilder)
   name.vb: UseServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents<TServerSentEventsService>(Microsoft.AspNetCore.Builder.IApplicationBuilder)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(Microsoft.AspNetCore.Builder.IApplicationBuilder)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents<TServerSentEventsService>(IApplicationBuilder)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder)
   nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents<TServerSentEventsService>(IApplicationBuilder)
   nameWithType.vb: ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   name: UseServerSentEvents<TServerSentEventsService>(IApplicationBuilder, ServerSentEventsOptions)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents__1_Microsoft_AspNetCore_Builder_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(Microsoft.AspNetCore.Builder.IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsMiddlewareExtensions_UseServerSentEvents__1_IApplicationBuilder_Lib_AspNetCore_ServerSentEvents_ServerSentEventsOptions_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents``1(IApplicationBuilder,Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   name.vb: UseServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, ServerSentEventsOptions)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents<TServerSentEventsService>(Microsoft.AspNetCore.Builder.IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(Microsoft.AspNetCore.Builder.IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents<TServerSentEventsService>(IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions)
   nameWithType: ServerSentEventsMiddlewareExtensions.UseServerSentEvents<TServerSentEventsService>(IApplicationBuilder, ServerSentEventsOptions)
   nameWithType.vb: ServerSentEventsMiddlewareExtensions.UseServerSentEvents(Of TServerSentEventsService)(IApplicationBuilder, ServerSentEventsOptions)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions
@@ -913,13 +944,13 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ServerSentEventsService()
   nameWithType: ServerSentEventsService.ServerSentEventsService()
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor(Microsoft.Extensions.Options.IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsService}})
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor(IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsService}})
   name: ServerSentEventsService(IOptions<ServerSentEventsServiceOptions<ServerSentEventsService>>)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService__ctor_Microsoft_Extensions_Options_IOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService___
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor(Microsoft.Extensions.Options.IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsService}})
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService__ctor_IOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService___
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor(IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsService}})
   name.vb: ServerSentEventsService(IOptions(Of ServerSentEventsServiceOptions(Of ServerSentEventsService)))
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ServerSentEventsService(Microsoft.Extensions.Options.IOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsService>>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ServerSentEventsService(Microsoft.Extensions.Options.IOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)))
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ServerSentEventsService(IOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsService>>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ServerSentEventsService(IOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsService)))
   nameWithType: ServerSentEventsService.ServerSentEventsService(IOptions<ServerSentEventsServiceOptions<ServerSentEventsService>>)
   nameWithType.vb: ServerSentEventsService.ServerSentEventsService(IOptions(Of ServerSentEventsServiceOptions(Of ServerSentEventsService)))
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor*
@@ -948,11 +979,11 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32)
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32)
   nameWithType: ServerSentEventsService.ChangeReconnectIntervalAsync(UInt32)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,CancellationToken)
   name: ChangeReconnectIntervalAsync(UInt32, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_ChangeReconnectIntervalAsync_System_UInt32_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32, System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_ChangeReconnectIntervalAsync_System_UInt32_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32, CancellationToken)
   nameWithType: ServerSentEventsService.ChangeReconnectIntervalAsync(UInt32, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ChangeReconnectIntervalAsync*
   name: ChangeReconnectIntervalAsync
@@ -973,11 +1004,11 @@ references:
   commentId: E:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ClientDisconnected
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ClientDisconnected
   nameWithType: ServerSentEventsService.ClientDisconnected
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClient(System.Guid)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClient(Guid)
   name: GetClient(Guid)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_GetClient_System_Guid_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClient(System.Guid)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClient(System.Guid)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_GetClient_Guid_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClient(Guid)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClient(Guid)
   nameWithType: ServerSentEventsService.GetClient(Guid)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClient*
   name: GetClient
@@ -1005,11 +1036,11 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.GetClients
   nameWithType: ServerSentEventsService.GetClients
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnConnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnConnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   name: OnConnectAsync(HttpRequest, IServerSentEventsClient)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_OnConnectAsync_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnConnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnConnectAsync(Microsoft.AspNetCore.Http.HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_OnConnectAsync_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnConnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnConnectAsync(HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   nameWithType: ServerSentEventsService.OnConnectAsync(HttpRequest, IServerSentEventsClient)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnConnectAsync*
   name: OnConnectAsync
@@ -1018,11 +1049,11 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnConnectAsync
   nameWithType: ServerSentEventsService.OnConnectAsync
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnDisconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnDisconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   name: OnDisconnectAsync(HttpRequest, IServerSentEventsClient)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_OnDisconnectAsync_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnDisconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnDisconnectAsync(Microsoft.AspNetCore.Http.HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_OnDisconnectAsync_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnDisconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnDisconnectAsync(HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)
   nameWithType: ServerSentEventsService.OnDisconnectAsync(HttpRequest, IServerSentEventsClient)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnDisconnectAsync*
   name: OnDisconnectAsync
@@ -1031,11 +1062,11 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnDisconnectAsync
   nameWithType: ServerSentEventsService.OnDisconnectAsync
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnReconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnReconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
   name: OnReconnectAsync(HttpRequest, IServerSentEventsClient, String)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_OnReconnectAsync_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnReconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnReconnectAsync(Microsoft.AspNetCore.Http.HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.String)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_OnReconnectAsync_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnReconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnReconnectAsync(HttpRequest, Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.String)
   nameWithType: ServerSentEventsService.OnReconnectAsync(HttpRequest, IServerSentEventsClient, String)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.OnReconnectAsync*
   name: OnReconnectAsync
@@ -1063,120 +1094,120 @@ references:
   commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   nameWithType: ServerSentEventsService.SendEventAsync(ServerSentEvent)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  name: SendEventAsync(ServerSentEvent, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, CancellationToken)
+  nameWithType: ServerSentEventsService.SendEventAsync(ServerSentEvent, CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name: SendEventAsync(ServerSentEvent, Func<IServerSentEventsClient, Boolean>)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name.vb: SendEventAsync(ServerSentEvent, Func(Of IServerSentEventsClient, Boolean))
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
   nameWithType: ServerSentEventsService.SendEventAsync(ServerSentEvent, Func<IServerSentEventsClient, Boolean>)
   nameWithType.vb: ServerSentEventsService.SendEventAsync(ServerSentEvent, Func(Of IServerSentEventsClient, Boolean))
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name: SendEventAsync(ServerSentEvent, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name.vb: SendEventAsync(ServerSentEvent, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, System.Threading.CancellationToken)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), System.Threading.CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, CancellationToken)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), CancellationToken)
   nameWithType: ServerSentEventsService.SendEventAsync(ServerSentEvent, Func<IServerSentEventsClient, Boolean>, CancellationToken)
   nameWithType.vb: ServerSentEventsService.SendEventAsync(ServerSentEvent, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  name: SendEventAsync(ServerSentEvent, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Threading.CancellationToken)
-  nameWithType: ServerSentEventsService.SendEventAsync(ServerSentEvent, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String)
   name: SendEventAsync(String)
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_
   commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String)
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String)
   nameWithType: ServerSentEventsService.SendEventAsync(String)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,CancellationToken)
+  name: SendEventAsync(String, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, CancellationToken)
+  nameWithType: ServerSentEventsService.SendEventAsync(String, CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  name: SendEventAsync(String, Func<IServerSentEventsClient, Boolean>)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  name.vb: SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean))
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
+  nameWithType: ServerSentEventsService.SendEventAsync(String, Func<IServerSentEventsClient, Boolean>)
+  nameWithType.vb: ServerSentEventsService.SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean))
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
+  name: SendEventAsync(String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
+  name.vb: SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, CancellationToken)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), CancellationToken)
+  nameWithType: ServerSentEventsService.SendEventAsync(String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
+  nameWithType.vb: ServerSentEventsService.SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   name: SendEventAsync(String, ServerSentEvent)
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_
   commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   nameWithType: ServerSentEventsService.SendEventAsync(String, ServerSentEvent)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  name: SendEventAsync(String, ServerSentEvent, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, CancellationToken)
+  nameWithType: ServerSentEventsService.SendEventAsync(String, ServerSentEvent, CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name: SendEventAsync(String, ServerSentEvent, Func<IServerSentEventsClient, Boolean>)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name.vb: SendEventAsync(String, ServerSentEvent, Func(Of IServerSentEventsClient, Boolean))
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
   nameWithType: ServerSentEventsService.SendEventAsync(String, ServerSentEvent, Func<IServerSentEventsClient, Boolean>)
   nameWithType.vb: ServerSentEventsService.SendEventAsync(String, ServerSentEvent, Func(Of IServerSentEventsClient, Boolean))
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name: SendEventAsync(String, ServerSentEvent, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name.vb: SendEventAsync(String, ServerSentEvent, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, System.Threading.CancellationToken)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), System.Threading.CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, CancellationToken)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), CancellationToken)
   nameWithType: ServerSentEventsService.SendEventAsync(String, ServerSentEvent, Func<IServerSentEventsClient, Boolean>, CancellationToken)
   nameWithType.vb: ServerSentEventsService.SendEventAsync(String, ServerSentEvent, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  name: SendEventAsync(String, ServerSentEvent, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, Lib.AspNetCore.ServerSentEvents.ServerSentEvent, System.Threading.CancellationToken)
-  nameWithType: ServerSentEventsService.SendEventAsync(String, ServerSentEvent, CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
-  name: SendEventAsync(String, Func<IServerSentEventsClient, Boolean>)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
-  name.vb: SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean))
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
-  nameWithType: ServerSentEventsService.SendEventAsync(String, Func<IServerSentEventsClient, Boolean>)
-  nameWithType.vb: ServerSentEventsService.SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean))
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
-  name: SendEventAsync(String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
-  name.vb: SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, System.Threading.CancellationToken)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), System.Threading.CancellationToken)
-  nameWithType: ServerSentEventsService.SendEventAsync(String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  nameWithType.vb: ServerSentEventsService.SendEventAsync(String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String)
   name: SendEventAsync(String, String)
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_String_
   commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String)
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String)
   nameWithType: ServerSentEventsService.SendEventAsync(String, String)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,CancellationToken)
+  name: SendEventAsync(String, String, CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_String_CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, CancellationToken)
+  nameWithType: ServerSentEventsService.SendEventAsync(String, String, CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name: SendEventAsync(String, String, Func<IServerSentEventsClient, Boolean>)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})
   name.vb: SendEventAsync(String, String, Func(Of IServerSentEventsClient, Boolean))
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean))
   nameWithType: ServerSentEventsService.SendEventAsync(String, String, Func<IServerSentEventsClient, Boolean>)
   nameWithType.vb: ServerSentEventsService.SendEventAsync(String, String, Func(Of IServerSentEventsClient, Boolean))
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name: SendEventAsync(String, String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)
   name.vb: SendEventAsync(String, String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, System.Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, System.Threading.CancellationToken)
-  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, System.Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), System.Threading.CancellationToken)
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, Func<Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean>, CancellationToken)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, Func(Of Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient, System.Boolean), CancellationToken)
   nameWithType: ServerSentEventsService.SendEventAsync(String, String, Func<IServerSentEventsClient, Boolean>, CancellationToken)
   nameWithType.vb: ServerSentEventsService.SendEventAsync(String, String, Func(Of IServerSentEventsClient, Boolean), CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,System.Threading.CancellationToken)
-  name: SendEventAsync(String, String, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_String_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.String,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.String, System.Threading.CancellationToken)
-  nameWithType: ServerSentEventsService.SendEventAsync(String, String, CancellationToken)
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.Threading.CancellationToken)
-  name: SendEventAsync(String, CancellationToken)
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_System_String_System_Threading_CancellationToken_
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String,System.Threading.CancellationToken)
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync(System.String, System.Threading.CancellationToken)
-  nameWithType: ServerSentEventsService.SendEventAsync(String, CancellationToken)
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.SendEventAsync*
   name: SendEventAsync
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService_SendEventAsync_
