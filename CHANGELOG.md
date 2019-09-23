@@ -1,3 +1,10 @@
+## Lib.AspNetCore.ServerSentEvents 4.0.0
+### Additions and Changes
+- Dropped support for obsolete APIs
+- Dropped support for ASP.NET Core 2.0.0 (the lowest supported version is now ASP.NET Core 2.1.0)
+- Added support for ASP.NET Core 3.0.0
+- Added support for Endpoint Routing
+
 ## Lib.AspNetCore.ServerSentEvents 3.3.0
 ### Additions and Changes
 - Added method for getting clients in a specified group.
