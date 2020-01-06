@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Advanced | Lib.AspNetCore.ServerSentEvents </title>
+    <title>Groups | Lib.AspNetCore.ServerSentEvents </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Advanced | Lib.AspNetCore.ServerSentEvents ">
+    <meta name="title" content="Groups | Lib.AspNetCore.ServerSentEvents ">
     <meta name="generator" content="docfx 2.48.0.0">
     
     <link rel="shortcut icon" href="../resources/ico/favicon.ico">
@@ -52,32 +52,48 @@
         <div class="article row grid">
           <div class="col-md-12">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="advanced">Advanced</h1>
+<h1 id="groups">Groups</h1>
 
-<h2 id="set-http-response-headers-for-accept-response">Set HTTP response headers for accept response</h2>
-<p>A <code>ServerSentEventsOptions</code> object can be used to set HTTP response headers for accept response.</p>
-<h3 id="http-response-headers-for-nginx-proxy-configuration">HTTP response headers for Nginx proxy configuration</h3>
-<p>The following code sets HTTP response headers for Nginx proxy configuration.</p>
+<p>A group is a collection of clients associated with a name. Groups are the recommended way to send to multiple clients, because the groups are managed by the library. A client can be a member of multiple groups.</p>
+<h2 id="adding-to-a-group">Adding to a group</h2>
+<p>Client can be added to a group via the <code>IServerSentEventsService.AddToGroupAsync</code> method (the method will return an information if a client has been added to an existing or a new group).</p>
+<pre><code class="lang-cs">await _serverSentEventsService.AddToGroupAsync(groupName, client);
+</code></pre><p>Group membership isn&#39;t preserved when a client reconnects. The client needs to rejoin the group when connection is re-established. One of possible ways to handle this is putting group assigment logic into <code>ServerSentEventsServiceOptions.OnClientConnected</code> callback.</p>
 <pre><code class="lang-cs">public class Startup
 {
     ...
 
-    public void Configure(IApplicationBuilder app)
+    public void ConfigureServices(IServiceCollection services)
     {
-        ...
-
-        app.MapServerSentEvents(&quot;/default-sse-endpoint&quot;, new ServerSentEventsOptions
+        services.AddServerSentEvents(options =&gt;
         {
-            OnPrepareAccept = response =&gt;
+            options.OnClientConnected = async (service, clientConnectedArgs) =&gt;
             {
-                response.Headers.Append(&quot;Cache-Control&quot;, &quot;no-cache&quot;);
-                response.Headers.Append(&quot;X-Accel-Buffering&quot;, &quot;no&quot;);
-            }
+                // Logic which determines the client group.
+                ...
+
+                await service.AddToGroupAsync(groupName, clientConnectedArgs.Client);
+            };
         });
 
         ...
     }
+
+    ...
 }
+</code></pre><p>Clients within a group can be retrieved via the <code>IServerSentEventsService.GetClients</code> method</p>
+<pre><code class="lang-cs">IReadOnlyCollection&lt;IServerSentEventsClient&gt; clientsInGroup = _serverSentEventsService.GetClients(groupName);
+</code></pre><h2 id="sending-to-a-group">Sending to a group</h2>
+<p>Messages can be sent to all clients in a group via the <code>IServerSentEventsService.SendEventAsync</code> method.</p>
+<pre><code class="lang-cs">await _serverSentEventsService.SendEventAsync(groupName, messageText);
+</code></pre><p>If there is a need to sent a message to only some clients in a group, a predicate can be passed to the <code>IServerSentEventsService.SendEventAsync</code>.</p>
+<pre><code class="lang-cs">await _serverSentEventsService.SendEventAsync(groupName, messageText, client =&gt;
+{
+    // Logic which determines if message should be send to this client.
+    ...
+
+    return shouldSentMessage;
+});
 </code></pre></article>
           </div>
         </div>

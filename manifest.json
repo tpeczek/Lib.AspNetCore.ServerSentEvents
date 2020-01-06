@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html",
-          "hash": "kqeBXAtAroLT787RzTD91A=="
+          "hash": "mh3SEdgrJXXbkc/fSGjM9g=="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html",
-          "hash": "jVA8QaOOVUo3WkAZTO87dA=="
+          "hash": "Pd52+ZlkKZo0q23riq+kBg=="
         }
       },
       "is_incremental": false,
@@ -33,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html",
-          "hash": "g4LOtZYjDSHHZaEjtroq+g=="
+          "hash": "1VhTYjjKip5vVn8wb0Efog=="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.Internals.html",
-          "hash": "FiLVOUQd/bi68OD5ElSB+Q=="
+          "hash": "8D3zw328goN9FrNlEECqlA=="
         }
       },
       "is_incremental": false,
@@ -57,7 +57,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html",
-          "hash": "cEFzrbcictDHvbmPbtMigg=="
+          "hash": "ehnXTqYLoGHVeySRIrrpYw=="
         }
       },
       "is_incremental": false,
@@ -69,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAddToGroupResult.html",
-          "hash": "JP7NhYWb8NFfJFmwe91FtQ=="
+          "hash": "JKEK4dUDTNsNWMc8++YiaA=="
         }
       },
       "is_incremental": false,
@@ -81,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html",
-          "hash": "gaAAobb1hNjnp5GLFgVfGA=="
+          "hash": "hz+ECoK9JBpXiZPwTO3Xzw=="
         }
       },
       "is_incremental": false,
@@ -93,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.html",
-          "hash": "7+5FW+FXG7B/3JTYwU+2Lg=="
+          "hash": "7mQ4U91AuULue8SvBoSmJg=="
         }
       },
       "is_incremental": false,
@@ -105,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.html",
-          "hash": "uDK7WCrLO0dIDqxQhDJSjw=="
+          "hash": "mqWBCvyrMmCaktzwqsB0ow=="
         }
       },
       "is_incremental": false,
@@ -117,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.html",
-          "hash": "C1ian2UsDi0/d/XuYzWFxA=="
+          "hash": "Xmrj8XrccbAP4olXjv4Wpw=="
         }
       },
       "is_incremental": false,
@@ -129,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.html",
-          "hash": "gLuNlExR8LS/cUhaMc2enA=="
+          "hash": "QmKMlTE9gfq6UDxi6O56dA=="
         }
       },
       "is_incremental": false,
@@ -141,7 +141,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html",
-          "hash": "FML+AIZJx1bBirHcl1hxYw=="
+          "hash": "aonTvlHWwE5LvVtN+lKRBw=="
         }
       },
       "is_incremental": false,
@@ -153,7 +153,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html",
-          "hash": "sJoduK1mnd55cI1X+7OUEA=="
+          "hash": "9m4piCtY7CSw0i8wSYxZIg=="
         }
       },
       "is_incremental": false,
@@ -165,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html",
-          "hash": "wyRP7gvLdpd7i7qhM/k96w=="
+          "hash": "fTl38P5Lgi9oDQd6JODn8g=="
         }
       },
       "is_incremental": false,
@@ -177,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html",
-          "hash": "lf7y6Ge+ySTZToxawYovvQ=="
+          "hash": "3bLNLpkcD+bS7Ynx/5iIBg=="
         }
       },
       "is_incremental": false,
@@ -189,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions-1.html",
-          "hash": "QEPk1nOUU7bITj5TN7LAbQ=="
+          "hash": "tTRjn2pHQUwtQ51y51g0NQ=="
         }
       },
       "is_incremental": false,
@@ -201,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Lib.AspNetCore.ServerSentEvents.html",
-          "hash": "L1hGKwwcpxCDbfZaNBoOzA=="
+          "hash": "nYa1wM2KxhzrIQ8kExVq9A=="
         }
       },
       "is_incremental": false,
@@ -213,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "LwxE749RnbrPZ4Ye9fohaw=="
+          "hash": "gPxobmUnDgN1+ZiyRWfwyw=="
         }
       },
       "is_incremental": false,
@@ -225,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/advanced.html",
-          "hash": "hvhF22Ni3cBY+GZT0q/UFA=="
+          "hash": "gVGXu4z4Do4wRjKYbA46ag=="
         }
       },
       "is_incremental": false,
@@ -237,7 +237,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/authorization.html",
-          "hash": "DqayeImE3ZaeUNz/TYvvCg=="
+          "hash": "S8KU+BIH12ILDQlRB+F90Q=="
         }
       },
       "is_incremental": false,
@@ -252,7 +252,19 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting-started.html",
-          "hash": "1vckEO41mdxeeWNxxJS6ig=="
+          "hash": "GM5j40lX3CfQqYy1bqi8yA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/groups.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/groups.html",
+          "hash": "CnQ1QKlDYArcgTs21UpxNg=="
         }
       },
       "is_incremental": false,
@@ -264,7 +276,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "/oapb0cFBXcx7ZLpy2122Q=="
+          "hash": "De6C6BUmev05aVMa3y9Hng=="
         }
       },
       "is_incremental": false,
@@ -301,7 +313,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "ercEThJe2yXjRAQMo1WpAw=="
+          "hash": "Ub4EVYMI1ajf0Ie2tzeeNw=="
         }
       },
       "is_incremental": false,
@@ -319,13 +331,6 @@
         "full_build_reason_code": "ForceRebuild"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -336,13 +341,20 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 4,
+          "total_file_count": 5,
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 17,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }
