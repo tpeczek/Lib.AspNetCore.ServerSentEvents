@@ -25,6 +25,7 @@
           "index.md",
           "articles/getting-started.md",
           "articles/authorization.md",
+          "articles/groups.md",
           "articles/advanced.md"
         ]
       }
@@ -40,7 +41,7 @@
     "dest": "wwwroot",
     "globalMetadata": {
       "_appTitle": "Lib.AspNetCore.ServerSentEvents",
-      "_appFooter": "Copyright © 2017 - 2019 Tomasz Pęczek",
+      "_appFooter": "Copyright © 2017 - 2020 Tomasz Pęczek",
       "_appLogoPath": "resources/svg/logo.svg",
       "_appFaviconPath": "resources/ico/favicon.ico",
       "_disableBreadcrumb": true,
