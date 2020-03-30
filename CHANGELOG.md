@@ -1,3 +1,7 @@
+## Lib.AspNetCore.ServerSentEvents 4.1.0
+### Additions and Changes
+- Added a collection of key/value pairs to store additional information for clients (thank you @sebastiano1972)
+
 ## Lib.AspNetCore.ServerSentEvents 4.0.0
 ### Additions and Changes
 - Dropped support for obsolete APIs
