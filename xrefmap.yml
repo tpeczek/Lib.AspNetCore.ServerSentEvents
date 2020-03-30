@@ -45,6 +45,19 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.IsConnected
   nameWithType: ServerSentEventsClient.IsConnected
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
+  name: Properties
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Properties
+  commentId: P:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
+  nameWithType: ServerSentEventsClient.Properties
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties*
+  name: Properties
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Properties_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
+  nameWithType: ServerSentEventsClient.Properties
 - uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   name: SendEventAsync(ServerSentEvent)
   href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_
@@ -121,6 +134,19 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.IsConnected
   nameWithType: IServerSentEventsClient.IsConnected
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
+  name: Properties
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_Properties
+  commentId: P:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
+  nameWithType: IServerSentEventsClient.Properties
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties*
+  name: Properties
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_Properties_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
+  nameWithType: IServerSentEventsClient.Properties
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   name: SendEventAsync(ServerSentEvent)
   href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_
