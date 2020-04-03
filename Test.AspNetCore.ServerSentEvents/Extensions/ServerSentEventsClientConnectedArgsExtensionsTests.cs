@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using Lib.AspNetCore.ServerSentEvents;
 using Lib.AspNetCore.ServerSentEvents.Extensions;
 using Lib.AspNetCore.ServerSentEvents.Internals;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Primitives;
-using Moq;
 using Xunit;
 
 namespace Test.AspNetCore.ServerSentEvents.Extensions

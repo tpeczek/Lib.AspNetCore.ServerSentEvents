@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Lib.AspNetCore.ServerSentEvents.Extensions
@@ -20,9 +19,9 @@ namespace Lib.AspNetCore.ServerSentEvents.Extensions
             if (!args.Request.Headers.ContainsKey(header))
                 return;
 
-            if (overwrite && args.Client.Properties.ContainsKey(header))
+            if (overwrite)
             {
-                args.Client.Properties[header] = args.Request.Headers[header];
+                args.Client.Properties.AddOrUpdate(header, args.Request.Headers[header], (k, v) => args.Request.Headers[k]);
                 return;
             }
 
@@ -41,11 +40,12 @@ namespace Lib.AspNetCore.ServerSentEvents.Extensions
             {
                 if (overwrite && args.Client.Properties.ContainsKey(header.Key))
                 {
-                    args.Client.Properties[header.Key] = header.Value;
+                    args.Client.Properties.AddOrUpdate(header.Key, header.Value, (k, v) => header.Value);
                     continue;
                 }
 
                 args.Client.Properties.TryAdd(header.Key, header.Value);
+
             }
         }
     }
