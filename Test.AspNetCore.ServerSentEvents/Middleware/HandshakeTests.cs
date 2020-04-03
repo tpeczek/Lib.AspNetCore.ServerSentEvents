@@ -10,7 +10,7 @@ using Lib.AspNetCore.ServerSentEvents;
 
 namespace Test.AspNetCore.ServerSentEvents.Middleware
 {
-    public class HandshakeTests
+    public class ServerSentEventsClientConnectedArgsExtensionsTests
     {
         #region Fields
         private const string ACCEPT_HTTP_HEADER = "Accept";

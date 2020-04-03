@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Security.Claims;
@@ -35,7 +35,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// <summary>
         /// A set of key-values pairs to store pieces of information that can be used to select clients when sending events.
         /// </summary>
-        public IDictionary<string, string> Properties { get; } = new Dictionary<string, string>();
+        public ConcurrentDictionary<string, string> Properties { get; } = new ConcurrentDictionary<string, string>();
         #endregion
 
         #region Constructor

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,7 +31,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <summary>
         /// A set of key-values pairs to store pieces of information that can be used to select clients when sending events.
         /// </summary>
-        IDictionary<string, string> Properties { get; }
+        ConcurrentDictionary<string, string> Properties { get; }
         #endregion
 
         #region Methods
