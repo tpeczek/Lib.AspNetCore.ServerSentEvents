@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Security.Claims;
@@ -26,11 +25,6 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Gets the value indicating if client is connected.
         /// </summary>
         bool IsConnected { get; }
-
-        /// <summary>
-        /// A set of key-values pairs to store pieces of information that can be used to select clients when sending events.
-        /// </summary>
-        IDictionary<string, string> Properties { get; }
         #endregion
 
         #region Methods
@@ -63,6 +57,31 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Retrieves a piece of information associated to this client.
+        /// </summary>
+        /// <typeparam name="T">The type of the property being retrieved.</typeparam>
+        /// <param name="name">The name of the property being retrieved.</param>
+        /// <returns>The value of the property whose name has been specified if it exists in the set of properties associated to the client. Default otherwise.</returns>
+        T GetProperty<T>(string name);
+
+        /// <summary>
+        /// Removes a piece of information associated to this client.
+        /// </summary>
+        /// <typeparam name="T">The type of the property being removed.</typeparam>
+        /// <param name="name">The name of the property being removed.</param>
+        /// <returns>The value of the property whose name has been specified if it exists in the set of properties associated to the client. Default otherwise.</returns>
+        T RemoveProperty<T>(string name);
+
+        /// <summary>
+        /// Adds a property to the client so that it can be used to store client related pieces of information.
+        /// </summary>
+        /// <param name="name">The name of the property being added.</param>
+        /// <param name="value">The value of the property being added.</param>
+        /// <param name="overwrite">When true and the property already exists, its value will be updated. When false and the property already exists, its value will not be updated.</param>
+        /// <returns>True if the property has been added or updated, false otherwise.</returns>
+        bool SetProperty(string name, object value, bool overwrite = false);
         #endregion
     }
 }
