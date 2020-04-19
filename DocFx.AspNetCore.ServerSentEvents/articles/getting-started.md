@@ -27,14 +27,18 @@ public class Startup
 }
 ```
 
-The `AddServerSendEvents()` method registers default service which provides operations over Server-Sent Events protocol, while `MapServerSentEvents()` maps this service to a specific endpoint. The `MapServerSentEvents()` method can be called multiple times for different endpoints but all of them will be mapped to same service which will make them indistinguishable from application perspective. In order to create distinguishable endpoints a delivered version of [`Server​Sent​Events​Service`](../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html) should be registered (it doesn't need to override any of the default service functionality). Below is an example of such configuration.
+The `AddServerSendEvents()` method registers default service which provides operations over Server-Sent Events protocol, while `MapServerSentEvents()` maps this service to a specific endpoint. The `MapServerSentEvents()` method can be called multiple times for different endpoints but all of them will be mapped to same service which will make them indistinguishable from application perspective. In order to create distinguishable endpoints a delivered version of [`Server​Sent​Events​Service`](../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html) should be registered. It doesn't need to override any of the default service functionality, just provide a constructor which can take a service specific options. Below is an example of such configuration.
 
 ```cs
 internal interface INotificationsServerSentEventsService : IServerSentEventsService
 { }
 
 internal class NotificationsServerSentEventsService : ServerSentEventsService, INotificationsServerSentEventsService
-{ }
+{
+    public NotificationsServerSentEventsService(IOptions<ServerSentEventsServiceOptions<NotificationsServerSentEventsService>> options)
+        : base(options.ToBaseServerSentEventsServiceOptions())
+    { }
+}
 
 public class Startup
 {

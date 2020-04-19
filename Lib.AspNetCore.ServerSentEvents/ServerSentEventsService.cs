@@ -39,12 +39,6 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <summary>
         /// Initializes new instance of <see cref="ServerSentEventsService"/>.
         /// </summary>
-        public ServerSentEventsService()
-        { }
-
-        /// <summary>
-        /// Initializes new instance of <see cref="ServerSentEventsService"/>.
-        /// </summary>
         /// <param name="options">The options for the instance.</param>
         public ServerSentEventsService(IOptions<ServerSentEventsServiceOptions<ServerSentEventsService>> options)
         {

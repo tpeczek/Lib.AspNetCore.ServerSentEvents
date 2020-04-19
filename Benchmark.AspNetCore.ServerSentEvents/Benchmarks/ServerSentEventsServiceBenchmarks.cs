@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Security.Claims;
 using System.Collections.Generic;
+using Microsoft.Extensions.Options;
 using BenchmarkDotNet.Attributes;
 using Lib.AspNetCore.ServerSentEvents;
 using Lib.AspNetCore.ServerSentEvents.Internals;
@@ -34,7 +35,7 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Benchmarks
         {
             _serverSentEventsClient = new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), new NoOpHttpResponse());
 
-            _serverSentEventsService = new ServerSentEventsService();
+            _serverSentEventsService = new ServerSentEventsService(Options.Create<ServerSentEventsServiceOptions<ServerSentEventsService>>(null));
             for (int i = 0; i < MULTIPLE_CLIENTS_COUNT; i++)
             {
                 _serverSentEventsService.AddClient(new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), new NoOpHttpResponse()));
