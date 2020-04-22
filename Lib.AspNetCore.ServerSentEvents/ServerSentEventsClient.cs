@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Security.Claims;
@@ -14,6 +14,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
     {
         #region Fields
         private readonly HttpResponse _response;
+        private readonly ConcurrentDictionary<string, object> _properties = new ConcurrentDictionary<string, object>();
         #endregion
 
         #region Properties
@@ -31,11 +32,6 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// Gets the value indicating if client is connected.
         /// </summary>
         public bool IsConnected { get; internal set; }
-
-        /// <summary>
-        /// A set of key-values pairs to store pieces of information that can be used to select clients when sending events.
-        /// </summary>
-        public IDictionary<string, string> Properties { get; } = new Dictionary<string, string>();
         #endregion
 
         #region Constructor
@@ -50,6 +46,38 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Retrieves a piece of information associated to this client. This method is thread safe.
+        /// </summary>
+        /// <typeparam name="T">The type of the property being retrieved.</typeparam>
+        /// <param name="name">The name of the property being retrieved.</param>
+        /// <returns>The value of the property whose name has been specified if it exists in the set of properties associated to the client. Default otherwise.</returns>
+        public T GetProperty<T>(string name)
+        {
+            if (_properties.TryGetValue(name, out var value))
+            {
+                return (T) value;
+            }
+
+            return default;
+        }
+
+        /// <summary>
+        /// Removes a piece of information associated to this client. This method is thread safe.
+        /// </summary>
+        /// <typeparam name="T">The type of the property being removed.</typeparam>
+        /// <param name="name">The name of the property being removed.</param>
+        /// <returns>The value of the property whose name has been specified if it exists in the set of properties associated to the client. Default otherwise.</returns>
+        public T RemoveProperty<T>(string name)
+        {
+            if (_properties.TryRemove(name, out var value))
+            {
+                return (T)value;
+            }
+
+            return default;
+        }
+
         /// <summary>
         /// Sends event to client.
         /// </summary>
@@ -90,6 +118,24 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         public Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken)
         {
             return SendAsync(ServerSentEventsHelper.GetEventBytes(serverSentEvent), cancellationToken);
+        }
+
+        /// <summary>
+        /// Adds a property to the client so that it can be used to store client related pieces of information. This method is thread safe.
+        /// </summary>
+        /// <param name="name">The name of the property being added.</param>
+        /// <param name="value">The value of the property being added.</param>
+        /// <param name="overwrite">When true and the property already exists, its value will be updated. When false and the property already exists, its value will not be updated.</param>
+        /// <returns>True if the property has been added or updated, false otherwise.</returns>
+        public bool SetProperty(string name, object value, bool overwrite = false)
+        {
+            if (overwrite)
+            {
+                _properties.AddOrUpdate(name, value, (k, v) => value);
+                return true;
+            }
+
+            return _properties.TryAdd(name, value);
         }
 
         internal Task SendAsync(ServerSentEventBytes serverSentEvent, CancellationToken cancellationToken)
