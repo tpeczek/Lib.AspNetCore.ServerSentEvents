@@ -7,6 +7,7 @@ using Microsoft.Extensions.Options;
 using Moq;
 using Xunit;
 using Lib.AspNetCore.ServerSentEvents;
+using Test.AspNetCore.ServerSentEvents.Middleware.Infrastructure;
 
 namespace Test.AspNetCore.ServerSentEvents.Middleware
 {
@@ -28,7 +29,7 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
             (
                 NOOP_REQUEST_DELEGATE,
                 Mock.Of<IAuthorizationPolicyProvider>(),
-                Mock.Of<ServerSentEventsService>(),
+                Mock.Of<TestServerSentEventsService>(),
                 Options.Create(options)
             );
         }
