@@ -13,6 +13,11 @@ namespace Lib.AspNetCore.ServerSentEvents
     {
         #region Events
         /// <summary>
+        /// Occurs when client is connecting.
+        /// </summary>
+        event EventHandler<ServerSentEventsClientConnectingArgs> ClientConnecting;
+
+        /// <summary>
         /// Occurs when client has connected.
         /// </summary>
         event EventHandler<ServerSentEventsClientConnectedArgs> ClientConnected;
@@ -211,21 +216,27 @@ namespace Lib.AspNetCore.ServerSentEvents
         Task SendEventAsync(string groupName, ServerSentEvent serverSentEvent, Func<IServerSentEventsClient, bool> clientPredicate, CancellationToken cancellationToken);
 
         /// <summary>
-        /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
+        /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnecting"/> and the <see cref="ClientConnected"/> event.
+        /// The <see cref="ClientConnecting"/> event can be used to determine if the client meets some business logic criteria and if so the <see cref="ClientConnected"/> event is triggered.
+        /// If the client does not meet the business logic conditions, the <see cref="ClientConnected"/> event is not triggered and the function returns false to indicate to the middleware
+        /// to drop the connection with the client.
         /// </summary>
         /// <param name="request">The request which has been made in order to establish the connection.</param>
         /// <param name="client">The client who is establishing the connection.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task OnConnectAsync(HttpRequest request, IServerSentEventsClient client);
+        /// <returns>The task object that carries the result of the operation.</returns>
+        Task<bool> OnConnectAsync(HttpRequest request, IServerSentEventsClient client);
 
         /// <summary>
-        /// Method which is called when client is reestablishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
+        /// Method which is called when client is reestablishing the connection. The base implementation raises the <see cref="ClientConnecting"/> and the <see cref="ClientConnected"/> event.
+        /// The <see cref="ClientConnecting"/> event can be used to determine if the client meets some business logic criteria and if so the <see cref="ClientConnected"/> event is triggered.
+        /// If the client does not meet the business logic conditions, the <see cref="ClientConnected"/> event is not triggered and the function returns false to indicate to the middleware
+        /// to drop the connection with the client.
         /// </summary>
         /// <param name="request">The request which has been made in order to establish the connection.</param>
         /// <param name="client">The client who is reestablishing the connection.</param>
         /// <param name="lastEventId">The identifier of last event which client has received.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        Task OnReconnectAsync(HttpRequest request, IServerSentEventsClient client, string lastEventId);
+        /// <returns>The task object that carries the result of the operation.</returns>
+        Task<bool> OnReconnectAsync(HttpRequest request, IServerSentEventsClient client, string lastEventId);
 
         /// <summary>
         /// Method which is called when client is disconnecting. The base implementation raises the <see cref="ClientDisconnected"/> event.

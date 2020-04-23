@@ -36,6 +36,12 @@ namespace Lib.AspNetCore.ServerSentEvents
         }
 
         /// <summary>
+        /// Called when client is connecting..
+        /// This can be used to refuse a connection if some business logic is not met.
+        /// </summary>
+        public Action<IServerSentEventsService, ServerSentEventsClientConnectingArgs> OnClientConnecting { get; set; }
+
+        /// <summary>
         /// Called when client has connected.
         /// This can be used to add client to groups.
         /// </summary>

@@ -188,14 +188,26 @@ namespace Lib.AspNetCore.ServerSentEvents
             string lastEventId = request.Headers[Constants.LAST_EVENT_ID_HTTP_HEADER];
             if (!String.IsNullOrWhiteSpace(lastEventId))
             {
-                await _serverSentEventsService.OnReconnectAsync(request, client, lastEventId);
+                if (await _serverSentEventsService.OnReconnectAsync(request, client, lastEventId))
+                {
+                    _serverSentEventsService.AddClient(client);
+                }
+                else
+                {
+                    request.HttpContext.Abort();
+                }
             }
             else
             {
-                await _serverSentEventsService.OnConnectAsync(request, client);
+                if (await _serverSentEventsService.OnConnectAsync(request, client))
+                {
+                    _serverSentEventsService.AddClient(client);
+                }
+                else
+                {
+                    request.HttpContext.Abort();
+                }
             }
-
-            _serverSentEventsService.AddClient(client);
         }
 
         private async Task DisconnectClientAsync(HttpRequest request, ServerSentEventsClient client)

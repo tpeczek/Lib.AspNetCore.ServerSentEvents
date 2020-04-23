@@ -16,6 +16,12 @@ namespace Lib.AspNetCore.ServerSentEvents
     public class ServerSentEventsService : IServerSentEventsService
     {
         #region Events
+
+        /// <summary>
+        /// Occurs when client is connecting.
+        /// </summary>
+        public event EventHandler<ServerSentEventsClientConnectingArgs> ClientConnecting;
+
         /// <summary>
         /// Occurs when client has connected.
         /// </summary>
@@ -36,6 +42,15 @@ namespace Lib.AspNetCore.ServerSentEvents
         #endregion
 
         #region Constructors
+
+        /// <summary>
+        /// Initializes new instance of <see cref="ServerSentEventsService"/>.
+        /// Only used for unit tests to create mocks of this class.
+        /// </summary>
+        protected ServerSentEventsService()
+        {
+        }
+
         /// <summary>
         /// Initializes new instance of <see cref="ServerSentEventsService"/>.
         /// </summary>
@@ -43,8 +58,13 @@ namespace Lib.AspNetCore.ServerSentEvents
         public ServerSentEventsService(IOptions<ServerSentEventsServiceOptions<ServerSentEventsService>> options)
         {
             ServerSentEventsServiceOptions<ServerSentEventsService> serviceOptions = options?.Value;
-            if ((serviceOptions != null) && ((serviceOptions.OnClientConnected != null) || (serviceOptions.OnClientDisconnected != null)))
+            if ((serviceOptions != null) && ((serviceOptions.OnClientConnected != null) || (serviceOptions.OnClientConnecting != null) || (serviceOptions.OnClientDisconnected != null)))
             {
+                if (serviceOptions.OnClientConnecting != null)
+                {
+                    ClientConnecting += (sender, args) => serviceOptions.OnClientConnecting((IServerSentEventsService) sender, args);
+                }
+
                 if (serviceOptions.OnClientConnected != null)
                 {
                     ClientConnected += (sender, args) => serviceOptions.OnClientConnected((IServerSentEventsService)sender, args);
@@ -336,30 +356,60 @@ namespace Lib.AspNetCore.ServerSentEvents
         }
 
         /// <summary>
-        /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
+        /// Method which is called when client is establishing the connection. The base implementation raises the <see cref="ClientConnecting"/> and the <see cref="ClientConnected"/> event.
+        /// The <see cref="ClientConnecting"/> event can be used to determine if the client meets some business logic criteria and if so the <see cref="ClientConnected"/> event is triggered.
+        /// If the client does not meet the business logic conditions, the <see cref="ClientConnected"/> event is not triggered and the function returns false to indicate to the middleware
+        /// to drop the connection with the client.
         /// </summary>
         /// <param name="request">The request which has been made in order to establish the connection.</param>
         /// <param name="client">The client who is establishing the connection.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public virtual Task OnConnectAsync(HttpRequest request, IServerSentEventsClient client)
+        /// <returns>The task object that carries the result of the operation.</returns>
+        public virtual Task<bool> OnConnectAsync(HttpRequest request, IServerSentEventsClient client)
         {
+            if (ClientConnecting != null)
+            {
+                var serverSentEventsClientConnectingArgs = new ServerSentEventsClientConnectingArgs(request, client);
+                
+                ClientConnecting.Invoke(this, serverSentEventsClientConnectingArgs);
+
+                if (serverSentEventsClientConnectingArgs.DropConnection)
+                {
+                    return Task.FromResult(false);
+                }
+            }
+
             ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(request, client));
 
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
 
         /// <summary>
-        /// Method which is called when client is reestablishing the connection. The base implementation raises the <see cref="ClientConnected"/> event.
+        /// Method which is called when client is reestablishing the connection. The base implementation raises the <see cref="ClientConnecting"/> and the <see cref="ClientConnected"/> event.
+        /// The <see cref="ClientConnecting"/> event can be used to determine if the client meets some business logic criteria and if so the <see cref="ClientConnected"/> event is triggered.
+        /// If the client does not meet the business logic conditions, the <see cref="ClientConnected"/> event is not triggered and the function returns false to indicate to the middleware
+        /// to drop the connection with the client.
         /// </summary>
         /// <param name="request">The request which has been made in order to establish the connection.</param>
         /// <param name="client">The client who is reestablishing the connection.</param>
         /// <param name="lastEventId">The identifier of last event which client has received.</param>
-        /// <returns>The task object representing the asynchronous operation.</returns>
-        public virtual Task OnReconnectAsync(HttpRequest request, IServerSentEventsClient client, string lastEventId)
+        /// <returns>The task object that carries the result of the operation.</returns>
+        public virtual Task<bool> OnReconnectAsync(HttpRequest request, IServerSentEventsClient client, string lastEventId)
         {
+            if (ClientConnecting != null)
+            {
+                var serverSentEventsClientConnectingArgs = new ServerSentEventsClientConnectingArgs(request, client);
+
+                ClientConnecting.Invoke(this, serverSentEventsClientConnectingArgs);
+
+                if (serverSentEventsClientConnectingArgs.DropConnection)
+                {
+                    return Task.FromResult(false);
+                }
+            }
+
             ClientConnected?.Invoke(this, new ServerSentEventsClientConnectedArgs(request, client, lastEventId));
 
-            return Task.CompletedTask;
+            return Task.FromResult(true);
         }
 
         /// <summary>
