@@ -34,11 +34,15 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
             );
         }
 
-        private HttpContext PrepareHttpContext()
+        private HttpContext PrepareHttpContext(string acceptHeaderValue)
         {
             HttpContext context = new DefaultHttpContext();
 
-            context.Request.Headers.Append(ACCEPT_HTTP_HEADER, SSE_CONTENT_TYPE);
+            if (acceptHeaderValue != null)
+            {
+                context.Request.Headers.Append(ACCEPT_HTTP_HEADER, acceptHeaderValue);
+            }
+
             context.RequestAborted = new CancellationToken(true);
 
             return context;
@@ -47,14 +51,36 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
 
         #region Tests
         [Fact]
-        public async Task Invoke_SseRequest_Accepts()
+        public async Task Invoke_SseRequestWithoutAcceptHeader_Accepts()
         {
             ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware();
-            HttpContext context = PrepareHttpContext();
+            HttpContext context = PrepareHttpContext(null);
 
             await serverSentEventsMiddleware.Invoke(context, null);
 
             Assert.Equal(SSE_CONTENT_TYPE, context.Response.ContentType);
+        }
+
+        [Fact]
+        public async Task Invoke_SseRequestWithEventStreamAcceptHeader_Accepts()
+        {
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware();
+            HttpContext context = PrepareHttpContext(SSE_CONTENT_TYPE);
+
+            await serverSentEventsMiddleware.Invoke(context, null);
+
+            Assert.Equal(SSE_CONTENT_TYPE, context.Response.ContentType);
+        }
+
+        [Fact]
+        public async Task Invoke_SseRequestWithNotEventStreamAcceptHeader_Accepts()
+        {
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware();
+            HttpContext context = PrepareHttpContext("text/plain");
+
+            await serverSentEventsMiddleware.Invoke(context, null);
+
+            Assert.Null(context.Response.ContentType);
         }
 
         [Fact]
@@ -66,7 +92,7 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
                 OnPrepareAccept = onPrepareAcceptMock.Object
             });
 
-            await serverSentEventsMiddleware.Invoke(PrepareHttpContext(), null);
+            await serverSentEventsMiddleware.Invoke(PrepareHttpContext(null), null);
 
             onPrepareAcceptMock.Verify(m => m(It.IsAny<HttpResponse>()), Times.Once);
         }

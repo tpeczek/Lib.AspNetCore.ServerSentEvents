@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -52,7 +53,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <returns>The task object representing the asynchronous operation.</returns>
         public async Task Invoke(HttpContext context, IPolicyEvaluator policyEvaluator)
         {
-            if (context.Request.Headers[Constants.ACCEPT_HTTP_HEADER] == Constants.SSE_CONTENT_TYPE)
+            if (CheckAcceptHeader(context.Request.Headers))
             {
                 if (!await AuthorizeAsync(context, policyEvaluator))
                 {
@@ -82,6 +83,26 @@ namespace Lib.AspNetCore.ServerSentEvents
             {
                 await _next(context);
             }
+        }
+
+        private bool CheckAcceptHeader(IHeaderDictionary requestHeaders)
+        {
+            if (!requestHeaders.ContainsKey(Constants.ACCEPT_HTTP_HEADER))
+            {
+                return true;
+            }
+
+            if (requestHeaders[Constants.ACCEPT_HTTP_HEADER].Count == 0)
+            {
+                return true;
+            }
+
+            if (requestHeaders[Constants.ACCEPT_HTTP_HEADER].Any(acceptHeaderValue => acceptHeaderValue == Constants.SSE_CONTENT_TYPE))
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private async Task<bool> AuthorizeAsync(HttpContext context, IPolicyEvaluator policyEvaluator)
