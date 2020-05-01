@@ -1,3 +1,10 @@
+## Lib.AspNetCore.ServerSentEvents 5.0.0
+### Additions and Changes
+- Changed the collection of key/value pairs to store additional information for clients to thread safe methods (thank you @sebastiano1972)
+### Bug Fixes
+- Fixed Accept request header validation so request without it are processed.
+- Fixed ClientConnected and ClientDisconnected events not firing for custom ServerSentEventsService implementations.
+
 ## Lib.AspNetCore.ServerSentEvents 4.1.0
 ### Additions and Changes
 - Added a collection of key/value pairs to store additional information for clients (thank you @sebastiano1972)
