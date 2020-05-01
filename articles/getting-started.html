@@ -76,12 +76,16 @@
         ...
     }
 }
-</code></pre><p>The <code>AddServerSendEvents()</code> method registers default service which provides operations over Server-Sent Events protocol, while <code>MapServerSentEvents()</code> maps this service to a specific endpoint. The <code>MapServerSentEvents()</code> method can be called multiple times for different endpoints but all of them will be mapped to same service which will make them indistinguishable from application perspective. In order to create distinguishable endpoints a delivered version of <a href="../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html"><code>Server​Sent​Events​Service</code></a> should be registered (it doesn&#39;t need to override any of the default service functionality). Below is an example of such configuration.</p>
+</code></pre><p>The <code>AddServerSendEvents()</code> method registers default service which provides operations over Server-Sent Events protocol, while <code>MapServerSentEvents()</code> maps this service to a specific endpoint. The <code>MapServerSentEvents()</code> method can be called multiple times for different endpoints but all of them will be mapped to same service which will make them indistinguishable from application perspective. In order to create distinguishable endpoints a delivered version of <a href="../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html"><code>Server​Sent​Events​Service</code></a> should be registered. It doesn&#39;t need to override any of the default service functionality, just provide a constructor which can take a service specific options. Below is an example of such configuration.</p>
 <pre><code class="lang-cs">internal interface INotificationsServerSentEventsService : IServerSentEventsService
 { }
 
 internal class NotificationsServerSentEventsService : ServerSentEventsService, INotificationsServerSentEventsService
-{ }
+{
+    public NotificationsServerSentEventsService(IOptions&lt;ServerSentEventsServiceOptions&lt;NotificationsServerSentEventsService&gt;&gt; options)
+        : base(options.ToBaseServerSentEventsServiceOptions())
+    { }
+}
 
 public class Startup
 {

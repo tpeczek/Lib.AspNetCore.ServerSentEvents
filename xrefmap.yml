@@ -19,6 +19,22 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient
   fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient
   nameWithType: ServerSentEventsClient
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty*
+  name: GetProperty
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_GetProperty_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty
+  nameWithType: ServerSentEventsClient.GetProperty
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty``1(System.String)
+  name: GetProperty<T>(String)
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_GetProperty__1_System_String_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty``1(System.String)
+  name.vb: GetProperty(Of T)(String)
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty<T>(System.String)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty(Of T)(System.String)
+  nameWithType: ServerSentEventsClient.GetProperty<T>(String)
+  nameWithType.vb: ServerSentEventsClient.GetProperty(Of T)(String)
 - uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Id
   name: Id
   href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Id
@@ -45,19 +61,22 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.IsConnected
   nameWithType: ServerSentEventsClient.IsConnected
-- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
-  name: Properties
-  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Properties
-  commentId: P:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
-  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
-  nameWithType: ServerSentEventsClient.Properties
-- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties*
-  name: Properties
-  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Properties_
-  commentId: Overload:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.RemoveProperty*
+  name: RemoveProperty
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_RemoveProperty_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.RemoveProperty
   isSpec: "True"
-  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Properties
-  nameWithType: ServerSentEventsClient.Properties
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.RemoveProperty
+  nameWithType: ServerSentEventsClient.RemoveProperty
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.RemoveProperty``1(System.String)
+  name: RemoveProperty<T>(String)
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_RemoveProperty__1_System_String_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.RemoveProperty``1(System.String)
+  name.vb: RemoveProperty(Of T)(String)
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.RemoveProperty<T>(System.String)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.RemoveProperty(Of T)(System.String)
+  nameWithType: ServerSentEventsClient.RemoveProperty<T>(String)
+  nameWithType.vb: ServerSentEventsClient.RemoveProperty(Of T)(String)
 - uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   name: SendEventAsync(ServerSentEvent)
   href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_
@@ -89,6 +108,19 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync
   nameWithType: ServerSentEventsClient.SendEventAsync
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SetProperty(System.String,System.Object,System.Boolean)
+  name: SetProperty(String, Object, Boolean)
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SetProperty_System_String_System_Object_System_Boolean_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SetProperty(System.String,System.Object,System.Boolean)
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SetProperty(System.String, System.Object, System.Boolean)
+  nameWithType: ServerSentEventsClient.SetProperty(String, Object, Boolean)
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SetProperty*
+  name: SetProperty
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SetProperty_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SetProperty
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SetProperty
+  nameWithType: ServerSentEventsClient.SetProperty
 - uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.User
   name: User
   href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_User
@@ -108,6 +140,22 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient
   nameWithType: IServerSentEventsClient
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.GetProperty*
+  name: GetProperty
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_GetProperty_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.GetProperty
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.GetProperty
+  nameWithType: IServerSentEventsClient.GetProperty
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.GetProperty``1(System.String)
+  name: GetProperty<T>(String)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_GetProperty__1_System_String_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.GetProperty``1(System.String)
+  name.vb: GetProperty(Of T)(String)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.GetProperty<T>(System.String)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.GetProperty(Of T)(System.String)
+  nameWithType: IServerSentEventsClient.GetProperty<T>(String)
+  nameWithType.vb: IServerSentEventsClient.GetProperty(Of T)(String)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Id
   name: Id
   href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_Id
@@ -134,19 +182,22 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.IsConnected
   nameWithType: IServerSentEventsClient.IsConnected
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
-  name: Properties
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_Properties
-  commentId: P:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
-  nameWithType: IServerSentEventsClient.Properties
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties*
-  name: Properties
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_Properties_
-  commentId: Overload:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.RemoveProperty*
+  name: RemoveProperty
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_RemoveProperty_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.RemoveProperty
   isSpec: "True"
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Properties
-  nameWithType: IServerSentEventsClient.Properties
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.RemoveProperty
+  nameWithType: IServerSentEventsClient.RemoveProperty
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.RemoveProperty``1(System.String)
+  name: RemoveProperty<T>(String)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_RemoveProperty__1_System_String_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.RemoveProperty``1(System.String)
+  name.vb: RemoveProperty(Of T)(String)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.RemoveProperty<T>(System.String)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.RemoveProperty(Of T)(System.String)
+  nameWithType: IServerSentEventsClient.RemoveProperty<T>(String)
+  nameWithType.vb: IServerSentEventsClient.RemoveProperty(Of T)(String)
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent)
   name: SendEventAsync(ServerSentEvent)
   href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_
@@ -178,6 +229,19 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SendEventAsync
   nameWithType: IServerSentEventsClient.SendEventAsync
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SetProperty(System.String,System.Object,System.Boolean)
+  name: SetProperty(String, Object, Boolean)
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SetProperty_System_String_System_Object_System_Boolean_
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SetProperty(System.String,System.Object,System.Boolean)
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SetProperty(System.String, System.Object, System.Boolean)
+  nameWithType: IServerSentEventsClient.SetProperty(String, Object, Boolean)
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SetProperty*
+  name: SetProperty
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_SetProperty_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SetProperty
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.SetProperty
+  nameWithType: IServerSentEventsClient.SetProperty
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.User
   name: User
   href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_User
@@ -452,6 +516,28 @@ references:
   isSpec: "True"
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync
   nameWithType: IServerSentEventsService.SendEventAsync
+- uid: Lib.AspNetCore.ServerSentEvents.OptionsExtensions
+  name: OptionsExtensions
+  href: api/Lib.AspNetCore.ServerSentEvents.OptionsExtensions.html
+  commentId: T:Lib.AspNetCore.ServerSentEvents.OptionsExtensions
+  fullName: Lib.AspNetCore.ServerSentEvents.OptionsExtensions
+  nameWithType: OptionsExtensions
+- uid: Lib.AspNetCore.ServerSentEvents.OptionsExtensions.ToBaseServerSentEventsServiceOptions*
+  name: ToBaseServerSentEventsServiceOptions
+  href: api/Lib.AspNetCore.ServerSentEvents.OptionsExtensions.html#Lib_AspNetCore_ServerSentEvents_OptionsExtensions_ToBaseServerSentEventsServiceOptions_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.OptionsExtensions.ToBaseServerSentEventsServiceOptions
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.OptionsExtensions.ToBaseServerSentEventsServiceOptions
+  nameWithType: OptionsExtensions.ToBaseServerSentEventsServiceOptions
+- uid: Lib.AspNetCore.ServerSentEvents.OptionsExtensions.ToBaseServerSentEventsServiceOptions``1(IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{``0}})
+  name: ToBaseServerSentEventsServiceOptions<TServerSentEventsService>(IOptions<ServerSentEventsServiceOptions<TServerSentEventsService>>)
+  href: api/Lib.AspNetCore.ServerSentEvents.OptionsExtensions.html#Lib_AspNetCore_ServerSentEvents_OptionsExtensions_ToBaseServerSentEventsServiceOptions__1_IOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions___0___
+  commentId: M:Lib.AspNetCore.ServerSentEvents.OptionsExtensions.ToBaseServerSentEventsServiceOptions``1(IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{``0}})
+  name.vb: ToBaseServerSentEventsServiceOptions(Of TServerSentEventsService)(IOptions(Of ServerSentEventsServiceOptions(Of TServerSentEventsService)))
+  fullName: Lib.AspNetCore.ServerSentEvents.OptionsExtensions.ToBaseServerSentEventsServiceOptions<TServerSentEventsService>(IOptions<Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions<TServerSentEventsService>>)
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.OptionsExtensions.ToBaseServerSentEventsServiceOptions(Of TServerSentEventsService)(IOptions(Of Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of TServerSentEventsService)))
+  nameWithType: OptionsExtensions.ToBaseServerSentEventsServiceOptions<TServerSentEventsService>(IOptions<ServerSentEventsServiceOptions<TServerSentEventsService>>)
+  nameWithType.vb: OptionsExtensions.ToBaseServerSentEventsServiceOptions(Of TServerSentEventsService)(IOptions(Of ServerSentEventsServiceOptions(Of TServerSentEventsService)))
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEvent
   name: ServerSentEvent
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html
@@ -964,12 +1050,6 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService
   fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService
   nameWithType: ServerSentEventsService
-- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor
-  name: ServerSentEventsService()
-  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService__ctor
-  commentId: M:Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor
-  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.ServerSentEventsService()
-  nameWithType: ServerSentEventsService.ServerSentEventsService()
 - uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.#ctor(IOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions{Lib.AspNetCore.ServerSentEvents.ServerSentEventsService}})
   name: ServerSentEventsService(IOptions<ServerSentEventsServiceOptions<ServerSentEventsService>>)
   href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsService__ctor_IOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions_Lib_AspNetCore_ServerSentEvents_ServerSentEventsService___
