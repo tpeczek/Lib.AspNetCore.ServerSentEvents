@@ -1,3 +1,7 @@
+## Lib.AspNetCore.ServerSentEvents 5.1.0
+### Additions and Changes
+- Exposed way to provide ReconnectInterval through ServerSentEventsServiceOptions.
+
 ## Lib.AspNetCore.ServerSentEvents 5.0.0
 ### Additions and Changes
 - Changed the collection of key/value pairs to store additional information for clients to thread safe methods (thank you @sebastiano1972)
