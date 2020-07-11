@@ -1398,3 +1398,20 @@ references:
   fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of TServerSentEventsService).OnClientDisconnected
   nameWithType: ServerSentEventsServiceOptions<TServerSentEventsService>.OnClientDisconnected
   nameWithType.vb: ServerSentEventsServiceOptions(Of TServerSentEventsService).OnClientDisconnected
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions`1.ReconnectInterval
+  name: ReconnectInterval
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions_1_ReconnectInterval
+  commentId: P:Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions`1.ReconnectInterval
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions<TServerSentEventsService>.ReconnectInterval
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of TServerSentEventsService).ReconnectInterval
+  nameWithType: ServerSentEventsServiceOptions<TServerSentEventsService>.ReconnectInterval
+  nameWithType.vb: ServerSentEventsServiceOptions(Of TServerSentEventsService).ReconnectInterval
+- uid: Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions`1.ReconnectInterval*
+  name: ReconnectInterval
+  href: api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions-1.html#Lib_AspNetCore_ServerSentEvents_ServerSentEventsServiceOptions_1_ReconnectInterval_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions`1.ReconnectInterval
+  isSpec: "True"
+  fullName: Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions<TServerSentEventsService>.ReconnectInterval
+  fullName.vb: Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions(Of TServerSentEventsService).ReconnectInterval
+  nameWithType: ServerSentEventsServiceOptions<TServerSentEventsService>.ReconnectInterval
+  nameWithType.vb: ServerSentEventsServiceOptions(Of TServerSentEventsService).ReconnectInterval
