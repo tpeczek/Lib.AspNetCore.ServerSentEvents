@@ -29,6 +29,7 @@ namespace Lib.AspNetCore.ServerSentEvents
             {
                 KeepaliveInterval = options.Value.KeepaliveInterval,
                 KeepaliveMode = options.Value.KeepaliveMode,
+                ReconnectInterval = options.Value.ReconnectInterval,
                 OnClientConnected = options.Value.OnClientConnected,
                 OnClientDisconnected = options.Value.OnClientDisconnected
             });

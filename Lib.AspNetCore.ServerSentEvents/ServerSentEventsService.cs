@@ -43,8 +43,11 @@ namespace Lib.AspNetCore.ServerSentEvents
         public ServerSentEventsService(IOptions<ServerSentEventsServiceOptions<ServerSentEventsService>> options)
         {
             ServerSentEventsServiceOptions<ServerSentEventsService> serviceOptions = options?.Value;
-            if ((serviceOptions != null) && ((serviceOptions.OnClientConnected != null) || (serviceOptions.OnClientDisconnected != null)))
+
+            if (serviceOptions != null)
             {
+                ReconnectInterval = serviceOptions.ReconnectInterval;
+
                 if (serviceOptions.OnClientConnected != null)
                 {
                     ClientConnected += (sender, args) => serviceOptions.OnClientConnected((IServerSentEventsService)sender, args);

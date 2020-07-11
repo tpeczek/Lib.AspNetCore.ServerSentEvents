@@ -36,6 +36,11 @@ namespace Lib.AspNetCore.ServerSentEvents
         }
 
         /// <summary>
+        /// Gets or sets the interval after which clients will attempt to reestablish failed connections.
+        /// </summary>
+        public uint? ReconnectInterval { get; set; } = null;
+
+        /// <summary>
         /// Called when client has connected.
         /// This can be used to add client to groups.
         /// </summary>
