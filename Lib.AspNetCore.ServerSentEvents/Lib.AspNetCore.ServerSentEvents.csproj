@@ -5,7 +5,7 @@
     <VersionPrefix>5.1.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Authors>Tomasz Pęczek</Authors>
-    <TargetFrameworks>netcoreapp2.1;netcoreapp3.0;net461</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;netcoreapp3.1;net5.0;net461</TargetFrameworks>
     <AssemblyTitle>Lib.AspNetCore.ServerSentEvents</AssemblyTitle>
     <AssemblyName>Lib.AspNetCore.ServerSentEvents</AssemblyName>
     <PackageId>Lib.AspNetCore.ServerSentEvents</PackageId>
@@ -22,7 +22,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)' != 'netcoreapp3.0'">
+  <ItemGroup Condition="('$(TargetFramework)' == 'netcoreapp2.1') Or ('$(TargetFramework)' == 'net461')">
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="[2.1.0,3.0.0)" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="[2.1.0,3.0.0)" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization.Policy" Version="[2.1.0,3.0.0)" />
@@ -30,7 +30,7 @@
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="[2.1.0,3.0.0)" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[2.1.0,3.0.0)" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+  <ItemGroup Condition="('$(TargetFramework)' != 'netcoreapp2.1') And ('$(TargetFramework)' != 'net461')">
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 </Project>

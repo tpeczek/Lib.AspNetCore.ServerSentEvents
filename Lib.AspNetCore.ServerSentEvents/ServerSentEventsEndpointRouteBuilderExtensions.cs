@@ -1,4 +1,4 @@
-﻿#if NETCOREAPP3_0
+﻿#if !NETCOREAPP2_1 && !NET461
 using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Builder;
