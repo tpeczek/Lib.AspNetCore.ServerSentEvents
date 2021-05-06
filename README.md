@@ -1,5 +1,6 @@
 # Lib.AspNetCore.ServerSentEvents
-[![NuGet version](https://badge.fury.io/nu/Lib.AspNetCore.ServerSentEvents.svg)](http://badge.fury.io/nu/Lib.AspNetCore.ServerSentEvents)
+[![NuGet Version](https://img.shields.io/nuget/v/Lib.AspNetCore.ServerSentEvents?label=Lib.AspNetCore.ServerSentEvents&logo=nuget)](https://www.nuget.org/packages/Lib.AspNetCore.ServerSentEvents)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Lib.AspNetCore.ServerSentEvents?label=⭳)](https://www.nuget.org/packages/Lib.AspNetCore.ServerSentEvents)
 
 Lib.AspNetCore.ServerSentEvents is a library which provides Server-Sent Events (SSE) support for ASP.NET Core.
 
