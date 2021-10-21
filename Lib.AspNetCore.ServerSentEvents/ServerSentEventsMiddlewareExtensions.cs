@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Lib.AspNetCore.ServerSentEvents
 {
@@ -74,6 +75,8 @@ namespace Lib.AspNetCore.ServerSentEvents
             services.AddAuthorizationPolicyEvaluator();
 
             services.Configure(configureOptions);
+
+            services.TryAddSingleton<IServerSentEventsClientIdProvider, DefaultServerSentEventsClientIdProvider>();
 
             services.AddSingleton<TServerSentEventsService>();
             services.AddSingleton<TIServerSentEventsService>(serviceProvider => serviceProvider.GetService<TServerSentEventsService>());

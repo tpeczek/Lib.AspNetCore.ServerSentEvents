@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
 using Lib.AspNetCore.ServerSentEvents;
@@ -29,8 +30,10 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
             (
                 NOOP_REQUEST_DELEGATE,
                 Mock.Of<IAuthorizationPolicyProvider>(),
+                new DefaultServerSentEventsClientIdProvider(),
                 Mock.Of<TestServerSentEventsService>(),
-                Options.Create(options)
+                Options.Create(options),
+                NullLoggerFactory.Instance
             );
         }
 

@@ -395,6 +395,11 @@ namespace Lib.AspNetCore.ServerSentEvents
             }
         }
 
+        internal bool IsClientConnected(Guid clientId)
+        {
+            return _clients.ContainsKey(clientId);
+        }
+
         private async Task CreateGroupAsync(string groupName)
         {
             await _groupsSemaphore.WaitAsync();

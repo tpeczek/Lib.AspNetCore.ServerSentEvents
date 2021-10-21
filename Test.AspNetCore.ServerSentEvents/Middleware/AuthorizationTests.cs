@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Policy;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
 using Lib.AspNetCore.ServerSentEvents;
@@ -40,8 +41,10 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
             (
                 NOOP_REQUEST_DELEGATE,
                 PrepareAuthorizationPolicyProvider(),
+                new DefaultServerSentEventsClientIdProvider(),
                 Mock.Of<TestServerSentEventsService>(),
-                Options.Create(new ServerSentEventsOptions { Authorization = authorization })
+                Options.Create(new ServerSentEventsOptions { Authorization = authorization }),
+                NullLoggerFactory.Instance
             );
         }
 
