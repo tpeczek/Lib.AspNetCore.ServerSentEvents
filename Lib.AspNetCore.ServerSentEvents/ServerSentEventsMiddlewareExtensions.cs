@@ -76,7 +76,7 @@ namespace Lib.AspNetCore.ServerSentEvents
 
             services.Configure(configureOptions);
 
-            services.TryAddSingleton<IServerSentEventsClientIdProvider, DefaultServerSentEventsClientIdProvider>();
+            services.TryAddSingleton<IServerSentEventsClientIdProvider, NewGuidServerSentEventsClientIdProvider>();
 
             services.AddSingleton<TServerSentEventsService>();
             services.AddSingleton<TIServerSentEventsService>(serviceProvider => serviceProvider.GetService<TServerSentEventsService>());

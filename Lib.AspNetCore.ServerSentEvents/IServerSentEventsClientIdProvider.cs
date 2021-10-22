@@ -9,10 +9,10 @@ namespace Lib.AspNetCore.ServerSentEvents
     public interface IServerSentEventsClientIdProvider
     {
         /// <summary>
-        /// Gets and identifier which will be used by <see cref="IServerSentEventsClient"/>.
+        /// Acquires an identifier which will be used by <see cref="IServerSentEventsClient"/>.
         /// </summary>
         /// <param name="context">The context.</param>
         /// <returns>The identifier.</returns>
-        Guid GetClientId(HttpContext context);
+        Guid AcquireClientId(HttpContext context);
     }
 }

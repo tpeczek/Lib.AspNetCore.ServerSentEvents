@@ -69,7 +69,7 @@ namespace Lib.AspNetCore.ServerSentEvents
                     return;
                 }
 
-                Guid clientId = _serverSentEventsClientIdProvider.GetClientId(context);
+                Guid clientId = _serverSentEventsClientIdProvider.AcquireClientId(context);
                 if (_serverSentEventsService.IsClientConnected(clientId))
                 {
                     _logger.LogWarning("The IServerSentEventsClient with identifier {ClientId} is already connected. The request can't have been accepted.", clientId);

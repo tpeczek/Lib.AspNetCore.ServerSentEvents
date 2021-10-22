@@ -7,10 +7,10 @@ namespace Lib.AspNetCore.ServerSentEvents
     /// The default provider of identifiers for <see cref="IServerSentEventsClient"/> instances based on <see cref="HttpContext"/>.
     /// This provider creates new GUID every time.
     /// </summary>
-    public class DefaultServerSentEventsClientIdProvider : IServerSentEventsClientIdProvider
+    public class NewGuidServerSentEventsClientIdProvider : IServerSentEventsClientIdProvider
     {
         /// <inheritdoc />
-        public Guid GetClientId(HttpContext context)
+        public Guid AcquireClientId(HttpContext context)
         {
             return Guid.NewGuid();
         }
