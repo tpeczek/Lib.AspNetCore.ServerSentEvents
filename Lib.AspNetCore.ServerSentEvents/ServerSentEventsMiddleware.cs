@@ -23,6 +23,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         private readonly RequestDelegate _next;
         private readonly IAuthorizationPolicyProvider _policyProvider;
         private readonly IServerSentEventsClientIdProvider _serverSentEventsClientIdProvider;
+        private readonly IServerSentEventsNoReconnectClientsIdsStore _serverSentEventsNoReconnectClientsIdsStore;
         private readonly TServerSentEventsService _serverSentEventsService;
         private readonly ServerSentEventsOptions _serverSentEventsOptions;
         private readonly ILogger<ServerSentEventsMiddleware<TServerSentEventsService>> _logger;
@@ -41,12 +42,14 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <param name="serverSentEventsOptions"></param>
         /// <param name="loggerFactory">The logger factory.</param>
         public ServerSentEventsMiddleware(RequestDelegate next, IAuthorizationPolicyProvider policyProvider,
-            IServerSentEventsClientIdProvider serverSentEventsClientIdProvider, TServerSentEventsService serverSentEventsService, IOptions<ServerSentEventsOptions> serverSentEventsOptions,
+            IServerSentEventsClientIdProvider serverSentEventsClientIdProvider, IServerSentEventsNoReconnectClientsIdsStore serverSentEventsNoReconnectClientsIdsStore,
+            TServerSentEventsService serverSentEventsService, IOptions<ServerSentEventsOptions> serverSentEventsOptions,
             ILoggerFactory loggerFactory)
         {
             _next = next ?? throw new ArgumentNullException(nameof(next));
             _policyProvider = policyProvider ?? throw new ArgumentNullException(nameof(policyProvider));
             _serverSentEventsClientIdProvider = serverSentEventsClientIdProvider ?? throw new ArgumentNullException(nameof(serverSentEventsClientIdProvider));
+            _serverSentEventsNoReconnectClientsIdsStore = serverSentEventsNoReconnectClientsIdsStore ?? throw new ArgumentNullException(nameof(serverSentEventsNoReconnectClientsIdsStore));
             _serverSentEventsService = serverSentEventsService ?? throw new ArgumentNullException(nameof(serverSentEventsService));
             _serverSentEventsOptions = serverSentEventsOptions?.Value ?? throw new ArgumentNullException(nameof(serverSentEventsOptions));
             _logger = loggerFactory.CreateLogger<ServerSentEventsMiddleware<TServerSentEventsService>>();

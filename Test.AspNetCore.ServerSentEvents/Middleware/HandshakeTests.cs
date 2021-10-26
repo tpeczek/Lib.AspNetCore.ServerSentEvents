@@ -31,6 +31,7 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
                 NOOP_REQUEST_DELEGATE,
                 Mock.Of<IAuthorizationPolicyProvider>(),
                 new NewGuidServerSentEventsClientIdProvider(),
+                new NoOpServerSentEventsNoReconnectClientsIdsStore(),
                 Mock.Of<TestServerSentEventsService>(),
                 Options.Create(options),
                 NullLoggerFactory.Instance

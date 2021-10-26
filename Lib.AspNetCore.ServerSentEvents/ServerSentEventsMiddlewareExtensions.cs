@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace Lib.AspNetCore.ServerSentEvents
@@ -77,11 +79,68 @@ namespace Lib.AspNetCore.ServerSentEvents
             services.Configure(configureOptions);
 
             services.TryAddSingleton<IServerSentEventsClientIdProvider, NewGuidServerSentEventsClientIdProvider>();
+            services.TryAddSingleton<IServerSentEventsNoReconnectClientsIdsStore, NoOpServerSentEventsNoReconnectClientsIdsStore>();
 
             services.AddSingleton<TServerSentEventsService>();
             services.AddSingleton<TIServerSentEventsService>(serviceProvider => serviceProvider.GetService<TServerSentEventsService>());
 
             services.AddSingleton<IHostedService, ServerSentEventsKeepaliveService<TServerSentEventsService>>();
+
+            return services;
+        }
+
+        /// <summary>
+        /// Registers implementation of <see cref="IServerSentEventsClientIdProvider"/>.
+        /// </summary>
+        /// <typeparam name="TServerSentEventsClientIdProvider">The type of <see cref="IServerSentEventsClientIdProvider"/> implementation.</typeparam>
+        /// <param name="services">The collection of service descriptors.</param>
+        /// <returns>The collection of service descriptors.</returns>
+        public static IServiceCollection AddServerSentEventsClientIdProvider<TServerSentEventsClientIdProvider>(this IServiceCollection services)
+            where TServerSentEventsClientIdProvider : class, IServerSentEventsClientIdProvider
+        {
+            if (services == null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
+
+            services.Remove(services.FirstOrDefault(d => d.ServiceType == typeof(IServerSentEventsClientIdProvider)));
+            services.AddSingleton<IServerSentEventsClientIdProvider, TServerSentEventsClientIdProvider>();
+
+            return services;
+        }
+
+        /// <summary>
+        /// Registers implementation of <see cref="IServerSentEventsNoReconnectClientsIdsStore"/> backed by memory store.
+        /// </summary>
+        /// <param name="services">The collection of service descriptors.</param>
+        /// <returns>The collection of service descriptors.</returns>
+        public static IServiceCollection AddInMemoryServerSentEventsNoReconnectClientsIdsStore(this IServiceCollection services)
+        {
+            if (services == null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
+
+            services.Remove(services.FirstOrDefault(d => d.ServiceType == typeof(IServerSentEventsNoReconnectClientsIdsStore)));
+            services.AddSingleton<IServerSentEventsNoReconnectClientsIdsStore, InMemoryServerSentEventsNoReconnectClientsIdsStore>();
+
+            return services;
+        }
+
+        /// <summary>
+        /// Registers implementation of <see cref="IServerSentEventsNoReconnectClientsIdsStore"/> backed by an <see cref="IDistributedCache"/>.
+        /// </summary>
+        /// <param name="services">The collection of service descriptors.</param>
+        /// <returns>The collection of service descriptors.</returns>
+        public static IServiceCollection AddDistributedServerSentEventsNoReconnectClientsIdsStore(this IServiceCollection services)
+        {
+            if (services == null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
+
+            services.Remove(services.FirstOrDefault(d => d.ServiceType == typeof(IServerSentEventsNoReconnectClientsIdsStore)));
+            services.AddSingleton<IServerSentEventsNoReconnectClientsIdsStore, DistributedServerSentEventsNoReconnectClientsIdsStore>();
 
             return services;
         }
