@@ -31,6 +31,11 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             return response.Body.FlushAsync();
         }
 
+        internal static void PreventReconnect(this HttpResponse response)
+        {
+            response.StatusCode = StatusCodes.Status204NoContent;
+        }
+
         internal static Task WriteAsync(this HttpResponse response, in ServerSentEventBytes serverSentEvent, CancellationToken cancellationToken)
         {
             return response.Body.WriteAsync(serverSentEvent.Bytes, 0, serverSentEvent.BytesCount, cancellationToken);

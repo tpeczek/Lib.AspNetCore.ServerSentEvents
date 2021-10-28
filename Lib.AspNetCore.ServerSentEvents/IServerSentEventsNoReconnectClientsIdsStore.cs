@@ -12,19 +12,19 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Adds client identifier.
         /// </summary>
         /// <param name="clientId">The client identifier.</param>
-        Task AddClientId(Guid clientId);
+        Task AddClientIdAsync(Guid clientId);
 
         /// <summary>
         /// Determines whether the store contains client identifier.
         /// </summary>
         /// <param name="clientId">The client identifier.</param>
         /// <returns>True if the store contains client identifier; otherwise, false.</returns>
-        Task<bool> ContainsClientId(Guid clientId);
+        Task<bool> ContainsClientIdAsync(Guid clientId);
 
         /// <summary>
         /// Removes client identifier.
         /// </summary>
         /// <param name="clientId">The client identifier.</param>
-        Task RemoveClientId(Guid clientId);
+        Task RemoveClientIdAsync(Guid clientId);
     }
 }

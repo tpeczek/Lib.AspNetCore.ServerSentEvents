@@ -27,6 +27,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         private readonly TServerSentEventsService _serverSentEventsService;
         private readonly ServerSentEventsOptions _serverSentEventsOptions;
         private readonly ILogger<ServerSentEventsMiddleware<TServerSentEventsService>> _logger;
+        private readonly bool _clientDisconnectServicesAvailable = false;
 
         private AuthorizationPolicy _authorizationPolicy;
         #endregion
@@ -53,6 +54,9 @@ namespace Lib.AspNetCore.ServerSentEvents
             _serverSentEventsService = serverSentEventsService ?? throw new ArgumentNullException(nameof(serverSentEventsService));
             _serverSentEventsOptions = serverSentEventsOptions?.Value ?? throw new ArgumentNullException(nameof(serverSentEventsOptions));
             _logger = loggerFactory.CreateLogger<ServerSentEventsMiddleware<TServerSentEventsService>>();
+
+            _clientDisconnectServicesAvailable = (_serverSentEventsClientIdProvider.GetType() != typeof(NewGuidServerSentEventsClientIdProvider))
+                                                 && (_serverSentEventsNoReconnectClientsIdsStore.GetType() != typeof(NoOpServerSentEventsNoReconnectClientsIdsStore));
         }
         #endregion
 
@@ -79,13 +83,18 @@ namespace Lib.AspNetCore.ServerSentEvents
                     return;
                 }
 
+                if (await PreventReconnectAsync(clientId, context))
+                {
+                    return;
+                }
+
                 DisableResponseBuffering(context);
 
                 HandleContentEncoding(context);
 
                 await context.Response.AcceptAsync(_serverSentEventsOptions.OnPrepareAccept);
 
-                ServerSentEventsClient client = new ServerSentEventsClient(clientId, context.User, context.Response);
+                ServerSentEventsClient client = new ServerSentEventsClient(clientId, context.User, context.Response, _clientDisconnectServicesAvailable);
 
                 if (_serverSentEventsService.ReconnectInterval.HasValue)
                 {
@@ -157,6 +166,22 @@ namespace Lib.AspNetCore.ServerSentEvents
             }
 
             return authorized;
+        }
+
+        private async Task<bool> PreventReconnectAsync(Guid clientId, HttpContext context)
+        {
+            if (!await _serverSentEventsNoReconnectClientsIdsStore.ContainsClientIdAsync(clientId))
+            {
+                return false;
+            }
+
+            context.Response.PreventReconnect();
+
+            _serverSentEventsClientIdProvider.ReleaseClientId(clientId, context);
+
+            await _serverSentEventsNoReconnectClientsIdsStore.RemoveClientIdAsync(clientId);
+
+            return true;
         }
 
         private async Task ChallengeAsync(HttpContext context)
@@ -241,6 +266,15 @@ namespace Lib.AspNetCore.ServerSentEvents
         private async Task DisconnectClientAsync(HttpRequest request, ServerSentEventsClient client)
         {
             _serverSentEventsService.RemoveClient(client);
+
+            if (client.PreventReconnect)
+            {
+                await _serverSentEventsNoReconnectClientsIdsStore.AddClientIdAsync(client.Id);
+            }
+            else
+            {
+                _serverSentEventsClientIdProvider.ReleaseClientId(client.Id, request.HttpContext);
+            }
 
             await _serverSentEventsService.OnDisconnectAsync(request, client);
         }

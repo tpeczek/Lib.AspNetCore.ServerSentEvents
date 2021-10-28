@@ -18,7 +18,7 @@ namespace Test.AspNetCore.ServerSentEvents
         private static ServerSentEventsClient PrepareServerSentEventsClient()
         {
             var context = new DefaultHttpContext();
-            return new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), context.Response);
+            return new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), context.Response, false);
         }
         #endregion
 

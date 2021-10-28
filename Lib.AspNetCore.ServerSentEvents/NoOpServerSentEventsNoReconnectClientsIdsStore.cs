@@ -5,17 +5,17 @@ namespace Lib.AspNetCore.ServerSentEvents
 {
     internal class NoOpServerSentEventsNoReconnectClientsIdsStore : IServerSentEventsNoReconnectClientsIdsStore
     {
-        public Task AddClientId(Guid clientId)
+        public Task AddClientIdAsync(Guid clientId)
         {
             return Task.CompletedTask;
         }
 
-        public Task<bool> ContainsClientId(Guid clientId)
+        public Task<bool> ContainsClientIdAsync(Guid clientId)
         {
             return Task.FromResult(false);
         }
 
-        public Task RemoveClientId(Guid clientId)
+        public Task RemoveClientIdAsync(Guid clientId)
         {
             return Task.CompletedTask;
         }

@@ -14,17 +14,17 @@ namespace Lib.AspNetCore.ServerSentEvents
             _cache = cache ?? throw new ArgumentNullException(nameof(cache));
         }
 
-        public async Task AddClientId(Guid clientId)
+        public async Task AddClientIdAsync(Guid clientId)
         {
             await _cache.SetAsync(clientId.ToString(), _dummyItem);
         }
 
-        public async Task<bool> ContainsClientId(Guid clientId)
+        public async Task<bool> ContainsClientIdAsync(Guid clientId)
         {
             return (await _cache.GetAsync(clientId.ToString())) is null;
         }
 
-        public async Task RemoveClientId(Guid clientId)
+        public async Task RemoveClientIdAsync(Guid clientId)
         {
             await _cache.RemoveAsync(clientId.ToString());
         }

@@ -33,12 +33,12 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Benchmarks
         #region Constructor
         public ServerSentEventsServiceBenchmarks()
         {
-            _serverSentEventsClient = new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), new NoOpHttpResponse());
+            _serverSentEventsClient = new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), new NoOpHttpResponse(), false);
 
             _serverSentEventsService = new ServerSentEventsService(Options.Create<ServerSentEventsServiceOptions<ServerSentEventsService>>(null));
             for (int i = 0; i < MULTIPLE_CLIENTS_COUNT; i++)
             {
-                _serverSentEventsService.AddClient(new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), new NoOpHttpResponse()));
+                _serverSentEventsService.AddClient(new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), new NoOpHttpResponse(), false));
             }
         }
         #endregion

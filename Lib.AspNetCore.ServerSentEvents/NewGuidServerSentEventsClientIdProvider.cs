@@ -9,5 +9,8 @@ namespace Lib.AspNetCore.ServerSentEvents
         {
             return Guid.NewGuid();
         }
+
+        public void ReleaseClientId(Guid clientId, HttpContext context)
+        { }
     }
 }
