@@ -26,6 +26,7 @@
           "articles/getting-started.md",
           "articles/authorization.md",
           "articles/groups.md",
+          "articles/disconneting-clients.md",
           "articles/advanced.md"
         ]
       }
@@ -34,7 +35,8 @@
       {
         "files": [
           "resources/svg/logo.svg",
-          "resources/ico/favicon.ico"
+          "resources/ico/favicon.ico",
+          "resources/disconneting-client-flow.png"
         ]
       }
     ],
