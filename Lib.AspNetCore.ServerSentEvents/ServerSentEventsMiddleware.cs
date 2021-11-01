@@ -39,6 +39,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <param name="next">The next delegate in the pipeline.</param>
         /// <param name="policyProvider">The service which can provide an <see cref="AuthorizationPolicy" />.</param>
         /// <param name="serverSentEventsClientIdProvider">The provider of identifiers for <see cref="IServerSentEventsClient"/> instances.</param>
+        /// <param name="serverSentEventsNoReconnectClientsIdsStore">The store which keeps identifiers of <see cref="IServerSentEventsClient"/> which shouldn't be allowed to reconnect.</param>
         /// <param name="serverSentEventsService">The service which provides operations over Server-Sent Events protocol.</param>
         /// <param name="serverSentEventsOptions"></param>
         /// <param name="loggerFactory">The logger factory.</param>

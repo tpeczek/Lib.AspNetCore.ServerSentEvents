@@ -1,12 +1,8 @@
-﻿using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Policy;
-using Microsoft.Extensions.Options;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Xunit;
 using Lib.AspNetCore.ServerSentEvents;
@@ -35,37 +31,6 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
             return policyProviderMock.Object;
         }
 
-        private ServerSentEventsMiddleware<ServerSentEventsService> PrepareServerSentEventsMiddleware(ServerSentEventsAuthorization authorization = null)
-        {
-            return new ServerSentEventsMiddleware<ServerSentEventsService>
-            (
-                NOOP_REQUEST_DELEGATE,
-                PrepareAuthorizationPolicyProvider(),
-                new NewGuidServerSentEventsClientIdProvider(),
-                new NoOpServerSentEventsNoReconnectClientsIdsStore(),
-                Mock.Of<TestServerSentEventsService>(),
-                Options.Create(new ServerSentEventsOptions { Authorization = authorization }),
-                NullLoggerFactory.Instance
-            );
-        }
-
-        private HttpContext PrepareHttpContext(Mock<IAuthenticationService> authenticationServiceMock = null)
-        {
-            HttpContext context = new DefaultHttpContext();
-
-            context.Request.Headers.Append(ACCEPT_HTTP_HEADER, SSE_CONTENT_TYPE);
-            context.RequestAborted = new CancellationToken(true);
-
-            authenticationServiceMock = authenticationServiceMock ?? new Mock<IAuthenticationService>();
-
-            ServiceCollection serviceCollection = new ServiceCollection();
-            serviceCollection.AddSingleton(authenticationServiceMock.Object);
-
-            context.RequestServices = serviceCollection.BuildServiceProvider();
-
-            return context;
-        }
-
         private Mock<IPolicyEvaluator> PreparePolicyEvaluatorMock(HttpContext context, AuthenticateResult authenticateResult = null, PolicyAuthorizationResult policyAuthorizationResult = null)
         {
             authenticateResult = authenticateResult ?? DEFAULT_AUTHENTICATE_RESULT;
@@ -83,8 +48,8 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_NoAuthorization_DoesNotCallAuthenticateAsync()
         {
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware();
-            HttpContext context = PrepareHttpContext();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(authorizationPolicyProvider: PrepareAuthorizationPolicyProvider());
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext();
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context);
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);
@@ -95,8 +60,8 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_NoAuthorization_DoesNotCallAuthorizeAsync()
         {
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware();
-            HttpContext context = PrepareHttpContext();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(authorizationPolicyProvider: PrepareAuthorizationPolicyProvider());
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext();
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context);
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);
@@ -107,8 +72,11 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_Authorization_CallsAuthenticateAsync()
         {
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware(ServerSentEventsAuthorization.Default);
-            HttpContext context = PrepareHttpContext();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(
+                authorizationPolicyProvider: PrepareAuthorizationPolicyProvider(),
+                options: new ServerSentEventsOptions { Authorization = ServerSentEventsAuthorization.Default });
+
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext();
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context);
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);
@@ -119,8 +87,11 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_Authorization_CallsAuthorizeAsync()
         {
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware(ServerSentEventsAuthorization.Default);
-            HttpContext context = PrepareHttpContext();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(
+                authorizationPolicyProvider: PrepareAuthorizationPolicyProvider(),
+                options: new ServerSentEventsOptions { Authorization = ServerSentEventsAuthorization.Default });
+
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext();
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context);
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);
@@ -131,10 +102,13 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_Authorization_PolicyAuthorizationResultSuccess_DoesNotCallChallengeAsync()
         {
-            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(
+                authorizationPolicyProvider: PrepareAuthorizationPolicyProvider(),
+                options: new ServerSentEventsOptions { Authorization = ServerSentEventsAuthorization.Default });
 
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware(ServerSentEventsAuthorization.Default);
-            HttpContext context = PrepareHttpContext(authenticationServiceMock);
+            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(authenticationService: authenticationServiceMock.Object);
+            
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context, policyAuthorizationResult: PolicyAuthorizationResult.Success());
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);
@@ -145,10 +119,13 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_Authorization_PolicyAuthorizationResultSuccess_DoesNotCallForbidAsync()
         {
-            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(
+                authorizationPolicyProvider: PrepareAuthorizationPolicyProvider(),
+                options: new ServerSentEventsOptions { Authorization = ServerSentEventsAuthorization.Default });
 
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware(ServerSentEventsAuthorization.Default);
-            HttpContext context = PrepareHttpContext(authenticationServiceMock);
+            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(authenticationService: authenticationServiceMock.Object);
+
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context, policyAuthorizationResult: PolicyAuthorizationResult.Success());
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);
@@ -159,10 +136,13 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_Authorization_PolicyAuthorizationResultChallenge_CallsChallengeAsync()
         {
-            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(
+                authorizationPolicyProvider: PrepareAuthorizationPolicyProvider(),
+                options: new ServerSentEventsOptions { Authorization = ServerSentEventsAuthorization.Default });
 
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware(ServerSentEventsAuthorization.Default);
-            HttpContext context = PrepareHttpContext(authenticationServiceMock);
+            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(authenticationService: authenticationServiceMock.Object);
+
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context, policyAuthorizationResult: PolicyAuthorizationResult.Challenge());
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);
@@ -173,10 +153,13 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_AuthorizationWithSchemes_PolicyAuthorizationResultChallenge_CallsChallengeAsyncForEveryScheme()
         {
-            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(
+                authorizationPolicyProvider: PrepareAuthorizationPolicyProvider(),
+                options: new ServerSentEventsOptions { Authorization = new ServerSentEventsAuthorization { AuthenticationSchemes = "schema1,schema2" } });
 
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware(new ServerSentEventsAuthorization { AuthenticationSchemes = "schema1,schema2" });
-            HttpContext context = PrepareHttpContext(authenticationServiceMock);
+            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(authenticationService: authenticationServiceMock.Object);
+
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context, policyAuthorizationResult: PolicyAuthorizationResult.Challenge());
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);
@@ -188,10 +171,13 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_Authorization_PolicyAuthorizationResultForbid_CallsForbidAsync()
         {
-            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(
+                authorizationPolicyProvider: PrepareAuthorizationPolicyProvider(),
+                options: new ServerSentEventsOptions { Authorization = ServerSentEventsAuthorization.Default });
 
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware(ServerSentEventsAuthorization.Default);
-            HttpContext context = PrepareHttpContext(authenticationServiceMock);
+            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(authenticationService: authenticationServiceMock.Object);
+
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context, policyAuthorizationResult: PolicyAuthorizationResult.Forbid());
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);
@@ -202,10 +188,13 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         [Fact]
         public async Task Invoke_SseRequest_AuthorizationWithSchemes_PolicyAuthorizationResultForbid_CallsForbidAsyncForEveryScheme()
         {
-            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(
+                authorizationPolicyProvider: PrepareAuthorizationPolicyProvider(),
+                options: new ServerSentEventsOptions { Authorization = new ServerSentEventsAuthorization { AuthenticationSchemes = "schema1,schema2" } });
 
-            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = PrepareServerSentEventsMiddleware(new ServerSentEventsAuthorization { AuthenticationSchemes = "schema1,schema2" });
-            HttpContext context = PrepareHttpContext(authenticationServiceMock);
+            Mock<IAuthenticationService> authenticationServiceMock = new Mock<IAuthenticationService>();
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(authenticationService: authenticationServiceMock.Object);
+            
             Mock<IPolicyEvaluator> policyEvaluatorMock = PreparePolicyEvaluatorMock(context, policyAuthorizationResult: PolicyAuthorizationResult.Forbid());
 
             await serverSentEventsMiddleware.Invoke(context, policyEvaluatorMock.Object);

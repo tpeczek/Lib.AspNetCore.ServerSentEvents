@@ -95,10 +95,13 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
                 throw new InvalidOperationException($"Disconnecting a {nameof(ServerSentEventsClient)} requires registering implementations of {nameof(IServerSentEventsClientIdProvider)} and {nameof(IServerSentEventsNoReconnectClientsIdsStore)}.");
             }
 
-            IsConnected = false;
             PreventReconnect = true;
 
-            _response.HttpContext.Abort();
+            if (IsConnected)
+            {
+                IsConnected = false;
+                _response.HttpContext.Abort();
+            } 
         }
 
         /// <summary>

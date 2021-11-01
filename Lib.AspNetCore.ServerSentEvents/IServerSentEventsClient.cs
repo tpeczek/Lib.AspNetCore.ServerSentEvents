@@ -33,6 +33,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// </summary>
         /// <remarks>
         /// This requires registering implementations of <see cref="IServerSentEventsClientIdProvider"/> and <see cref="IServerSentEventsNoReconnectClientsIdsStore"/>.
+        /// </remarks>
         void Disconnect();
 
         /// <summary>
