@@ -29,6 +29,14 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         #region Methods
         /// <summary>
+        /// Disconnects client.
+        /// </summary>
+        /// <remarks>
+        /// This requires registering implementations of <see cref="IServerSentEventsClientIdProvider"/> and <see cref="IServerSentEventsNoReconnectClientsIdsStore"/>.
+        /// </remarks>
+        void Disconnect();
+
+        /// <summary>
         /// Sends event to client.
         /// </summary>
         /// <param name="text">The simple text event.</param>

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Policy;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 using Lib.AspNetCore.ServerSentEvents.Internals;
 
 namespace Lib.AspNetCore.ServerSentEvents
@@ -21,8 +22,12 @@ namespace Lib.AspNetCore.ServerSentEvents
         #region Fields
         private readonly RequestDelegate _next;
         private readonly IAuthorizationPolicyProvider _policyProvider;
+        private readonly IServerSentEventsClientIdProvider _serverSentEventsClientIdProvider;
+        private readonly IServerSentEventsNoReconnectClientsIdsStore _serverSentEventsNoReconnectClientsIdsStore;
         private readonly TServerSentEventsService _serverSentEventsService;
         private readonly ServerSentEventsOptions _serverSentEventsOptions;
+        private readonly ILogger<ServerSentEventsMiddleware<TServerSentEventsService>> _logger;
+        private readonly bool _clientDisconnectServicesAvailable = false;
 
         private AuthorizationPolicy _authorizationPolicy;
         #endregion
@@ -33,14 +38,26 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// </summary>
         /// <param name="next">The next delegate in the pipeline.</param>
         /// <param name="policyProvider">The service which can provide an <see cref="AuthorizationPolicy" />.</param>
+        /// <param name="serverSentEventsClientIdProvider">The provider of identifiers for <see cref="IServerSentEventsClient"/> instances.</param>
+        /// <param name="serverSentEventsNoReconnectClientsIdsStore">The store which keeps identifiers of <see cref="IServerSentEventsClient"/> which shouldn't be allowed to reconnect.</param>
         /// <param name="serverSentEventsService">The service which provides operations over Server-Sent Events protocol.</param>
         /// <param name="serverSentEventsOptions"></param>
-        public ServerSentEventsMiddleware(RequestDelegate next, IAuthorizationPolicyProvider policyProvider, TServerSentEventsService serverSentEventsService, IOptions<ServerSentEventsOptions> serverSentEventsOptions)
+        /// <param name="loggerFactory">The logger factory.</param>
+        public ServerSentEventsMiddleware(RequestDelegate next, IAuthorizationPolicyProvider policyProvider,
+            IServerSentEventsClientIdProvider serverSentEventsClientIdProvider, IServerSentEventsNoReconnectClientsIdsStore serverSentEventsNoReconnectClientsIdsStore,
+            TServerSentEventsService serverSentEventsService, IOptions<ServerSentEventsOptions> serverSentEventsOptions,
+            ILoggerFactory loggerFactory)
         {
             _next = next ?? throw new ArgumentNullException(nameof(next));
             _policyProvider = policyProvider ?? throw new ArgumentNullException(nameof(policyProvider));
+            _serverSentEventsClientIdProvider = serverSentEventsClientIdProvider ?? throw new ArgumentNullException(nameof(serverSentEventsClientIdProvider));
+            _serverSentEventsNoReconnectClientsIdsStore = serverSentEventsNoReconnectClientsIdsStore ?? throw new ArgumentNullException(nameof(serverSentEventsNoReconnectClientsIdsStore));
             _serverSentEventsService = serverSentEventsService ?? throw new ArgumentNullException(nameof(serverSentEventsService));
             _serverSentEventsOptions = serverSentEventsOptions?.Value ?? throw new ArgumentNullException(nameof(serverSentEventsOptions));
+            _logger = loggerFactory.CreateLogger<ServerSentEventsMiddleware<TServerSentEventsService>>();
+
+            _clientDisconnectServicesAvailable = (_serverSentEventsClientIdProvider.GetType() != typeof(NewGuidServerSentEventsClientIdProvider))
+                                                 && (_serverSentEventsNoReconnectClientsIdsStore.GetType() != typeof(NoOpServerSentEventsNoReconnectClientsIdsStore));
         }
         #endregion
 
@@ -60,13 +77,25 @@ namespace Lib.AspNetCore.ServerSentEvents
                     return;
                 }
 
+                Guid clientId = _serverSentEventsClientIdProvider.AcquireClientId(context);
+                if (_serverSentEventsService.IsClientConnected(clientId))
+                {
+                    _logger.LogWarning("The IServerSentEventsClient with identifier {ClientId} is already connected. The request can't have been accepted.", clientId);
+                    return;
+                }
+
+                if (await PreventReconnectAsync(clientId, context))
+                {
+                    return;
+                }
+
                 DisableResponseBuffering(context);
 
                 HandleContentEncoding(context);
 
                 await context.Response.AcceptAsync(_serverSentEventsOptions.OnPrepareAccept);
 
-                ServerSentEventsClient client = new ServerSentEventsClient(Guid.NewGuid(), context.User, context.Response);
+                ServerSentEventsClient client = new ServerSentEventsClient(clientId, context.User, context.Response, _clientDisconnectServicesAvailable);
 
                 if (_serverSentEventsService.ReconnectInterval.HasValue)
                 {
@@ -138,6 +167,22 @@ namespace Lib.AspNetCore.ServerSentEvents
             }
 
             return authorized;
+        }
+
+        private async Task<bool> PreventReconnectAsync(Guid clientId, HttpContext context)
+        {
+            if (!await _serverSentEventsNoReconnectClientsIdsStore.ContainsClientIdAsync(clientId))
+            {
+                return false;
+            }
+
+            context.Response.PreventReconnect();
+
+            _serverSentEventsClientIdProvider.ReleaseClientId(clientId, context);
+
+            await _serverSentEventsNoReconnectClientsIdsStore.RemoveClientIdAsync(clientId);
+
+            return true;
         }
 
         private async Task ChallengeAsync(HttpContext context)
@@ -222,6 +267,15 @@ namespace Lib.AspNetCore.ServerSentEvents
         private async Task DisconnectClientAsync(HttpRequest request, ServerSentEventsClient client)
         {
             _serverSentEventsService.RemoveClient(client);
+
+            if (client.PreventReconnect)
+            {
+                await _serverSentEventsNoReconnectClientsIdsStore.AddClientIdAsync(client.Id);
+            }
+            else
+            {
+                _serverSentEventsClientIdProvider.ReleaseClientId(client.Id, request.HttpContext);
+            }
 
             await _serverSentEventsService.OnDisconnectAsync(request, client);
         }

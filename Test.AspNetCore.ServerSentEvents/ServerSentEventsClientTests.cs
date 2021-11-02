@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Security.Claims;
-using Lib.AspNetCore.ServerSentEvents.Internals;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
+using Moq;
 using Xunit;
+using Lib.AspNetCore.ServerSentEvents;
+using Lib.AspNetCore.ServerSentEvents.Internals;
 
 namespace Test.AspNetCore.ServerSentEvents
 {
@@ -15,10 +18,10 @@ namespace Test.AspNetCore.ServerSentEvents
         #endregion
 
         #region Prepare SUT
-        private static ServerSentEventsClient PrepareServerSentEventsClient()
+        private static ServerSentEventsClient PrepareServerSentEventsClient(HttpContext context = null, bool clientDisconnectServicesAvailable = false)
         {
-            var context = new DefaultHttpContext();
-            return new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), context.Response);
+            context = context ?? new DefaultHttpContext();
+            return new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), context.Response, clientDisconnectServicesAvailable);
         }
         #endregion
 
@@ -131,6 +134,49 @@ namespace Test.AspNetCore.ServerSentEvents
 
             Assert.False(actual);
             Assert.Equal(PROPERTY_1_VALUE, actualValue);
+        }
+
+        [Fact]
+        public void Disconnect_ClientDisconnectServicesNotAvailable_ThrowsInvalidOperationException()
+        {
+            // ARRANGE
+            var client = PrepareServerSentEventsClient();
+
+            // ASSERT
+            InvalidOperationException disconnectException = Assert.Throws<InvalidOperationException>(client.Disconnect);
+            Assert.Equal(disconnectException.Message, $"Disconnecting a {nameof(ServerSentEventsClient)} requires registering implementations of {nameof(IServerSentEventsClientIdProvider)} and {nameof(IServerSentEventsNoReconnectClientsIdsStore)}.");
+        }
+
+        [Fact]
+        public void Disconnect_ClientDisconnectServicesAvailable_PreventsReconnect()
+        {
+            // ARRANGE
+            var client = PrepareServerSentEventsClient(clientDisconnectServicesAvailable: true);
+
+            // ACT
+            client.Disconnect();
+
+            // ASSERT
+            Assert.True(client.PreventReconnect);
+        }
+
+        [Fact]
+        public void Disconnect_ClientDisconnectServicesAvailable_Disconnects()
+        {
+            // ARRANGE
+            HttpContext context = new DefaultHttpContext();
+
+            Mock<IHttpRequestLifetimeFeature> httpRequestLifetimeFeatureMock = new Mock<IHttpRequestLifetimeFeature>();
+            context.Features.Set(httpRequestLifetimeFeatureMock.Object);
+
+            var client = PrepareServerSentEventsClient(context: context, clientDisconnectServicesAvailable: true);
+
+            // ACT
+            client.Disconnect();
+
+            // ASSERT
+            Assert.False(client.IsConnected);
+            httpRequestLifetimeFeatureMock.Verify(o => o.Abort(), Times.Once);
         }
         #endregion
     }

@@ -29,6 +29,7 @@
     <PackageReference Include="Microsoft.Extensions.Options" Version="[2.1.0,3.0.0)" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="[2.1.0,3.0.0)" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[2.1.0,3.0.0)" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="[2.1.0,3.0.0)" />
   </ItemGroup>
   <ItemGroup Condition="('$(TargetFramework)' != 'netcoreapp2.1') And ('$(TargetFramework)' != 'net461')">
     <FrameworkReference Include="Microsoft.AspNetCore.App" />

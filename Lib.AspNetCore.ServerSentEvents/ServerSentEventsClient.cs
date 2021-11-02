@@ -14,6 +14,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
     {
         #region Fields
         private readonly HttpResponse _response;
+        private readonly bool _clientDisconnectServicesAvailable;
         private readonly ConcurrentDictionary<string, object> _properties = new ConcurrentDictionary<string, object>();
         #endregion
 
@@ -32,15 +33,18 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// Gets the value indicating if client is connected.
         /// </summary>
         public bool IsConnected { get; internal set; }
+
+        internal bool PreventReconnect { get; set; } = false;
         #endregion
 
         #region Constructor
-        internal ServerSentEventsClient(Guid id, ClaimsPrincipal user, HttpResponse response)
+        internal ServerSentEventsClient(Guid id, ClaimsPrincipal user, HttpResponse response, bool clientDisconnectServicesAvailable)
         {
             Id = id;
             User = user ?? throw new ArgumentNullException(nameof(user));
 
             _response = response ?? throw new ArgumentNullException(nameof(response));
+            _clientDisconnectServicesAvailable = clientDisconnectServicesAvailable;
             IsConnected = true;
         }
         #endregion
@@ -76,6 +80,28 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             }
 
             return default;
+        }
+
+        /// <summary>
+        /// Disconnects client.
+        /// </summary>
+        /// <remarks>
+        /// This requires registering implementations of <see cref="IServerSentEventsClientIdProvider"/> and <see cref="IServerSentEventsNoReconnectClientsIdsStore"/>.
+        /// </remarks>
+        public void Disconnect()
+        {
+            if (!_clientDisconnectServicesAvailable)
+            {
+                throw new InvalidOperationException($"Disconnecting a {nameof(ServerSentEventsClient)} requires registering implementations of {nameof(IServerSentEventsClientIdProvider)} and {nameof(IServerSentEventsNoReconnectClientsIdsStore)}.");
+            }
+
+            PreventReconnect = true;
+
+            if (IsConnected)
+            {
+                IsConnected = false;
+                _response.HttpContext.Abort();
+            } 
         }
 
         /// <summary>
