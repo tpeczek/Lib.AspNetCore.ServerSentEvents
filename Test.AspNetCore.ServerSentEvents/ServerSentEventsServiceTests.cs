@@ -34,11 +34,11 @@ namespace Test.AspNetCore.ServerSentEvents
             // ARRANGE
             ServerSentEventsService serverSentEventsService = new ServerSentEventsService(Options.Create<ServerSentEventsServiceOptions<ServerSentEventsService>>(new ServerSentEventsServiceOptions<ServerSentEventsService>
             {
-                OnClientConnected = async (service, clientConnectedArgs) =>
+                OnClientConnected = (service, clientConnectedArgs) =>
                 {
                     for (var i = 0; i < 1000; i++)
                     {
-                        await service.AddToGroupAsync(Guid.NewGuid().ToString(), clientConnectedArgs.Client);
+                        service.AddToGroup(Guid.NewGuid().ToString(), clientConnectedArgs.Client);
                     }
                 }
             }));
@@ -63,15 +63,15 @@ namespace Test.AspNetCore.ServerSentEvents
         }
 
         [Fact]
-        public async Task GetClients_GroupNameProvidedAndClientInGroup_ReturnsClient()
+        public async Task GetClients_GroupNameProvidedAndGroupExists_ReturnsGroup()
         {
             // ARRANGE
-            const string serverSentEventsClientsGroupName = nameof(GetClients_GroupNameProvidedAndClientInGroup_ReturnsClient);
+            const string serverSentEventsClientsGroupName = nameof(GetClients_GroupNameProvidedAndGroupExists_ReturnsGroup);
             ServerSentEventsService serverSentEventsService = new ServerSentEventsService(Options.Create<ServerSentEventsServiceOptions<ServerSentEventsService>>(new ServerSentEventsServiceOptions<ServerSentEventsService>
             {
                 OnClientConnected = async (service, clientConnectedArgs) =>
                 {
-                    await service.AddToGroupAsync(serverSentEventsClientsGroupName, clientConnectedArgs.Client);
+                    service.AddToGroup(serverSentEventsClientsGroupName, clientConnectedArgs.Client);
                 }
             }));
             ServerSentEventsClient serverSentEventsClient = await PrepareAndAddServerSentEventsClientAsync(serverSentEventsService);
@@ -81,6 +81,20 @@ namespace Test.AspNetCore.ServerSentEvents
 
             // ASSERT
             Assert.Single(serverSentEventsClientsGroup, serverSentEventsClient);
+        }
+
+        [Fact]
+        public void GetClients_GroupNameProvidedAndGroupNotExists_ReturnsEmptyGroup()
+        {
+            // ARRANGE
+            const string serverSentEventsClientsGroupName = nameof(GetClients_GroupNameProvidedAndGroupNotExists_ReturnsEmptyGroup);
+            ServerSentEventsService serverSentEventsService = new ServerSentEventsService(Options.Create<ServerSentEventsServiceOptions<ServerSentEventsService>>(null));
+
+            // ACT
+            IReadOnlyCollection<IServerSentEventsClient> serverSentEventsClientsGroup = serverSentEventsService.GetClients(serverSentEventsClientsGroupName);
+
+            // ASSERT
+            Assert.Empty(serverSentEventsClientsGroup);
         }
         #endregion
     }
