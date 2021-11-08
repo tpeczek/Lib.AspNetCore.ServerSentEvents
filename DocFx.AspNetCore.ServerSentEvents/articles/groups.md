@@ -4,10 +4,10 @@ A group is a collection of clients associated with a name. Groups are the recomm
 
 ## Adding to a group
 
-Client can be added to a group via the `IServerSentEventsService.AddToGroupAsync` method (the method will return an information if a client has been added to an existing or a new group).
+Client can be added to a group via the `IServerSentEventsService.AddToGroup` method (the method will return an information if a client has been added to an existing or a new group).
 
 ```cs
-await _serverSentEventsService.AddToGroupAsync(groupName, client);
+_serverSentEventsService.AddToGroup(groupName, client);
 ```
 
 Group membership isn't preserved when a client reconnects. The client needs to rejoin the group when connection is re-established. One of possible ways to handle this is putting group assigment logic into `ServerSentEventsServiceOptions.OnClientConnected` callback.
@@ -21,12 +21,12 @@ public class Startup
     {
         services.AddServerSentEvents(options =>
         {
-            options.OnClientConnected = async (service, clientConnectedArgs) =>
+            options.OnClientConnected = (service, clientConnectedArgs) =>
             {
                 // Logic which determines the client group.
                 ...
 
-                await service.AddToGroupAsync(groupName, clientConnectedArgs.Client);
+                service.AddToGroup(groupName, clientConnectedArgs.Client);
             };
         });
 

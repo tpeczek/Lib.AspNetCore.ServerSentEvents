@@ -56,8 +56,8 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// </summary>
         /// <param name="groupName">The group name.</param>
         /// <param name="client">The client to add to a group.</param>
-        /// <returns>The task object representing the result of asynchronous operation</returns>
-        Task<ServerSentEventsAddToGroupResult> AddToGroupAsync(string groupName, IServerSentEventsClient client);
+        /// <returns>The result of operation.</returns>
+        ServerSentEventsAddToGroupResult AddToGroup(string groupName, IServerSentEventsClient client);
 
         /// <summary>
         /// Changes the interval after which clients will attempt to reestablish failed connections.
