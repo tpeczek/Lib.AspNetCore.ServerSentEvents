@@ -1,0 +1,39 @@
+name: CD
+on:
+  push:
+    tags:
+    - "v[0-9]+.[0-9]+.[0-9]+"
+jobs:
+  deployment:
+    runs-on: windows-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Extract VERSION
+      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+      shell: bash
+    - name: Setup .NET Core 2.1 SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '2.1.x'
+    - name: Setup .NET Core 3.1 SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.x'
+    - name: Setup .NET 5.0 SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x'
+    - name: Restore
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
+    - name: Test
+      run: dotnet test --configuration Release --no-build
+    - name: Pack
+      run: dotnet pack --configuration Release --no-build
+    - name: NuGet Push Lib.AspNetCore.ServerSentEvents
+      run: dotnet nuget push Lib.AspNetCore.ServerSentEvents/bin/Release/Lib.AspNetCore.ServerSentEvents.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
+      shell: bash
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
