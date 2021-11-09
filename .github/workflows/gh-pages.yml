@@ -23,7 +23,7 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Publish
-      uses: JamesIves/github-pages-deploy-action@4.1.4
+      uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         branch: gh-pages
         folder: DocFx.AspNetCore.ServerSentEvents/wwwroot
