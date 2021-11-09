@@ -23,19 +23,19 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: docfx
-          path: DocFx.AspNetCore.ServerSentEvents/wwwroot
-          retention-days: 1
+      uses: actions/upload-artifact@v2
+      with:
+        name: docfx
+        path: DocFx.AspNetCore.ServerSentEvents/wwwroot
+        retention-days: 1
   publish:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
     - name: Download Artifacts
-        uses: actions/download-artifact@v2
-        with:
-          name: docfx
+      uses: actions/download-artifact@v2
+      with:
+        name: docfx
     - name: Publish
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
