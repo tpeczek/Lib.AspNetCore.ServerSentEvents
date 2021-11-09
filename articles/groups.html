@@ -8,7 +8,7 @@
     <title>Groups | Lib.AspNetCore.ServerSentEvents </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Groups | Lib.AspNetCore.ServerSentEvents ">
-    <meta name="generator" content="docfx 2.48.0.0">
+    <meta name="generator" content="docfx 2.58.8.0">
     
     <link rel="shortcut icon" href="../resources/ico/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -56,8 +56,8 @@
 
 <p>A group is a collection of clients associated with a name. Groups are the recommended way to send to multiple clients, because the groups are managed by the library. A client can be a member of multiple groups.</p>
 <h2 id="adding-to-a-group">Adding to a group</h2>
-<p>Client can be added to a group via the <code>IServerSentEventsService.AddToGroupAsync</code> method (the method will return an information if a client has been added to an existing or a new group).</p>
-<pre><code class="lang-cs">await _serverSentEventsService.AddToGroupAsync(groupName, client);
+<p>Client can be added to a group via the <code>IServerSentEventsService.AddToGroup</code> method (the method will return an information if a client has been added to an existing or a new group).</p>
+<pre><code class="lang-cs">_serverSentEventsService.AddToGroup(groupName, client);
 </code></pre><p>Group membership isn&#39;t preserved when a client reconnects. The client needs to rejoin the group when connection is re-established. One of possible ways to handle this is putting group assigment logic into <code>ServerSentEventsServiceOptions.OnClientConnected</code> callback.</p>
 <pre><code class="lang-cs">public class Startup
 {
@@ -67,12 +67,12 @@
     {
         services.AddServerSentEvents(options =&gt;
         {
-            options.OnClientConnected = async (service, clientConnectedArgs) =&gt;
+            options.OnClientConnected = (service, clientConnectedArgs) =&gt;
             {
                 // Logic which determines the client group.
                 ...
 
-                await service.AddToGroupAsync(groupName, clientConnectedArgs.Client);
+                service.AddToGroup(groupName, clientConnectedArgs.Client);
             };
         });
 
@@ -106,7 +106,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2017 - 2020 Tomasz Pęczek
+            Copyright © 2017 - 2021 Tomasz Pęczek
             
           </div>
         </div>

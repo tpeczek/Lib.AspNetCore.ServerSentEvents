@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Interface IServerSentEventsService
    | Lib.AspNetCore.ServerSentEvents ">
-    <meta name="generator" content="docfx 2.48.0.0">
+    <meta name="generator" content="docfx 2.58.8.0">
     
     <link rel="shortcut icon" href="../resources/ico/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -102,14 +102,14 @@
   </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_AddToGroupAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.AddToGroupAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_AddToGroupAsync_System_String_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.AddToGroupAsync(System.String,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)">AddToGroupAsync(String, IServerSentEventsClient)</h4>
+  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_AddToGroup_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.AddToGroup*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_AddToGroup_System_String_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.AddToGroup(System.String,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)">AddToGroup(String, IServerSentEventsClient)</h4>
   <div class="markdown level1 summary"><p>Adds a client to the specified group.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task&lt;ServerSentEventsAddToGroupResult&gt; AddToGroupAsync(string groupName, IServerSentEventsClient client)</code></pre>
+    <pre><code class="lang-csharp hljs">ServerSentEventsAddToGroupResult AddToGroup(string groupName, IServerSentEventsClient client)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -145,8 +145,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAddToGroupResult.html">ServerSentEventsAddToGroupResult</a>&gt;</td>
-        <td><p>The task object representing the result of asynchronous operation</p>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAddToGroupResult.html">ServerSentEventsAddToGroupResult</a></td>
+        <td><p>The result of operation.</p>
 </td>
       </tr>
     </tbody>
@@ -188,14 +188,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ChangeReconnectIntervalAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ChangeReconnectIntervalAsync_System_UInt32_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,CancellationToken)">ChangeReconnectIntervalAsync(UInt32, CancellationToken)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ChangeReconnectIntervalAsync_System_UInt32_System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.ChangeReconnectIntervalAsync(System.UInt32,System.Threading.CancellationToken)">ChangeReconnectIntervalAsync(UInt32, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Changes the interval after which clients will attempt to reestablish failed connections.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -220,7 +220,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token to cancel operation.</p>
 </td>
@@ -237,14 +237,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_GetClient_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_GetClient_Guid_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient(Guid)">GetClient(Guid)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_GetClient_System_Guid_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.GetClient(System.Guid)">GetClient(Guid)</h4>
   <div class="markdown level1 summary"><p>Gets the client based on the unique client identifier.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -263,7 +263,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Guid</span></td>
+        <td><span class="xref">System.Guid</span></td>
         <td><span class="parametername">clientId</span></td>
         <td><p>The unique client identifier.</p>
 </td>
@@ -305,7 +305,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IReadOnlyCollection</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>&gt;</td>
         <td><p>The clients.</p>
 </td>
       </tr>
@@ -348,14 +348,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">IReadOnlyCollection</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>&gt;</td>
+        <td><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>&gt;</td>
         <td><p>The clients in the specified group.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnConnectAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnConnectAsync_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)">OnConnectAsync(HttpRequest, IServerSentEventsClient)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnConnectAsync_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnConnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)">OnConnectAsync(HttpRequest, IServerSentEventsClient)</h4>
   <div class="markdown level1 summary"><p>Method which is called when client is establishing the connection. The base implementation raises the <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ClientConnected">ClientConnected</a> event.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -374,7 +374,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">HttpRequest</span></td>
+        <td><span class="xref">Microsoft.AspNetCore.Http.HttpRequest</span></td>
         <td><span class="parametername">request</span></td>
         <td><p>The request which has been made in order to establish the connection.</p>
 </td>
@@ -397,14 +397,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnDisconnectAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnDisconnectAsync_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)">OnDisconnectAsync(HttpRequest, IServerSentEventsClient)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnDisconnectAsync_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnDisconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient)">OnDisconnectAsync(HttpRequest, IServerSentEventsClient)</h4>
   <div class="markdown level1 summary"><p>Method which is called when client is disconnecting. The base implementation raises the <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ClientDisconnected">ClientDisconnected</a> event.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -423,7 +423,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">HttpRequest</span></td>
+        <td><span class="xref">Microsoft.AspNetCore.Http.HttpRequest</span></td>
         <td><span class="parametername">request</span></td>
         <td><p>The original request which has been made in order to establish the connection.</p>
 </td>
@@ -446,14 +446,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnReconnectAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnReconnectAsync_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync(HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)">OnReconnectAsync(HttpRequest, IServerSentEventsClient, String)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_OnReconnectAsync_Microsoft_AspNetCore_Http_HttpRequest_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_String_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.OnReconnectAsync(Microsoft.AspNetCore.Http.HttpRequest,Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.String)">OnReconnectAsync(HttpRequest, IServerSentEventsClient, String)</h4>
   <div class="markdown level1 summary"><p>Method which is called when client is reestablishing the connection. The base implementation raises the <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_ClientConnected">ClientConnected</a> event.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -472,7 +472,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">HttpRequest</span></td>
+        <td><span class="xref">Microsoft.AspNetCore.Http.HttpRequest</span></td>
         <td><span class="parametername">request</span></td>
         <td><p>The request which has been made in order to establish the connection.</p>
 </td>
@@ -501,7 +501,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
@@ -544,63 +544,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)">SendEventAsync(ServerSentEvent, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Sends event to all clients.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html">ServerSentEvent</a></td>
-        <td><span class="parametername">serverSentEvent</span></td>
-        <td><p>The event.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The cancellation token to cancel operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>The task object representing the asynchronous operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})">SendEventAsync(ServerSentEvent, Func&lt;IServerSentEventsClient, Boolean&gt;)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})">SendEventAsync(ServerSentEvent, Func&lt;IServerSentEventsClient, Boolean&gt;)</h4>
   <div class="markdown level1 summary"><p>Sends event to all clients.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -625,7 +576,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
         <td><span class="parametername">clientPredicate</span></td>
         <td><p>The function to test each client for a condition.</p>
 </td>
@@ -642,14 +593,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)">SendEventAsync(ServerSentEvent, Func&lt;IServerSentEventsClient, Boolean&gt;, CancellationToken)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)">SendEventAsync(ServerSentEvent, Func&lt;IServerSentEventsClient, Boolean&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Sends event to all clients.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -674,13 +625,13 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
         <td><span class="parametername">clientPredicate</span></td>
         <td><p>The function to test each client for a condition.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token to cancel operation.</p>
 </td>
@@ -697,7 +648,56 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)">SendEventAsync(ServerSentEvent, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Sends event to all clients.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task SendEventAsync(ServerSentEvent serverSentEvent, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html">ServerSentEvent</a></td>
+        <td><span class="parametername">serverSentEvent</span></td>
+        <td><p>The event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token to cancel operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
@@ -740,160 +740,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>The task object representing the asynchronous operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,CancellationToken)">SendEventAsync(String, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Sends event to all clients.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task SendEventAsync(string text, CancellationToken cancellationToken)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">text</span></td>
-        <td><p>The simple text event.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The cancellation token to cancel operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>The task object representing the asynchronous operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})">SendEventAsync(String, Func&lt;IServerSentEventsClient, Boolean&gt;)</h4>
-  <div class="markdown level1 summary"><p>Sends event to all clients.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task SendEventAsync(string text, Func&lt;IServerSentEventsClient, bool&gt; clientPredicate)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">text</span></td>
-        <td><p>The simple text event.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">clientPredicate</span></td>
-        <td><p>The function to test each client for a condition.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>The task object representing the asynchronous operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)">SendEventAsync(String, Func&lt;IServerSentEventsClient, Boolean&gt;, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Sends event to all clients.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task SendEventAsync(string text, Func&lt;IServerSentEventsClient, bool&gt; clientPredicate, CancellationToken cancellationToken)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">text</span></td>
-        <td><p>The simple text event.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
-        <td><span class="parametername">clientPredicate</span></td>
-        <td><p>The function to test each client for a condition.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The cancellation token to cancel operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
@@ -942,69 +789,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)">SendEventAsync(String, ServerSentEvent, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Sends event to clients in group.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task SendEventAsync(string groupName, ServerSentEvent serverSentEvent, CancellationToken cancellationToken)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">groupName</span></td>
-        <td><p>The group name.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html">ServerSentEvent</a></td>
-        <td><span class="parametername">serverSentEvent</span></td>
-        <td><p>The event.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The cancellation token to cancel operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>The task object representing the asynchronous operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})">SendEventAsync(String, ServerSentEvent, Func&lt;IServerSentEventsClient, Boolean&gt;)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})">SendEventAsync(String, ServerSentEvent, Func&lt;IServerSentEventsClient, Boolean&gt;)</h4>
   <div class="markdown level1 summary"><p>Sends event to clients in group.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1035,7 +827,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
         <td><span class="parametername">clientPredicate</span></td>
         <td><p>The function to test each client for a condition.</p>
 </td>
@@ -1052,14 +844,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)">SendEventAsync(String, ServerSentEvent, Func&lt;IServerSentEventsClient, Boolean&gt;, CancellationToken)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)">SendEventAsync(String, ServerSentEvent, Func&lt;IServerSentEventsClient, Boolean&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Sends event to clients in group.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1090,13 +882,13 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
         <td><span class="parametername">clientPredicate</span></td>
         <td><p>The function to test each client for a condition.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token to cancel operation.</p>
 </td>
@@ -1113,7 +905,166 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)">SendEventAsync(String, ServerSentEvent, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Sends event to clients in group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task SendEventAsync(string groupName, ServerSentEvent serverSentEvent, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">groupName</span></td>
+        <td><p>The group name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html">ServerSentEvent</a></td>
+        <td><span class="parametername">serverSentEvent</span></td>
+        <td><p>The event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token to cancel operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})">SendEventAsync(String, Func&lt;IServerSentEventsClient, Boolean&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sends event to all clients.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task SendEventAsync(string text, Func&lt;IServerSentEventsClient, bool&gt; clientPredicate)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The simple text event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">clientPredicate</span></td>
+        <td><p>The function to test each client for a condition.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)">SendEventAsync(String, Func&lt;IServerSentEventsClient, Boolean&gt;, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Sends event to all clients.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task SendEventAsync(string text, Func&lt;IServerSentEventsClient, bool&gt; clientPredicate, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The simple text event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="parametername">clientPredicate</span></td>
+        <td><p>The function to test each client for a condition.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token to cancel operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
@@ -1162,69 +1113,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,CancellationToken)">SendEventAsync(String, String, CancellationToken)</h4>
-  <div class="markdown level1 summary"><p>Sends event to clients in group.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Task SendEventAsync(string groupName, string text, CancellationToken cancellationToken)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">groupName</span></td>
-        <td><p>The group name.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td><span class="parametername">text</span></td>
-        <td><p>The simple text event.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="xref">CancellationToken</span></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The cancellation token to cancel operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Task</span></td>
-        <td><p>The task object representing the asynchronous operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})">SendEventAsync(String, String, Func&lt;IServerSentEventsClient, Boolean&gt;)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean})">SendEventAsync(String, String, Func&lt;IServerSentEventsClient, Boolean&gt;)</h4>
   <div class="markdown level1 summary"><p>Sends event to clients in group.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1255,7 +1151,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
         <td><span class="parametername">clientPredicate</span></td>
         <td><p>The function to test each client for a condition.</p>
 </td>
@@ -1272,14 +1168,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},CancellationToken)">SendEventAsync(String, String, Func&lt;IServerSentEventsClient, Boolean&gt;, CancellationToken)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_System_Func_Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_System_Boolean__System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,System.Func{Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient,System.Boolean},System.Threading.CancellationToken)">SendEventAsync(String, String, Func&lt;IServerSentEventsClient, Boolean&gt;, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Sends event to clients in group.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1310,13 +1206,13 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a>, <span class="xref">System.Boolean</span>&gt;</td>
         <td><span class="parametername">clientPredicate</span></td>
         <td><p>The function to test each client for a condition.</p>
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token to cancel operation.</p>
 </td>
@@ -1333,7 +1229,111 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_String_System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.String,System.Threading.CancellationToken)">SendEventAsync(String, String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Sends event to clients in group.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task SendEventAsync(string groupName, string text, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">groupName</span></td>
+        <td><p>The group name.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The simple text event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token to cancel operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>The task object representing the asynchronous operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_IServerSentEventsService_SendEventAsync_System_String_System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.SendEventAsync(System.String,System.Threading.CancellationToken)">SendEventAsync(String, CancellationToken)</h4>
+  <div class="markdown level1 summary"><p>Sends event to all clients.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Task SendEventAsync(string text, CancellationToken cancellationToken)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">text</span></td>
+        <td><p>The simple text event.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>The cancellation token to cancel operation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
@@ -1359,7 +1359,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.html">ServerSentEventsClientConnectedArgs</a>&gt;</td>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.html">ServerSentEventsClientConnectedArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1382,7 +1382,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.html">ServerSentEventsClientDisconnectedArgs</a>&gt;</td>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.html">ServerSentEventsClientDisconnectedArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -1399,7 +1399,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2017 - 2020 Tomasz Pęczek
+            Copyright © 2017 - 2021 Tomasz Pęczek
             
           </div>
         </div>

@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Disconneting Clients | Lib.AspNetCore.ServerSentEvents </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Disconneting Clients | Lib.AspNetCore.ServerSentEvents ">
+    <meta name="generator" content="docfx 2.58.8.0">
+    
+    <link rel="shortcut icon" href="../resources/ico/favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../resources/svg/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-12">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="disconneting-clients">Disconneting Clients</h1>
+
+<p>There is an option to disconnect a client from server. The flow is based on responding with <em>204 No Content</em> status code to reconnect attempt.</p>
+<center><img src="../resources/disconneting-client-flow.png" alt="Server-Sent Events Client Disconnect Flow Diagram"></center>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The client disconnect functionality requires registering two services, which are not registered by default.</p>
+<h3 id="client-identifier-provider">Client Identifier Provider</h3>
+<p>First is implementation of <a href="../api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClientIdProvider.html"><code>IServerSentEventsClientIdProvider</code></a>, which responsibility is to provide an identifier for a client. This identifier should remain the same if client performs reconnect(s). There is no ready to use implementation of this provider, as the approach to this should strongly depend on context. Below is a sample cookie based implementation (which is certainly not sophisticated enough for production scenarios).</p>
+<pre><code class="lang-cs">internal class CookieBasedServerSentEventsClientIdProvider : IServerSentEventsClientIdProvider
+{
+    private const string COOKIE_NAME = &quot;.ServerSentEvents.Guid&quot;;
+
+    public Guid AcquireClientId(HttpContext context)
+    {
+        Guid clientId;
+
+        string cookieValue = context.Request.Cookies[COOKIE_NAME];
+        if (String.IsNullOrWhiteSpace(cookieValue) || !Guid.TryParse(cookieValue, out clientId))
+        {
+            clientId = Guid.NewGuid();
+
+            context.Response.Cookies.Append(COOKIE_NAME, clientId.ToString());
+        }
+
+        return clientId;
+    }
+
+    public void ReleaseClientId(Guid clientId, HttpContext context)
+    {
+        context.Response.Cookies.Delete(COOKIE_NAME);
+    }
+}
+</code></pre><p>There is a helper method which simplifies registering an implementation.</p>
+<pre><code class="lang-cs">public class Startup
+{
+    ...
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddServerSentEvents();
+
+        // Register cookie based clients identifier provider for Server Sent Events
+        services.AddServerSentEventsClientIdProvider&lt;CookieBasedServerSentEventsClientIdProvider&gt;();
+
+        ...
+    }
+
+    ...
+}
+</code></pre><h3 id="no-reconnect-identifiers-store">&quot;No Reconnect&quot; Identifiers Store</h3>
+<p>Second is implementation of <a href="../api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsNoReconnectClientsIdsStore.html"><code>IServerSentEventsNoReconnectClientsIdsStore</code></a>, which responsibility is to store identifiers which should not be allowed to reconnect. There are two ready to use implementations. First stores the identifiers in memory, while the second is backed by distributed cache. Both have ready to use methods to register them.</p>
+<pre><code class="lang-cs">public class Startup
+{
+    ...
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddServerSentEvents();
+
+        // Register cookie based clients identifier provider for Server Sent Events
+        services.AddServerSentEventsClientIdProvider&lt;CookieBasedServerSentEventsClientIdProvider&gt;();
+
+        // Register IServerSentEventsNoReconnectClientsIdsStore backed by memory store.
+        services.AddInMemoryServerSentEventsNoReconnectClientsIdsStore();
+
+        ...
+    }
+
+    ...
+}
+</code></pre><h2 id="disconnecting-a-client">Disconnecting a Client</h2>
+<p>Disconnecting a client is as simple as calling <code>Disconnect()</code> on a <a href="../api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html"><code>IServerSentEventsClient</code></a>.</p>
+</article>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2017 - 2021 Tomasz Pęczek
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

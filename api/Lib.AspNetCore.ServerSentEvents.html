@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Namespace Lib.AspNetCore.ServerSentEvents
    | Lib.AspNetCore.ServerSentEvents ">
-    <meta name="generator" content="docfx 2.48.0.0">
+    <meta name="generator" content="docfx 2.58.8.0">
     
     <link rel="shortcut icon" href="../resources/ico/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -79,7 +79,7 @@
       <section><p>Defines authorization rules for Server-Sent Events endpoint.</p>
 </section>
       <h4><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.html">ServerSentEventsEndpointRouteBuilderExtensions</a></h4>
-      <section><p>Provides extension methods for <see cref="!:IEndpointRouteBuilder"></see> to add Server-Sent Events.</p>
+      <section><p>Provides extension methods for <span class="xref">Microsoft.AspNetCore.Routing.IEndpointRouteBuilder</span> to add Server-Sent Events.</p>
 </section>
       <h4><a class="xref" href="Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html">ServerSentEventsMiddleware&lt;TServerSentEventsService&gt;</a></h4>
       <section><p>Middleware which provides support for Server-Sent Events protocol.
@@ -111,6 +111,12 @@
       <h4><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a></h4>
       <section><p>Contract for client listening for Server-Sent Events</p>
 </section>
+      <h4><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClientIdProvider.html">IServerSentEventsClientIdProvider</a></h4>
+      <section><p>Contract for provider of identifiers for <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a> instances based on <span class="xref">Microsoft.AspNetCore.Http.HttpContext</span>.</p>
+</section>
+      <h4><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsNoReconnectClientsIdsStore.html">IServerSentEventsNoReconnectClientsIdsStore</a></h4>
+      <section><p>Contract for store which keeps identifiers of <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a> which shouldn&apos;t be allowed to reconnect.</p>
+</section>
       <h4><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html">IServerSentEventsService</a></h4>
       <section><p>Contract for service which provides operations over Server-Sent Events protocol.</p>
 </section>
@@ -134,7 +140,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2017 - 2020 Tomasz Pęczek
+            Copyright © 2017 - 2021 Tomasz Pęczek
             
           </div>
         </div>

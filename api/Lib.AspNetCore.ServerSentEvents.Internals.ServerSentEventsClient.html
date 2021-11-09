@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ServerSentEventsClient
    | Lib.AspNetCore.ServerSentEvents ">
-    <meta name="generator" content="docfx 2.48.0.0">
+    <meta name="generator" content="docfx 2.58.8.0">
     
     <link rel="shortcut icon" href="../resources/ico/favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -77,11 +77,35 @@
     <h5>Implements</h5>
     <div><a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html">IServerSentEventsClient</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.ServerSentEvents.Internals.html">Lib.AspNetCore.ServerSentEvents.Internals</a></h6>
   <h6><strong>Assembly</strong>: Lib.AspNetCore.ServerSentEvents.dll</h6>
   <h5 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class ServerSentEventsClient : object, IServerSentEventsClient</code></pre>
+    <pre><code class="lang-csharp hljs">public sealed class ServerSentEventsClient : IServerSentEventsClient</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -104,7 +128,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Guid</span></td>
+        <td><span class="xref">System.Guid</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -152,13 +176,25 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ClaimsPrincipal</span></td>
+        <td><span class="xref">System.Security.Claims.ClaimsPrincipal</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Disconnect_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Disconnect*"></a>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Disconnect" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Disconnect">Disconnect()</h4>
+  <div class="markdown level1 summary"><p>Disconnects client.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Disconnect()</code></pre>
+  </div>
+  <h5 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Disconnect_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This requires registering implementations of <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsClientIdProvider.html">IServerSentEventsClientIdProvider</a> and <a class="xref" href="Lib.AspNetCore.ServerSentEvents.IServerSentEventsNoReconnectClientsIdsStore.html">IServerSentEventsNoReconnectClientsIdsStore</a>.</p>
+</div>
   <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_GetProperty_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty*"></a>
   <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_GetProperty__1_System_String_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty``1(System.String)">GetProperty&lt;T&gt;(String)</h4>
   <div class="markdown level1 summary"><p>Retrieves a piece of information associated to this client. This method is thread safe.</p>
@@ -314,14 +350,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,CancellationToken)">SendEventAsync(ServerSentEvent, CancellationToken)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_Lib_AspNetCore_ServerSentEvents_ServerSentEvent_System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(Lib.AspNetCore.ServerSentEvents.ServerSentEvent,System.Threading.CancellationToken)">SendEventAsync(ServerSentEvent, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Sends event to client.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -346,7 +382,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token to cancel operation.</p>
 </td>
@@ -363,7 +399,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
@@ -406,14 +442,14 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <a id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync*"></a>
-  <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_System_String_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String,CancellationToken)">SendEventAsync(String, CancellationToken)</h4>
+  <h4 id="Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_SendEventAsync_System_String_System_Threading_CancellationToken_" data-uid="Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.SendEventAsync(System.String,System.Threading.CancellationToken)">SendEventAsync(String, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Sends event to client.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -438,7 +474,7 @@
 </td>
       </tr>
       <tr>
-        <td><span class="xref">CancellationToken</span></td>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
         <td><span class="parametername">cancellationToken</span></td>
         <td><p>The cancellation token to cancel operation.</p>
 </td>
@@ -455,7 +491,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Task</span></td>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
         <td><p>The task object representing the asynchronous operation.</p>
 </td>
       </tr>
@@ -532,7 +568,7 @@
             <span class="pull-right">
               <a href="#top">Back to top</a>
             </span>
-            Copyright © 2017 - 2020 Tomasz Pęczek
+            Copyright © 2017 - 2021 Tomasz Pęczek
             
           </div>
         </div>
