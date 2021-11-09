@@ -1,3 +1,9 @@
+## Lib.AspNetCore.ServerSentEvents 7.0.0
+### Additions and Changes
+- Added support for disconnecting clients. You can read more here: [Server-Sent Events and ASP.NET Core - Disconnecting a Client](https://www.tpeczek.com/2021/11/server-sent-events-and-aspnet-core.html)
+### Bug Fixes
+- Fixed race condition in groups management. This has caused method signature change (`IServerSentEventsService.AddToGroupAsync` to `IServerSentEventsService.AddToGroup`)
+
 ## Lib.AspNetCore.ServerSentEvents 6.0.0
 ### Additions and Changes
 - Changed support for ASP.NET Core 3.0.0 to ASP.NET Core 3.1.0

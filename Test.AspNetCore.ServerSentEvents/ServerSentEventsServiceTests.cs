@@ -69,7 +69,7 @@ namespace Test.AspNetCore.ServerSentEvents
             const string serverSentEventsClientsGroupName = nameof(GetClients_GroupNameProvidedAndGroupExists_ReturnsGroup);
             ServerSentEventsService serverSentEventsService = new ServerSentEventsService(Options.Create<ServerSentEventsServiceOptions<ServerSentEventsService>>(new ServerSentEventsServiceOptions<ServerSentEventsService>
             {
-                OnClientConnected = async (service, clientConnectedArgs) =>
+                OnClientConnected = (service, clientConnectedArgs) =>
                 {
                     service.AddToGroup(serverSentEventsClientsGroupName, clientConnectedArgs.Client);
                 }
