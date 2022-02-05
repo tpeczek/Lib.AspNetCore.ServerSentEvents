@@ -1,11 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Lib.AspNetCore.ServerSentEvents is a library which provides Server-Sent Events (SSE) support for ASP.NET Core</Description>
-    <Copyright>Copyright © 2017 - 2021 Tomasz Pęczek</Copyright>
+    <Copyright>Copyright © 2017 - 2022 Tomasz Pęczek</Copyright>
     <VersionPrefix>7.0.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Authors>Tomasz Pęczek</Authors>
-    <TargetFrameworks>netcoreapp2.1;netcoreapp3.1;net5.0;net461</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;net461</TargetFrameworks>
     <AssemblyTitle>Lib.AspNetCore.ServerSentEvents</AssemblyTitle>
     <AssemblyName>Lib.AspNetCore.ServerSentEvents</AssemblyName>
     <PackageId>Lib.AspNetCore.ServerSentEvents</PackageId>
@@ -22,7 +22,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
-  <ItemGroup Condition="('$(TargetFramework)' == 'netcoreapp2.1') Or ('$(TargetFramework)' == 'net461')">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="[2.1.0,3.0.0)" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="[2.1.0,3.0.0)" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization.Policy" Version="[2.1.0,3.0.0)" />
@@ -31,10 +31,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[2.1.0,3.0.0)" />
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="[2.1.0,3.0.0)" />
   </ItemGroup>
-  <ItemGroup Condition="('$(TargetFramework)' != 'netcoreapp2.1') And ('$(TargetFramework)' != 'net461')">
+  <ItemGroup Condition="'$(TargetFramework)' != 'net461'">
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DotNet.ReproducibleBuilds" Version="0.1.66" PrivateAssets="All"/>
+    <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
 </Project>
