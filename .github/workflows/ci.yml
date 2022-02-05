@@ -12,10 +12,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Setup .NET Core 2.1 SDK
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '2.1.x'
     - name: Setup .NET Core 3.1 SDK
       uses: actions/setup-dotnet@v1
       with:
@@ -24,6 +20,10 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '5.0.x'
+    - name: Setup .NET 6.0 SDK
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
     - name: Restore
       run: dotnet restore
     - name: Build
