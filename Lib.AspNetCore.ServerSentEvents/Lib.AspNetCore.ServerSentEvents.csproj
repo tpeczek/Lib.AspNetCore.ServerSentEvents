@@ -24,12 +24,12 @@
   </PropertyGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="[2.1.0,3.0.0)" />
-    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="[2.1.0,3.0.0)" />
+    <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="[2.1.0,)" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization.Policy" Version="[2.1.0,3.0.0)" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="[2.1.0,3.0.0)" />
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="[2.1.0,3.0.0)" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[2.1.0,3.0.0)" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="[2.1.0,3.0.0)" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="[2.1.0,)" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="[2.1.0,)" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[2.1.0,)" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="[2.1.0,)" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'net461'">
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
