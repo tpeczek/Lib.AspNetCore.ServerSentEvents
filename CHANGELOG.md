@@ -1,3 +1,7 @@
+## Lib.AspNetCore.ServerSentEvents 8.1.0
+### Additions and Changes
+- Removed upper bounds on some of the .NET Framework dependencies versions
+
 ## Lib.AspNetCore.ServerSentEvents 8.0.0
 ### Additions and Changes
 - Dropped support for ASP.NET Core 2.1.0 (the lowest supported version is now ASP.NET Core 3.1.0)

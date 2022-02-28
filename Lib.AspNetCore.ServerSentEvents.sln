@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.ServerSentEvents", "Lib.AspNetCore.ServerSentEvents\Lib.AspNetCore.ServerSentEvents.csproj", "{A0373515-C536-4C8E-B7AD-5878F357556A}"
 EndProject
@@ -9,7 +9,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocFx.AspNetCore.ServerSent
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmark.AspNetCore.ServerSentEvents", "Benchmark.AspNetCore.ServerSentEvents\Benchmark.AspNetCore.ServerSentEvents.csproj", "{C502D468-F253-4574-917B-E31C6EFC28F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.AspNetCore.ServerSentEvents", "Test.AspNetCore.ServerSentEvents\Test.AspNetCore.ServerSentEvents.csproj", "{98E0FAC2-06DD-411B-9707-9EF46E322829}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.AspNetCore.ServerSentEvents", "Test.AspNetCore.ServerSentEvents\Test.AspNetCore.ServerSentEvents.csproj", "{98E0FAC2-06DD-411B-9707-9EF46E322829}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D1EDCC37-B02E-4361-BBF9-19170B84E4B1}"
+	ProjectSection(SolutionItems) = preProject
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
