@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace Lib.AspNetCore.ServerSentEvents
 {
@@ -50,5 +51,12 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Called when client has disconnected.
         /// </summary>
         public Action<IServerSentEventsService, ServerSentEventsClientDisconnectedArgs> OnClientDisconnected { get; set; }
+
+        /// <summary>
+        /// Called to validate clients.
+        /// This can be used to inspect query string parameters and similar and to return other HTTP responses instead
+        /// of accepting the SSE connection.
+        /// </summary>
+        public Func<ServerSentEventsClientValidationArgs, Task<bool>> ValidationHandler { get; set; }
     }
 }

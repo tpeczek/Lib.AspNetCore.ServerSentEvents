@@ -76,6 +76,13 @@ namespace Lib.AspNetCore.ServerSentEvents
                 {
                     return;
                 }
+                
+                string lastEventId = context.Request.Headers[Constants.LAST_EVENT_ID_HTTP_HEADER];
+                var isValid = await _serverSentEventsService.OnValidateConnectionAsync(context.Request, context.Response, lastEventId);
+                if (!isValid)
+                {
+                    return;
+                }
 
                 Guid clientId = _serverSentEventsClientIdProvider.AcquireClientId(context);
                 if (_serverSentEventsService.IsClientConnected(clientId))

@@ -37,6 +37,11 @@ namespace Lib.AspNetCore.ServerSentEvents
         void Disconnect();
 
         /// <summary>
+        /// Disconnects the currently connected request only.
+        /// </summary>
+        void DisconnectCurrentRequest();
+
+        /// <summary>
         /// Sends event to client.
         /// </summary>
         /// <param name="text">The simple text event.</param>

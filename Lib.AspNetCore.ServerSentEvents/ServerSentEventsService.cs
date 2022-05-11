@@ -57,6 +57,11 @@ namespace Lib.AspNetCore.ServerSentEvents
                 {
                     ClientDisconnected += (sender, args) => serviceOptions.OnClientDisconnected((IServerSentEventsService)sender, args);
                 }
+
+                if (serviceOptions.ValidationHandler != null) 
+                {
+                    ValidationHandler = serviceOptions.ValidationHandler;
+                }
             }
         }
         #endregion
@@ -66,6 +71,8 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Gets the interval after which clients will attempt to reestablish failed connections.
         /// </summary>
         public uint? ReconnectInterval { get; private set; }
+
+        public Func<ServerSentEventsClientValidationArgs, Task<bool>> ValidationHandler { get; set; }
         #endregion
 
         #region Methods
@@ -376,6 +383,24 @@ namespace Lib.AspNetCore.ServerSentEvents
             ClientDisconnected?.Invoke(this, new ServerSentEventsClientDisconnectedArgs(request, client));
 
             return Task.CompletedTask;
+        }
+
+        /// <summary>
+        /// Method which is called to validate a connection. The base implementation calls the <see cref="ValidationHandler"/> callback.
+        /// </summary>
+        /// <param name="request">The request which has been made in order to establish the connection.</param>
+        /// <param name="response">The response, if necessary to handle the request.</param>
+        /// <param name="lastEventId">The identifier of last event which client has received.</param>
+        /// <returns>The task object representing the outcome of the validation. If the validation succeeded, the connection will continue, otherwise the validation is assumed to have handled the request.</returns>
+        public virtual async Task<bool> OnValidateConnectionAsync(HttpRequest request, HttpResponse response, string lastEventId)
+        {
+            if (ValidationHandler != null) {
+                var args = new ServerSentEventsClientValidationArgs(request, response, lastEventId);
+                var isValid = await ValidationHandler(args);
+                return isValid;
+            }
+
+            return true;
         }
 
         internal void AddClient(ServerSentEventsClient client)

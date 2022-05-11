@@ -105,6 +105,18 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         }
 
         /// <summary>
+        /// Disconnects the currently connected request only.
+        /// </summary>
+        public void DisconnectCurrentRequest()
+        {
+            if (IsConnected) {
+                IsConnected = false;
+                _response.HttpContext.Abort();
+            }
+        }
+
+
+        /// <summary>
         /// Sends event to client.
         /// </summary>
         /// <param name="text">The simple text event.</param>

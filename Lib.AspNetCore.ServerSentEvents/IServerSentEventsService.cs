@@ -28,6 +28,14 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// Gets the interval after which clients will attempt to reestablish failed connections.
         /// </summary>
         uint? ReconnectInterval { get; }
+
+        /// <summary>
+        /// Gets the callback that will be used to validate an incoming connection.
+        /// </summary>
+        /// <remarks>
+        /// If the callback handled the request, <c>false</c> is returned and the protocol will not be started.
+        /// </remarks>
+        Func<ServerSentEventsClientValidationArgs, Task<bool>> ValidationHandler { get; }
         #endregion
 
         #region Methods
@@ -234,6 +242,16 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <param name="client">The client who is disconnecting.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         Task OnDisconnectAsync(HttpRequest request, IServerSentEventsClient client);
+
+        /// <summary>
+        /// Method which is called to validate a connection. The base implementation calls the <see cref="ValidationHandler"/> callback.
+        /// </summary>
+        /// <param name="request">The request which has been made in order to establish the connection.</param>
+        /// <param name="response">The response, if necessary to handle the request.</param>
+        /// <param name="lastEventId">The identifier of last event which client has received.</param>
+        /// <returns>The task object representing the outcome of the validation. If the validation succeeded, the connection will continue, otherwise the validation is assumed to have handled the request.</returns>
+        Task<bool> OnValidateConnectionAsync(HttpRequest request, HttpResponse response, string lastEventId);
+
         #endregion
     }
 }

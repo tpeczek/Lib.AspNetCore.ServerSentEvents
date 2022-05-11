@@ -81,6 +81,28 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware
         }
 
         [Fact]
+        public async Task Invoke_DisconnectedCurrentRequestByServer_DoesNotPreventReconnect()
+        {
+            Mock<IServerSentEventsClientIdProvider> serverSentEventsClientIdProviderMock = PrepareServerSentEventsClientIdProviderMock();
+            Mock<IServerSentEventsNoReconnectClientsIdsStore> serverSentEventsNoReconnectClientsIdsStoreMock = new Mock<IServerSentEventsNoReconnectClientsIdsStore>();
+            ServerSentEventsService serverSentEventsService = new TestServerSentEventsService();
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(
+                serverSentEventsClientIdProvider: serverSentEventsClientIdProviderMock.Object,
+                serverSentEventsNoReconnectClientsIdsStore: serverSentEventsNoReconnectClientsIdsStoreMock.Object,
+                serverSentEventsService: serverSentEventsService);
+
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(httpRequestLifetimeFeature: new TestHttpRequestLifetimeFeature());
+
+            Task middlewareInvokeTask = serverSentEventsMiddleware.Invoke(context, null);
+
+            serverSentEventsService.GetClient(CLIENT_ID).DisconnectCurrentRequest();
+
+            await middlewareInvokeTask;
+
+            serverSentEventsNoReconnectClientsIdsStoreMock.Verify(o => o.AddClientIdAsync(It.IsAny<Guid>()), Times.Never);
+        }
+
+        [Fact]
         public async Task Invoke_DisconnectedByServer_PreventsReconnect()
         {
             Mock<IServerSentEventsClientIdProvider> serverSentEventsClientIdProviderMock = PrepareServerSentEventsClientIdProviderMock();

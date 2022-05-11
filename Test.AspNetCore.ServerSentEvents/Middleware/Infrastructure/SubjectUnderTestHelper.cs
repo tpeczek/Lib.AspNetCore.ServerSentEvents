@@ -27,7 +27,8 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware.Infrastructure
             IServerSentEventsClientIdProvider serverSentEventsClientIdProvider = null,
             IServerSentEventsNoReconnectClientsIdsStore serverSentEventsNoReconnectClientsIdsStore = null,
             ServerSentEventsService serverSentEventsService = null,
-            ServerSentEventsOptions options = null)
+            ServerSentEventsOptions options = null,
+            bool validateConnectionResult = true)
         {
             return new ServerSentEventsMiddleware<ServerSentEventsService>
             (
@@ -35,7 +36,7 @@ namespace Test.AspNetCore.ServerSentEvents.Middleware.Infrastructure
                 authorizationPolicyProvider ?? Mock.Of<IAuthorizationPolicyProvider>(),
                 serverSentEventsClientIdProvider ?? new NewGuidServerSentEventsClientIdProvider(),
                 serverSentEventsNoReconnectClientsIdsStore ?? new NoOpServerSentEventsNoReconnectClientsIdsStore(),
-                serverSentEventsService ?? Mock.Of<TestServerSentEventsService>(),
+                serverSentEventsService ?? Mock.Of<TestServerSentEventsService>(s => s.OnValidateConnectionAsync(It.IsAny<HttpRequest>(), It.IsAny<HttpResponse>(), It.IsAny<string>()).Result == validateConnectionResult),
                 Options.Create(options ?? new ServerSentEventsOptions()),
                 NullLoggerFactory.Instance
             );
