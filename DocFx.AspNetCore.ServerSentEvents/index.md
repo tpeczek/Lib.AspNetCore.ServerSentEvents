@@ -12,7 +12,7 @@ You can install [Lib.AspNetCore.ServerSentEvents](https://www.nuget.org/packages
 PM>  Install-Package Lib.AspNetCore.ServerSentEvents
 ```
 
-The configuration and basic usage patterns are described [here](articles/getting-started.md).
+The configuration and basic usage patterns are described [here](articles/getting-started.html).
 
 ## Demos
 

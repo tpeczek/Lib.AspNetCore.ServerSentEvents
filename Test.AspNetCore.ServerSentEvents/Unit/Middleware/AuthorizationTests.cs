@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Authorization.Policy;
 using Moq;
 using Xunit;
 using Lib.AspNetCore.ServerSentEvents;
-using Test.AspNetCore.ServerSentEvents.Middleware.Infrastructure;
+using Test.AspNetCore.ServerSentEvents.Unit.Middleware.Infrastructure;
 
-namespace Test.AspNetCore.ServerSentEvents.Middleware
+namespace Test.AspNetCore.ServerSentEvents.Unit.Middleware
 {
     public class AuthorizationTests
     {

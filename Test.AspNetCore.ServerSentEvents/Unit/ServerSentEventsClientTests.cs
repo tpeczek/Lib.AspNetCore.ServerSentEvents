@@ -7,7 +7,7 @@ using Xunit;
 using Lib.AspNetCore.ServerSentEvents;
 using Lib.AspNetCore.ServerSentEvents.Internals;
 
-namespace Test.AspNetCore.ServerSentEvents
+namespace Test.AspNetCore.ServerSentEvents.Unit
 {
     public class ServerSentEventsClientTests
     {

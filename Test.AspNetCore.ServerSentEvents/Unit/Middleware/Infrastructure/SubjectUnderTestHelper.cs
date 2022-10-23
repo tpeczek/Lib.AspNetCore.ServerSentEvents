@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using Lib.AspNetCore.ServerSentEvents;
 
-namespace Test.AspNetCore.ServerSentEvents.Middleware.Infrastructure
+namespace Test.AspNetCore.ServerSentEvents.Unit.Middleware.Infrastructure
 {
     internal static class SubjectUnderTestHelper
     {

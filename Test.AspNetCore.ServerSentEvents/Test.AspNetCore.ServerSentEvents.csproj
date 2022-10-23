@@ -2,6 +2,8 @@
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;net461</TargetFrameworks>
     <IsPackable>false</IsPackable>
+    <LangVersion>latest</LangVersion>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
@@ -14,10 +16,20 @@
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
     <PackageReference Include="Microsoft.AspNetCore.Http" Version="[2.1.0,3.0.0)" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="[2.1.0,3.0.0)" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="[2.1.0,3.0.0)" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' != 'net461'">
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net5.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="6.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lib.AspNetCore.ServerSentEvents\Lib.AspNetCore.ServerSentEvents.csproj" />
