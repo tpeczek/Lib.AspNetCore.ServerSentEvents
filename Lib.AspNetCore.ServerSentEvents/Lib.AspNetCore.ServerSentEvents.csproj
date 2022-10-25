@@ -12,6 +12,7 @@
     <PackageTags>aspnetcore;sse;server-sent;events;eventsource</PackageTags>
     <PackageProjectUrl>https://github.com/tpeczek/Lib.AspNetCore.ServerSentEvents</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/tpeczek/Lib.AspNetCore.ServerSentEvents</RepositoryUrl>
     <GenerateAssemblyTitleAttribute>true</GenerateAssemblyTitleAttribute>

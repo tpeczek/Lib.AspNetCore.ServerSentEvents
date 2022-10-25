@@ -9,7 +9,7 @@ using Xunit;
 using Lib.AspNetCore.ServerSentEvents;
 using Lib.AspNetCore.ServerSentEvents.Internals;
 
-namespace Test.AspNetCore.ServerSentEvents
+namespace Test.AspNetCore.ServerSentEvents.Unit
 {
     public class ServerSentEventsServiceTests
     {
@@ -18,7 +18,7 @@ namespace Test.AspNetCore.ServerSentEvents
         {
             HttpContext context = new DefaultHttpContext();
             ServerSentEventsClient serverSentEventsClient = new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), context.Response, false);
-            
+
             await serverSentEventsService.OnConnectAsync(context.Request, serverSentEventsClient);
 
             serverSentEventsService.AddClient(serverSentEventsClient);
@@ -32,7 +32,7 @@ namespace Test.AspNetCore.ServerSentEvents
         public void RemoveClient_ClientsBeingAddedToGroupsInParaller_NoRaceCondition()
         {
             // ARRANGE
-            ServerSentEventsService serverSentEventsService = new ServerSentEventsService(Options.Create<ServerSentEventsServiceOptions<ServerSentEventsService>>(new ServerSentEventsServiceOptions<ServerSentEventsService>
+            ServerSentEventsService serverSentEventsService = new ServerSentEventsService(Options.Create(new ServerSentEventsServiceOptions<ServerSentEventsService>
             {
                 OnClientConnected = (service, clientConnectedArgs) =>
                 {
@@ -67,7 +67,7 @@ namespace Test.AspNetCore.ServerSentEvents
         {
             // ARRANGE
             const string serverSentEventsClientsGroupName = nameof(GetClients_GroupNameProvidedAndGroupExists_ReturnsGroup);
-            ServerSentEventsService serverSentEventsService = new ServerSentEventsService(Options.Create<ServerSentEventsServiceOptions<ServerSentEventsService>>(new ServerSentEventsServiceOptions<ServerSentEventsService>
+            ServerSentEventsService serverSentEventsService = new ServerSentEventsService(Options.Create(new ServerSentEventsServiceOptions<ServerSentEventsService>
             {
                 OnClientConnected = (service, clientConnectedArgs) =>
                 {

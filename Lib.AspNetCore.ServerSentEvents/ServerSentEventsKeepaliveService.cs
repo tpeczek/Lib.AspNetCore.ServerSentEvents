@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Lib.AspNetCore.ServerSentEvents.Internals;
@@ -12,7 +13,7 @@ namespace Lib.AspNetCore.ServerSentEvents
     {
         #region Fields
         private readonly bool _isBehindAncm = IsBehindAncm();
-        private readonly static ServerSentEventBytes _keepaliveServerSentEventBytes = ServerSentEventsHelper.GetCommentBytes("KEEPALIVE");
+        private readonly ServerSentEventBytes _keepaliveServerSentEventBytes;
 
         private readonly CancellationTokenSource _stoppingCts = new CancellationTokenSource();
 
@@ -26,7 +27,11 @@ namespace Lib.AspNetCore.ServerSentEvents
         public ServerSentEventsKeepaliveService(TServerSentEventsService serverSentEventsService, IOptions<ServerSentEventsServiceOptions<TServerSentEventsService>> options)
         {
             _options = options?.Value ?? throw new ArgumentNullException(nameof(options));
+
             _serverSentEventsService = serverSentEventsService;
+            _keepaliveServerSentEventBytes = (_options.KeepaliveKind == ServerSentEventsKeepaliveKind.Comment)
+                ? ServerSentEventsHelper.GetCommentBytes(_options.KeepaliveContent)
+                : ServerSentEventsHelper.GetEventBytes(new ServerSentEvent { Type = _options.KeepaliveContent, Data = new List<string> { String.Empty } });
         }
         #endregion
 

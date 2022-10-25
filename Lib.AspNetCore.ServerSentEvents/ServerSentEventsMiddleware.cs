@@ -217,7 +217,7 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         private void DisableResponseBuffering(HttpContext context)
         {
-#if !NETCOREAPP2_1 && !NET461
+#if !NET461
             IHttpResponseBodyFeature responseBodyFeature = context.Features.Get<IHttpResponseBodyFeature>();
             if (responseBodyFeature != null)
             {
