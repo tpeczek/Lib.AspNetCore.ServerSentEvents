@@ -17,15 +17,18 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
     {
         #region Fields
         private const int KEEPALIVE_INTERVAL = 1;
-        private readonly static TimeSpan KEEPALIVE_TIMESPAN = TimeSpan.FromSeconds(KEEPALIVE_INTERVAL);
+        private readonly static TimeSpan KEEPALIVE_TIMESPAN = TimeSpan.FromSeconds(KEEPALIVE_INTERVAL + 1);
 
         private const string DEFAULT_KEEPALIVE = ": KEEPALIVE\r\n\r\n";
+        private const string CUSTOM_KEEPALIVE_CONTENT = "PING";
+        private const string CUSTOM_KEEPALIVE_COMMENT = ": PING\r\n\r\n";
+        private const string CUSTOM_KEEPALIVE_EVENT = "event: PING\r\ndata: \r\n\r\n";
         #endregion
 
         #region SUT
-        private class KeepaliveModeNeverServerSentEventsServerStartup : FakeServerSentEventsServerStartup
+        private class KeepaliveNeverServerSentEventsServerStartup : FakeServerSentEventsServerStartup
         {
-            public KeepaliveModeNeverServerSentEventsServerStartup(IConfiguration configuration) : base(configuration)
+            public KeepaliveNeverServerSentEventsServerStartup(IConfiguration configuration) : base(configuration)
             { }
 
             protected override Action<ServerSentEventsServiceOptions<ServerSentEventsService>> ConfigureServerSentEventsOption
@@ -41,9 +44,9 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
             }
         }
 
-        private class KeepaliveModeAlwaysServerSentEventsServerStartup : FakeServerSentEventsServerStartup
+        private class KeepaliveDefultAlwaysServerSentEventsServerStartup : FakeServerSentEventsServerStartup
         {
-            public KeepaliveModeAlwaysServerSentEventsServerStartup(IConfiguration configuration) : base(configuration)
+            public KeepaliveDefultAlwaysServerSentEventsServerStartup(IConfiguration configuration) : base(configuration)
             { }
 
             protected override Action<ServerSentEventsServiceOptions<ServerSentEventsService>> ConfigureServerSentEventsOption
@@ -58,13 +61,53 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
                 }
             }
         }
+
+        private class KeepaliveCustomCommentAlwaysServerSentEventsServerStartup : FakeServerSentEventsServerStartup
+        {
+            public KeepaliveCustomCommentAlwaysServerSentEventsServerStartup(IConfiguration configuration) : base(configuration)
+            { }
+
+            protected override Action<ServerSentEventsServiceOptions<ServerSentEventsService>> ConfigureServerSentEventsOption
+            {
+                get
+                {
+                    return options =>
+                    {
+                        options.KeepaliveMode = ServerSentEventsKeepaliveMode.Always;
+                        options.KeepaliveInterval = KEEPALIVE_INTERVAL;
+                        options.KeepaliveKind = ServerSentEventsKeepaliveKind.Comment;
+                        options.KeepaliveContent = CUSTOM_KEEPALIVE_CONTENT;
+                    };
+                }
+            }
+        }
+
+        private class KeepaliveCustomEventAlwaysServerSentEventsServerStartup : FakeServerSentEventsServerStartup
+        {
+            public KeepaliveCustomEventAlwaysServerSentEventsServerStartup(IConfiguration configuration) : base(configuration)
+            { }
+
+            protected override Action<ServerSentEventsServiceOptions<ServerSentEventsService>> ConfigureServerSentEventsOption
+            {
+                get
+                {
+                    return options =>
+                    {
+                        options.KeepaliveMode = ServerSentEventsKeepaliveMode.Always;
+                        options.KeepaliveInterval = KEEPALIVE_INTERVAL;
+                        options.KeepaliveKind = ServerSentEventsKeepaliveKind.Event;
+                        options.KeepaliveContent = CUSTOM_KEEPALIVE_CONTENT;
+                    };
+                }
+            }
+        }
         #endregion
 
         #region Tests
         [Fact]
         public async Task ServerSentEventsServer_KeepaliveModeNever_DoesNotSendKeepalive()
         {
-            using FakeServerSentEventsServerrApplicationFactory<KeepaliveModeNeverServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new();
+            using FakeServerSentEventsServerrApplicationFactory<KeepaliveNeverServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new();
             HttpClient serverSentEventsClient = serverSentEventsServerApplicationFactory.CreateClient();
 
             string serverSentEvents = await GetServerSentEvents(serverSentEventsClient).ConfigureAwait(false);
@@ -75,12 +118,34 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
         [Fact]
         public async Task ServerSentEventsServer_KeepaliveModeAlways_SendsDefaultKeepalive()
         {
-            using FakeServerSentEventsServerrApplicationFactory<KeepaliveModeAlwaysServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new ();
+            using FakeServerSentEventsServerrApplicationFactory<KeepaliveDefultAlwaysServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new ();
             HttpClient serverSentEventsClient = serverSentEventsServerApplicationFactory.CreateClient();
 
             string serverSentEvents = await GetServerSentEvents(serverSentEventsClient).ConfigureAwait(false);
 
             Assert.Matches($"^({DEFAULT_KEEPALIVE})+$", serverSentEvents);
+        }
+
+        [Fact]
+        public async Task ServerSentEventsServer_KeepaliveModeAlwaysKeepaliveKindCommentKeepaliveContentCustom_SendsCustomCommentKeepalive()
+        {
+            using FakeServerSentEventsServerrApplicationFactory<KeepaliveCustomCommentAlwaysServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new();
+            HttpClient serverSentEventsClient = serverSentEventsServerApplicationFactory.CreateClient();
+
+            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient).ConfigureAwait(false);
+
+            Assert.Matches($"^({CUSTOM_KEEPALIVE_COMMENT})+$", serverSentEvents);
+        }
+
+        [Fact]
+        public async Task ServerSentEventsServer_KeepaliveModeAlwaysKeepaliveKindEventKeepaliveContentCustom_SendsCustomEventKeepalive()
+        {
+            using FakeServerSentEventsServerrApplicationFactory<KeepaliveCustomEventAlwaysServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new();
+            HttpClient serverSentEventsClient = serverSentEventsServerApplicationFactory.CreateClient();
+
+            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient).ConfigureAwait(false);
+
+            Assert.Matches($"^({CUSTOM_KEEPALIVE_EVENT})+$", serverSentEvents);
         }
 
         private static async Task<string> GetServerSentEvents(HttpClient serverSentEventsClient)
@@ -103,9 +168,8 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
 
                         try
                         {
-                            CancellationTokenSource keepaliveCancellationTokenSource = new CancellationTokenSource();
-                            keepaliveCancellationTokenSource.CancelAfter(KEEPALIVE_TIMESPAN);
-
+                            using CancellationTokenSource keepaliveCancellationTokenSource = new CancellationTokenSource(KEEPALIVE_TIMESPAN);
+                            
                             int bytesRead = await responseStream.ReadAsync(buffer, 0, buffer.Length, keepaliveCancellationTokenSource.Token).ConfigureAwait(false);
                             serverSentEventsResponseContent += Encoding.UTF8.GetString(buffer, 0, bytesRead);
                         }
