@@ -173,7 +173,7 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
                             int bytesRead = await responseStream.ReadAsync(buffer, 0, buffer.Length, keepaliveCancellationTokenSource.Token).ConfigureAwait(false);
                             serverSentEventsResponseContent += Encoding.UTF8.GetString(buffer, 0, bytesRead);
                         }
-                        catch (OperationCanceledException)
+                        catch (Exception ex) when (ex is OperationCanceledException || ex.InnerException is OperationCanceledException)
                         { }
 
                         ArrayPool<byte>.Shared.Return(buffer);
