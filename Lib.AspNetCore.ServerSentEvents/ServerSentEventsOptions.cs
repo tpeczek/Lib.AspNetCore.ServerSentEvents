@@ -26,5 +26,10 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// This can be used to add or change the response headers.
         /// </summary>
         public Action<HttpResponse> OnPrepareAccept { get; set; }
+
+        /// <summary>
+        /// Gets or sets the value indicating if Accept HTTP header with value of text/event-stream should be required.
+        /// </summary>
+        public bool RequireAcceptHeader { get; set; } = false;
     }
 }

@@ -16,7 +16,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit.Middleware
 
         #region Tests
         [Fact]
-        public async Task Invoke_SseRequestWithoutAcceptHeader_Accepts()
+        public async Task Invoke_SseRequestWithoutAcceptHeaderAndAcceptHeaderNotRequired_Accepts()
         {
             ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware();
             HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(acceptHeaderValue: null);
@@ -24,6 +24,17 @@ namespace Test.AspNetCore.ServerSentEvents.Unit.Middleware
             await serverSentEventsMiddleware.Invoke(context, null);
 
             Assert.Equal(SSE_CONTENT_TYPE, context.Response.ContentType);
+        }
+
+        [Fact]
+        public async Task Invoke_SseRequestWithoutAcceptHeaderAndAcceptHeaderRequired_DoesNotAccept()
+        {
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware(options: new ServerSentEventsOptions { RequireAcceptHeader = true });
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(acceptHeaderValue: null);
+
+            await serverSentEventsMiddleware.Invoke(context, null);
+
+            Assert.Null(context.Response.ContentType);
         }
 
         [Fact]
