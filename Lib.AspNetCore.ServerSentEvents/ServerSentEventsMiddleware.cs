@@ -118,12 +118,12 @@ namespace Lib.AspNetCore.ServerSentEvents
         {
             if (!requestHeaders.ContainsKey(Constants.ACCEPT_HTTP_HEADER))
             {
-                return true;
+                return !_serverSentEventsOptions.RequireAcceptHeader;
             }
 
             if (requestHeaders[Constants.ACCEPT_HTTP_HEADER].Count == 0)
             {
-                return true;
+                return !_serverSentEventsOptions.RequireAcceptHeader;
             }
 
             if (requestHeaders[Constants.ACCEPT_HTTP_HEADER].Any(acceptHeaderValue => acceptHeaderValue == Constants.SSE_CONTENT_TYPE))
