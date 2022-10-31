@@ -133,7 +133,7 @@ public class Startup
 <h3 id="changing-reconnect-interval">Changing Reconnect Interval</h3>
 <p>The interval after which client attempts to reconnect can be controlled by the application. In order to change the interval for specific endpoint it is enough to call <code>IServerSentEventsService.ChangeReconnectIntervalAsync</code>.</p>
 <h2 id="keepalives">Keepalives</h2>
-<p>Keepalives are supported in three <a href="../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.html">modes</a>. By default the will be automatically send if ANCM is detected, but both the mode and interval can be changed per <code>ServerSentEventsService</code> type.</p>
+<p>Keepalives are supported in three <a href="../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.html">modes</a>. By default they will be automatically send if ANCM is detected, but both the mode and interval can be changed per <code>ServerSentEventsService</code> type.</p>
 <pre><code class="lang-cs">public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
@@ -150,6 +150,43 @@ public class Startup
     }
 
     ...
+}
+</code></pre><p>In addition, the format of keepalives can also be configured. The options include choosing the <a href="../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveKind.html">kind</a> of the content to send (comment or event) as well as setting the content itself.</p>
+<pre><code class="lang-cs">public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+        services.AddServerSentEvents&lt;INotificationsServerSentEventsService, NotificationsServerSentEventsService&gt;(options =&gt;
+        {
+            ...
+            options.KeepaliveKind = ServerSentEventsKeepaliveKind.Event;
+            options.KeepaliveContent = &quot;PING&quot;;
+        });
+
+        ...
+    }
+
+    ...
+}
+</code></pre><h2 id="accept-request-header-validation">Accept Request Header Validation</h2>
+<p>The part of HTML Standard specifications which covers Server-Sent Events doesn&#39;t force user agents to set <code>Accept: text/event-stream</code>, it&#39;s optional. Because of that, by default, this library will accepts request with <code>Accept</code> header which value includes <code>text/event-stream</code> or request without <code>Accept</code> header. Sometimes this may not be desired behavior, so there is an option which allows for introducing string requirement for request to contain <code>Accept</code> header including <code>text/event-stream</code> value.</p>
+<pre><code class="lang-cs">public class Startup
+{
+    ...
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+
+        app.MapServerSentEvents(&quot;/default-sse-endpoint&quot;, new ServerSentEventsOptions
+        {
+            RequireAcceptHeader = true
+        });
+
+        ...
+    }
 }
 </code></pre></article>
           </div>
