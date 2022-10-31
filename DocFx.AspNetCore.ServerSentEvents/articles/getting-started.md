@@ -104,7 +104,7 @@ The interval after which client attempts to reconnect can be controlled by the a
 
 ## Keepalives
 
-Keepalives are supported in three [modes](../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.html). By default the will be automatically send if ANCM is detected, but both the mode and interval can be changed per `ServerSentEventsService` type.
+Keepalives are supported in three [modes](../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.html). By default they will be automatically send if ANCM is detected, but both the mode and interval can be changed per `ServerSentEventsService` type.
 
 ```cs
 public class Startup
@@ -123,5 +123,51 @@ public class Startup
     }
 
     ...
+}
+```
+
+In addition, the format of keepalives can also be configured. The options include choosing the [kind](../api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveKind.html) of the content to send (comment or event) as well as setting the content itself.
+
+```cs
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
+        ...
+
+		services.AddServerSentEvents<INotificationsServerSentEventsService, NotificationsServerSentEventsService>(options =>
+        {
+            ...
+            options.KeepaliveKind = ServerSentEventsKeepaliveKind.Event;
+            options.KeepaliveContent = "PING";
+        });
+
+		...
+    }
+
+    ...
+}
+```
+
+## Accept Request Header Validation
+
+The part of HTML Standard specifications which covers Server-Sent Events doesn't force user agents to set `Accept: text/event-stream`, it's optional. Because of that, by default, this library will accepts request with `Accept` header which value includes `text/event-stream` or request without `Accept` header. Sometimes this may not be desired behavior, so there is an option which allows for introducing string requirement for request to contain `Accept` header including `text/event-stream` value.
+
+```cs
+public class Startup
+{
+    ...
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+        ...
+
+        app.MapServerSentEvents("/default-sse-endpoint", new ServerSentEventsOptions
+        {
+            RequireAcceptHeader = true
+        });
+			
+		...
+    }
 }
 ```

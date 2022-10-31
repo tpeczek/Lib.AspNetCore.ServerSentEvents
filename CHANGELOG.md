@@ -1,3 +1,8 @@
+## Lib.AspNetCore.ServerSentEvents 8.2.0
+### Additions and Changes
+- Added options for controlling the format of [keepalives](https://tpeczek.github.io/Lib.AspNetCore.ServerSentEvents/articles/getting-started.html#keepalives).
+- Added options for controlling the [`Accept` request header validation](https://tpeczek.github.io/Lib.AspNetCore.ServerSentEvents/articles/getting-started.html#accept-request-header-validation).
+
 ## Lib.AspNetCore.ServerSentEvents 8.1.0
 ### Additions and Changes
 - Removed upper bounds on some of the .NET Framework dependencies versions
