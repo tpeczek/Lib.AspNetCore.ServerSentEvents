@@ -4,12 +4,276 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html",
+          "hash": "xVfe62XIWRUKb67eWsl6dF28bYYKx5K0Qp3+TJSuih4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClientIdProvider.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClientIdProvider.html",
+          "hash": "oWRzbFfjx5nVhMBZq1b/Y4PRd8+ew5+rOy36QOgNUtU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsNoReconnectClientsIdsStore.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsNoReconnectClientsIdsStore.html",
+          "hash": "2TsWJG5gIw76nBbXsm9/Pz0jHGHPb50yCSk9cq+r6V0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsService.html",
+          "hash": "e19VrykeDwiX7P6azSiA1Oh5dyby31Eo4gm5g6o6ux8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html",
+          "hash": "oSvqYFVxTSZE6DnhHsz8hhwkjIhT17i8/2mVi+1rEBE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.Internals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.Internals.html",
+          "hash": "PmkLTdpEdkJ847tfoYxAEvezdu7WwvaCb7SYT+admuk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.OptionsExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.OptionsExtensions.html",
+          "hash": "jXgzkIDhhtiC2PfHETfAXAprVfuCH7MmqS+d7iAMj14="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEvent.html",
+          "hash": "KgBdw4LLyE/+jX7p4z3s0zd+vEdhiVwGgTVU6gTteGg="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAddToGroupResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAddToGroupResult.html",
+          "hash": "56Y7cFFQmQtOOJvNvTfPTwedHR3ouFIYde91bQMxSz4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsAuthorization.html",
+          "hash": "yOdHQYQGldicVTvAj9ltqfyYof+XQBAyww/9XL5YGv0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientConnectedArgs.html",
+          "hash": "nCtCblSlrti7WbudSnY7RYPfK2MuVjc7VwLA9TnPHpo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsClientDisconnectedArgs.html",
+          "hash": "MmWIbLt+PpirQEAaReG6KpZN2/i/OpRftMGD9hN84AM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsEndpointRouteBuilderExtensions.html",
+          "hash": "M1sqVxrRo0T6aKZJ2QscAVR+KqUvmxOuFv0jS5JtFr0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveKind.html",
+          "hash": "vYMmmV1rZpbezPzO/d9Eimnvh5dgdWl9W39edJb6cpk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsKeepaliveMode.html",
+          "hash": "g+UegBe7Gb7DM0NoCSYbqBk4/qMW9oGLwrJ6cBM8WW8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddleware-1.html",
+          "hash": "beOBNUtBJWAUotTJdv3uVkeCm7yd8Nr5kjYdJSKmPw0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsMiddlewareExtensions.html",
+          "hash": "i44vJZNvdOsxoKfqXw8XRbIT5Eq3TEBv4EiSWyUWluM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsOptions.html",
+          "hash": "CcZKUVEv6rKPIOyL87Gl4xLNoN4e+fZs8fwdU/eDGQs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsService.html",
+          "hash": "91edNPrJ8cT4Ufv3JM5lYu4xtHLE6sOhDN5Vpz/mt2A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.ServerSentEventsServiceOptions-1.html",
+          "hash": "55L2sc6O0d68C7igNl5ruaTssSnkOQ5q8R9qVMM2yAc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Lib.AspNetCore.ServerSentEvents.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Lib.AspNetCore.ServerSentEvents.html",
+          "hash": "F99q3GRwWsdKJZiRus/gh2qXfc+XNSb8NiYyqBqGsFk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "wqJiqXIAYUXdwCU1KVELc08rHb+U+pm9B/g6vHVmujo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "articles/advanced.md",
       "output": {
         ".html": {
           "relative_path": "articles/advanced.html",
-          "hash": "6v9sMB/YF02siC3hg8w+xrfDmLkC3I+NRgVrTBmMMcs="
+          "hash": "eeBtLgigSqb7LcpPohNPIisyIDIUo3XZvNyk8CBf43c="
         }
       },
       "is_incremental": false,
@@ -21,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/authorization.html",
-          "hash": "ioqE3JhCFTnsVGt9Wa/P7OnCmz7yUsivIuEcTjjod2E="
+          "hash": "hIHDgwt5HV/bKLH36em+t0SVPexaaM5SCdVboDPikrM="
         }
       },
       "is_incremental": false,
@@ -36,7 +300,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/disconneting-clients.html",
-          "hash": "GL6eI8viygPiuekCffR51iYnUclRZ3703dNPRnVNrNE="
+          "hash": "OCuxR9N1cSNuOObw9Rq/T0+6/4UjrobmPZyAfCmuT64="
         }
       },
       "is_incremental": false,
@@ -51,7 +315,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/getting-started.html",
-          "hash": "Sz7fgt2h2lkp4gp4PwqqK+pgQBb1m7wRbQaY9S1deVA="
+          "hash": "0PcglCbksGeluhvhr9R61aV79TwwNPIkE3boz4ZcZGA="
         }
       },
       "is_incremental": false,
@@ -63,7 +327,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/groups.html",
-          "hash": "QRjWihZ8t58a66+mLplA80ZU2wuDuTwMjXHC/kJUKEI="
+          "hash": "KiyE9qCPJ1Q8eapGFpHT/UYtsrMRnGAMw6aIgSxb79U="
         }
       },
       "is_incremental": false,
@@ -78,7 +342,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "+v5NfyfA53o8cRn41CPDcnkQLAS5V3FXonOYA9cwzRk="
+          "hash": "7ZhUbDHUJLN3zs+uCyPowpt0lw4weamk5ScKty6E+f0="
         }
       },
       "is_incremental": false,
@@ -148,6 +412,12 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 6,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 21,
           "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {

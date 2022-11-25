@@ -5,9 +5,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Advanced | Lib.AspNetCore.ServerSentEvents </title>
+    <title>Enum ServerSentEventsAddToGroupResult
+   | Lib.AspNetCore.ServerSentEvents </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Advanced | Lib.AspNetCore.ServerSentEvents ">
+    <meta name="title" content="Enum ServerSentEventsAddToGroupResult
+   | Lib.AspNetCore.ServerSentEvents ">
     <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../resources/ico/favicon.ico">
@@ -15,7 +17,7 @@
     <link rel="stylesheet" href="../styles/docfx.css">
     <link rel="stylesheet" href="../styles/main.css">
     <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -49,36 +51,52 @@
         </nav>
       </header>
       <div role="main" class="container body-content hide-when-search">
-        <div class="article row grid">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
           <div class="col-md-12">
-            <article class="content wrap" id="_content" data-uid="">
-<h1 id="advanced">Advanced</h1>
-
-<h2 id="set-http-response-headers-for-accept-response">Set HTTP response headers for accept response</h2>
-<p>A <code>ServerSentEventsOptions</code> object can be used to set HTTP response headers for accept response.</p>
-<h3 id="http-response-headers-for-nginx-proxy-configuration">HTTP response headers for Nginx proxy configuration</h3>
-<p>The following code sets HTTP response headers for Nginx proxy configuration.</p>
-<pre><code class="lang-cs">public class Startup
-{
-    ...
-
-    public void Configure(IApplicationBuilder app)
-    {
-        ...
-
-        app.MapServerSentEvents(&quot;/default-sse-endpoint&quot;, new ServerSentEventsOptions
-        {
-            OnPrepareAccept = response =&gt;
-            {
-                response.Headers.Append(&quot;Cache-Control&quot;, &quot;no-cache&quot;);
-                response.Headers.Append(&quot;X-Accel-Buffering&quot;, &quot;no&quot;);
-            }
-        });
-
-        ...
-    }
-}
-</code></pre></article>
+            <article class="content wrap" id="_content" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAddToGroupResult">
+  
+  
+  <h1 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAddToGroupResult" data-uid="Lib.AspNetCore.ServerSentEvents.ServerSentEventsAddToGroupResult" class="text-break">Enum ServerSentEventsAddToGroupResult
+  </h1>
+  <div class="markdown level0 summary"><p>The add to group results.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Lib.AspNetCore.ServerSentEvents.html">Lib.AspNetCore.ServerSentEvents</a></h6>
+  <h6><strong>Assembly</strong>: Lib.AspNetCore.ServerSentEvents.dll</h6>
+  <h5 id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAddToGroupResult_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum ServerSentEventsAddToGroupResult</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAddToGroupResult_AddedToExistingGroup">AddedToExistingGroup</td>
+        <td><p>The client has been added to an existing group.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Lib_AspNetCore_ServerSentEvents_ServerSentEventsAddToGroupResult_AddedToNewGroup">AddedToNewGroup</td>
+        <td><p>The client has been added to a new group.</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+</article>
           </div>
         </div>
       </div>
