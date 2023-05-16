@@ -234,7 +234,10 @@ namespace Lib.AspNetCore.ServerSentEvents
 
         private void HandleContentEncoding(HttpContext context)
         {
-            context.Response.OnStarting(ResponseOnStartingCallback, context);
+            if (!context.Response.HasStarted)
+            {
+              context.Response.OnStarting(ResponseOnStartingCallback, context);
+            }
         }
 
         private static Task ResponseOnStartingCallback(object context)
