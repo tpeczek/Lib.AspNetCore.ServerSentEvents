@@ -72,6 +72,29 @@ namespace Test.AspNetCore.ServerSentEvents.Unit.Middleware
 
             onPrepareAcceptMock.Verify(m => m(It.IsAny<HttpResponse>()), Times.Once);
         }
+        
+        [Fact]
+        public async Task Invoke_SseRequestWithMultipleAcceptHeadersWithEventStreamAcceptHeader_Accepts()
+        {
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware();
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(acceptHeaderValue: SSE_CONTENT_TYPE+",text/html");
+
+            await serverSentEventsMiddleware.Invoke(context, null);
+
+            Assert.Equal(SSE_CONTENT_TYPE, context.Response.ContentType);
+        }
+        
+        [Fact]
+        public async Task Invoke_SseRequestWithMultipleAcceptHeadersWithNotEventStreamAcceptHeader_DoesNotAccept()
+        {
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware();
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(acceptHeaderValue: "text/plain,text/html");
+
+            await serverSentEventsMiddleware.Invoke(context, null);
+
+            Assert.Null(context.Response.ContentType);
+        }
+        
         #endregion
     }
 }
