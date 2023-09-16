@@ -125,8 +125,8 @@ namespace Lib.AspNetCore.ServerSentEvents
             {
                 return !_serverSentEventsOptions.RequireAcceptHeader;
             }
-
-            if (requestHeaders[Constants.ACCEPT_HTTP_HEADER].Any(acceptHeaderValue => acceptHeaderValue == Constants.SSE_CONTENT_TYPE))
+            
+            if (requestHeaders.GetCommaSeparatedValues(Constants.ACCEPT_HTTP_HEADER).Any(acceptHeaderValue => acceptHeaderValue == Constants.SSE_CONTENT_TYPE))
             {
                 return true;
             }
