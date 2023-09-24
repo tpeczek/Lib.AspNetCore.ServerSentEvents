@@ -114,6 +114,8 @@ namespace Lib.AspNetCore.ServerSentEvents
             }
         }
 
+        private static readonly string[] AcceptedHeaders = new[] { "*/*", "text/*", Constants.SSE_CONTENT_TYPE };
+        
         private bool CheckAcceptHeader(IHeaderDictionary requestHeaders)
         {
             if (!requestHeaders.ContainsKey(Constants.ACCEPT_HTTP_HEADER))
@@ -126,7 +128,7 @@ namespace Lib.AspNetCore.ServerSentEvents
                 return !_serverSentEventsOptions.RequireAcceptHeader;
             }
             
-            if (requestHeaders.GetCommaSeparatedValues(Constants.ACCEPT_HTTP_HEADER).Any(acceptHeaderValue => acceptHeaderValue == Constants.SSE_CONTENT_TYPE))
+            if (requestHeaders.GetCommaSeparatedValues(Constants.ACCEPT_HTTP_HEADER).Any(acceptHeaderValue => AcceptedHeaders.Contains(acceptHeaderValue)))
             {
                 return true;
             }

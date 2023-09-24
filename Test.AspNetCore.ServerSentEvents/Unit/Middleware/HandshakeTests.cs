@@ -95,6 +95,21 @@ namespace Test.AspNetCore.ServerSentEvents.Unit.Middleware
             Assert.Null(context.Response.ContentType);
         }
         
+        
+        [Theory]
+        [InlineData("*/*")]
+        [InlineData("text/*")]
+        [InlineData(SSE_CONTENT_TYPE)]
+        public async Task Invoke_SseRequestWithAcceptedHeader_Accepts(string header)
+        {
+            ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware();
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(acceptHeaderValue: header);
+
+            await serverSentEventsMiddleware.Invoke(context, null);
+
+            Assert.Equal(SSE_CONTENT_TYPE, context.Response.ContentType);
+        }
+        
         #endregion
     }
 }
