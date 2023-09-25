@@ -29,7 +29,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         private readonly ServerSentEventsOptions _serverSentEventsOptions;
         private readonly ILogger<ServerSentEventsMiddleware<TServerSentEventsService>> _logger;
         private readonly bool _clientDisconnectServicesAvailable = false;
-        private readonly HashSet<string> AcceptedHeaders = new() { "*/*", "text/*", Constants.SSE_CONTENT_TYPE };
+        private readonly HashSet<string> _acceptableContentTypes = new() { "*/*", "text/*", Constants.SSE_CONTENT_TYPE };
 
         private AuthorizationPolicy _authorizationPolicy;
         #endregion
@@ -116,8 +116,6 @@ namespace Lib.AspNetCore.ServerSentEvents
             }
         }
 
-        
-        
         private bool CheckAcceptHeader(IHeaderDictionary requestHeaders)
         {
             if (!requestHeaders.ContainsKey(Constants.ACCEPT_HTTP_HEADER))
@@ -130,7 +128,7 @@ namespace Lib.AspNetCore.ServerSentEvents
                 return !_serverSentEventsOptions.RequireAcceptHeader;
             }
             
-            if (requestHeaders.GetCommaSeparatedValues(Constants.ACCEPT_HTTP_HEADER).Any(acceptHeaderValue => AcceptedHeaders.Contains(acceptHeaderValue)))
+            if (requestHeaders.GetCommaSeparatedValues(Constants.ACCEPT_HTTP_HEADER).Any(_acceptableContentTypes.Contains))
             {
                 return true;
             }
@@ -219,7 +217,7 @@ namespace Lib.AspNetCore.ServerSentEvents
             }
         }
 
-        private void DisableResponseBuffering(HttpContext context)
+        private static void DisableResponseBuffering(HttpContext context)
         {
 #if !NET461
             IHttpResponseBodyFeature responseBodyFeature = context.Features.Get<IHttpResponseBodyFeature>();
@@ -236,7 +234,7 @@ namespace Lib.AspNetCore.ServerSentEvents
 #endif
         }
 
-        private void HandleContentEncoding(HttpContext context)
+        private static void HandleContentEncoding(HttpContext context)
         {
             context.Response.OnStarting(ResponseOnStartingCallback, context);
         }

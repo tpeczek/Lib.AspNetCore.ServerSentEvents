@@ -42,10 +42,10 @@ namespace Test.AspNetCore.ServerSentEvents.Unit.Middleware
         [InlineData("*/*")]
         [InlineData("text/*")]
         [InlineData(SSE_CONTENT_TYPE)]
-        public async Task Invoke_SseRequestWithAcceptedHeader_Accepts(string header)
+        public async Task Invoke_SseRequestWithAcceptedHeader_Accepts(string contentType)
         {
             ServerSentEventsMiddleware<ServerSentEventsService> serverSentEventsMiddleware = SubjectUnderTestHelper.PrepareServerSentEventsMiddleware();
-            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(acceptHeaderValue: header);
+            HttpContext context = SubjectUnderTestHelper.PrepareHttpContext(acceptHeaderValue: contentType);
 
             await serverSentEventsMiddleware.Invoke(context, null);
 

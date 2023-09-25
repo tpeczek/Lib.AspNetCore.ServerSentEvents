@@ -1,3 +1,8 @@
+## Lib.AspNetCore.ServerSentEvents 8.3.0
+### Additions and Changes
+- Added support for scenario when multiple types are provided as `Accept` header value (thanks to @krebil)
+- Added support for wildcard (`*/*` and `text/*`) mime types (thanks to @krebil)
+
 ## Lib.AspNetCore.ServerSentEvents 8.2.0
 ### Additions and Changes
 - Added options for controlling the format of [keepalives](https://tpeczek.github.io/Lib.AspNetCore.ServerSentEvents/articles/getting-started.html#keepalives).

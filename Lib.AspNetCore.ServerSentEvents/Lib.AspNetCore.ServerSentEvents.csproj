@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Description>Lib.AspNetCore.ServerSentEvents is a library which provides Server-Sent Events (SSE) support for ASP.NET Core</Description>
     <Copyright>Copyright © 2017 - 2023 Tomasz Pęczek</Copyright>
-    <VersionPrefix>8.2.0</VersionPrefix>
+    <VersionPrefix>8.3.0</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <Authors>Tomasz Pęczek</Authors>
     <TargetFrameworks>netcoreapp3.1;net5.0;net6.0;net461</TargetFrameworks>
