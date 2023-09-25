@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         private readonly ServerSentEventsOptions _serverSentEventsOptions;
         private readonly ILogger<ServerSentEventsMiddleware<TServerSentEventsService>> _logger;
         private readonly bool _clientDisconnectServicesAvailable = false;
+        private readonly HashSet<string> AcceptedHeaders = new() { "*/*", "text/*", Constants.SSE_CONTENT_TYPE };
 
         private AuthorizationPolicy _authorizationPolicy;
         #endregion
@@ -114,7 +116,7 @@ namespace Lib.AspNetCore.ServerSentEvents
             }
         }
 
-        private static readonly string[] AcceptedHeaders = new[] { "*/*", "text/*", Constants.SSE_CONTENT_TYPE };
+        
         
         private bool CheckAcceptHeader(IHeaderDictionary requestHeaders)
         {
