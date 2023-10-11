@@ -35,6 +35,8 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         public bool IsConnected { get; internal set; }
 
         internal bool PreventReconnect { get; set; } = false;
+
+        internal bool IsRemoved { get; set; } = false;
         #endregion
 
         #region Constructor

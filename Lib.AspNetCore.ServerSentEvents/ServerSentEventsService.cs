@@ -383,15 +383,29 @@ namespace Lib.AspNetCore.ServerSentEvents
             _clients.TryAdd(client.Id, client);
         }
 
+        internal void RemoveClient(Guid clientId)
+        {
+            IServerSentEventsClient client;
+
+            _clients.TryGetValue(clientId, out client);
+
+            RemoveClient((ServerSentEventsClient)client);
+        }
+
         internal void RemoveClient(ServerSentEventsClient client)
         {
             client.IsConnected = false;
 
-            _clients.TryRemove(client.Id, out _);
-
-            foreach(KeyValuePair<string, ConcurrentDictionary<Guid, IServerSentEventsClient>> group in _groups)
+            if (!client.IsRemoved)
             {
-                group.Value.TryRemove(client.Id, out _);
+                _clients.TryRemove(client.Id, out _);
+
+                client.IsRemoved = true;
+
+                foreach (KeyValuePair<string, ConcurrentDictionary<Guid, IServerSentEventsClient>> group in _groups)
+                {
+                    group.Value.TryRemove(client.Id, out _);
+                }
             }
         }
 
