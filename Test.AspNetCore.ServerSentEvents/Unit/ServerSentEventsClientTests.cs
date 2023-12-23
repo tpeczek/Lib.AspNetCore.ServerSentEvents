@@ -9,6 +9,8 @@ using Lib.AspNetCore.ServerSentEvents.Internals;
 
 namespace Test.AspNetCore.ServerSentEvents.Unit
 {
+    using System.Threading.Tasks;
+
     public class ServerSentEventsClientTests
     {
         #region Fields
@@ -137,31 +139,31 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
         }
 
         [Fact]
-        public void Disconnect_ClientDisconnectServicesNotAvailable_ThrowsInvalidOperationException()
+        public async Task Disconnect_ClientDisconnectServicesNotAvailable_ThrowsInvalidOperationException()
         {
             // ARRANGE
             var client = PrepareServerSentEventsClient();
 
             // ASSERT
-            InvalidOperationException disconnectException = Assert.Throws<InvalidOperationException>(client.Disconnect);
+            InvalidOperationException disconnectException = await Assert.ThrowsAsync<InvalidOperationException>(async () =>await client.Disconnect());
             Assert.Equal(disconnectException.Message, $"Disconnecting a {nameof(ServerSentEventsClient)} requires registering implementations of {nameof(IServerSentEventsClientIdProvider)} and {nameof(IServerSentEventsNoReconnectClientsIdsStore)}.");
         }
 
         [Fact]
-        public void Disconnect_ClientDisconnectServicesAvailable_PreventsReconnect()
+        public async Task Disconnect_ClientDisconnectServicesAvailable_PreventsReconnect()
         {
             // ARRANGE
             var client = PrepareServerSentEventsClient(clientDisconnectServicesAvailable: true);
 
             // ACT
-            client.Disconnect();
+            await client.Disconnect();
 
             // ASSERT
             Assert.True(client.PreventReconnect);
         }
 
         [Fact]
-        public void Disconnect_ClientDisconnectServicesAvailable_Disconnects()
+        public async Task Disconnect_ClientDisconnectServicesAvailable_Disconnects()
         {
             // ARRANGE
             HttpContext context = new DefaultHttpContext();
@@ -172,7 +174,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
             var client = PrepareServerSentEventsClient(context: context, clientDisconnectServicesAvailable: true);
 
             // ACT
-            client.Disconnect();
+            await client.Disconnect();
 
             // ASSERT
             Assert.False(client.IsConnected);
