@@ -34,7 +34,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <remarks>
         /// This requires registering implementations of <see cref="IServerSentEventsClientIdProvider"/> and <see cref="IServerSentEventsNoReconnectClientsIdsStore"/>.
         /// </remarks>
-        Task Disconnect();
+        Task DisconnectAsync();
 
         /// <summary>
         /// Sends event to client.

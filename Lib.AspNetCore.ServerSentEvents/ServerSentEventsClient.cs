@@ -90,7 +90,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         /// <remarks>
         /// This requires registering implementations of <see cref="IServerSentEventsClientIdProvider"/> and <see cref="IServerSentEventsNoReconnectClientsIdsStore"/>.
         /// </remarks>
-        public async Task Disconnect()
+        public async Task DisconnectAsync()
         {
             if (!_clientDisconnectServicesAvailable)
             {
@@ -102,13 +102,15 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             if (IsConnected)
             {
                 IsConnected = false;
+
                 await _response.Body.FlushAsync();
-#if !NET461
-                await _response.CompleteAsync();
-#else
+
+#if NET461
                 _response.HttpContext.Abort();
+#else
+                await _response.CompleteAsync();
 #endif
-            } 
+            }
         }
 
         /// <summary>
