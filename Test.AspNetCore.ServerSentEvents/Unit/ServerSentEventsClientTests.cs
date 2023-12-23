@@ -145,7 +145,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
             var client = PrepareServerSentEventsClient();
 
             // ASSERT
-            InvalidOperationException disconnectException = await Assert.ThrowsAsync<InvalidOperationException>(async () =>await client.Disconnect());
+            InvalidOperationException disconnectException = await Assert.ThrowsAsync<InvalidOperationException>(async () => await client.DisconnectAsync());
             Assert.Equal(disconnectException.Message, $"Disconnecting a {nameof(ServerSentEventsClient)} requires registering implementations of {nameof(IServerSentEventsClientIdProvider)} and {nameof(IServerSentEventsNoReconnectClientsIdsStore)}.");
         }
 
@@ -156,7 +156,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
             var client = PrepareServerSentEventsClient(clientDisconnectServicesAvailable: true);
 
             // ACT
-            await client.Disconnect();
+            await client.DisconnectAsync();
 
             // ASSERT
             Assert.True(client.PreventReconnect);
@@ -174,7 +174,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
             var client = PrepareServerSentEventsClient(context: context, clientDisconnectServicesAvailable: true);
 
             // ACT
-            await client.Disconnect();
+            await client.DisconnectAsync();
 
             // ASSERT
             Assert.False(client.IsConnected);

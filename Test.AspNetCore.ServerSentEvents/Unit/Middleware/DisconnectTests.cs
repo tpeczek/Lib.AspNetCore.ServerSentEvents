@@ -95,7 +95,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit.Middleware
 
             Task middlewareInvokeTask = serverSentEventsMiddleware.Invoke(context, null);
 
-            await serverSentEventsService.GetClient(CLIENT_ID).Disconnect();
+            await serverSentEventsService.GetClient(CLIENT_ID).DisconnectAsync();
 
             await middlewareInvokeTask;
 
@@ -117,7 +117,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit.Middleware
 
             Task middlewareInvokeTask = serverSentEventsMiddleware.Invoke(context, null);
 
-            await serverSentEventsService.GetClient(CLIENT_ID).Disconnect();
+            await serverSentEventsService.GetClient(CLIENT_ID).DisconnectAsync();
 
             await middlewareInvokeTask;
 
