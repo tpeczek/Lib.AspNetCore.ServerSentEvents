@@ -15,6 +15,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         #region Fields
         private readonly HttpResponse _response;
         private readonly bool _clientDisconnectServicesAvailable;
+        private readonly TaskCompletionSource<bool> _disconnectTaskCompletionSource = new TaskCompletionSource<bool>();
         private readonly ConcurrentDictionary<string, object> _properties = new ConcurrentDictionary<string, object>();
         #endregion
 
@@ -40,13 +41,20 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         #endregion
 
         #region Constructor
-        internal ServerSentEventsClient(Guid id, ClaimsPrincipal user, HttpResponse response, bool clientDisconnectServicesAvailable)
+        internal ServerSentEventsClient(Guid id, HttpContext context, bool clientDisconnectServicesAvailable)
         {
-            Id = id;
-            User = user ?? throw new ArgumentNullException(nameof(user));
+            if (context is null)
+            {
+                throw new ArgumentNullException(nameof(context));
+            }
 
-            _response = response ?? throw new ArgumentNullException(nameof(response));
+            Id = id;
+            User = context.User;
+
+            _response = context.Response;
+            context.RequestAborted.Register(RequestAbortedCallback, _disconnectTaskCompletionSource);
             _clientDisconnectServicesAvailable = clientDisconnectServicesAvailable;
+
             IsConnected = true;
         }
         #endregion
@@ -103,12 +111,11 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
             {
                 IsConnected = false;
 
-                await _response.Body.FlushAsync();
-
 #if NET461
                 _response.HttpContext.Abort();
 #else
                 await _response.CompleteAsync();
+                _disconnectTaskCompletionSource.TrySetResult(true);
 #endif
             }
         }
@@ -183,6 +190,16 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         internal Task ChangeReconnectIntervalAsync(uint reconnectInterval, CancellationToken cancellationToken)
         {
             return SendAsync(ServerSentEventsHelper.GetReconnectIntervalBytes(reconnectInterval), cancellationToken);
+        }
+
+        internal Task WaitForDisconnectAsync()
+        {
+            return _disconnectTaskCompletionSource.Task;
+        }
+
+        private static void RequestAbortedCallback(object taskCompletionSource)
+        {
+            ((TaskCompletionSource<bool>)taskCompletionSource).TrySetResult(true);
         }
 
         private void CheckIsConnected()

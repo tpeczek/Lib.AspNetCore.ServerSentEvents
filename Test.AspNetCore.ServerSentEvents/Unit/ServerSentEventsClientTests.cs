@@ -23,7 +23,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
         private static ServerSentEventsClient PrepareServerSentEventsClient(HttpContext context = null, bool clientDisconnectServicesAvailable = false)
         {
             context = context ?? new DefaultHttpContext();
-            return new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), context.Response, clientDisconnectServicesAvailable);
+            return new ServerSentEventsClient(Guid.NewGuid(), context, clientDisconnectServicesAvailable);
         }
         #endregion
 
@@ -168,8 +168,13 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
             // ARRANGE
             HttpContext context = new DefaultHttpContext();
 
+#if NET461
             Mock<IHttpRequestLifetimeFeature> httpRequestLifetimeFeatureMock = new Mock<IHttpRequestLifetimeFeature>();
             context.Features.Set(httpRequestLifetimeFeatureMock.Object);
+#else
+            Mock<IHttpResponseBodyFeature> httpResponseBodyFeatureMock = new Mock<IHttpResponseBodyFeature>();
+            context.Features.Set(httpResponseBodyFeatureMock.Object);
+#endif
 
             var client = PrepareServerSentEventsClient(context: context, clientDisconnectServicesAvailable: true);
 
@@ -178,7 +183,13 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
 
             // ASSERT
             Assert.False(client.IsConnected);
+            Assert.True(client.DisconnectAsync().IsCompleted);
+
+#if NET461
             httpRequestLifetimeFeatureMock.Verify(o => o.Abort(), Times.Once);
+#else
+            httpResponseBodyFeatureMock.Verify(o => o.CompleteAsync(), Times.Once);
+#endif
         }
         #endregion
     }

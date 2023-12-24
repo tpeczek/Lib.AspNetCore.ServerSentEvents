@@ -96,7 +96,7 @@ namespace Lib.AspNetCore.ServerSentEvents
 
                 await context.Response.AcceptAsync(_serverSentEventsOptions.OnPrepareAccept);
 
-                ServerSentEventsClient client = new ServerSentEventsClient(clientId, context.User, context.Response, _clientDisconnectServicesAvailable);
+                ServerSentEventsClient client = new ServerSentEventsClient(clientId, context, _clientDisconnectServicesAvailable);
 
                 if (_serverSentEventsService.ReconnectInterval.HasValue)
                 {
@@ -105,7 +105,7 @@ namespace Lib.AspNetCore.ServerSentEvents
 
                 await ConnectClientAsync(context.Request, client);
 
-                await context.RequestAborted.WaitAsync();
+                await client.WaitForDisconnectAsync();
 
                 await DisconnectClientAsync(context.Request, client);
             }

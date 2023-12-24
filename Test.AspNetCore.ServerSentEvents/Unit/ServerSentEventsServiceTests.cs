@@ -17,7 +17,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
         private static async Task<ServerSentEventsClient> PrepareAndAddServerSentEventsClientAsync(ServerSentEventsService serverSentEventsService)
         {
             HttpContext context = new DefaultHttpContext();
-            ServerSentEventsClient serverSentEventsClient = new ServerSentEventsClient(Guid.NewGuid(), new ClaimsPrincipal(), context.Response, false);
+            ServerSentEventsClient serverSentEventsClient = new ServerSentEventsClient(Guid.NewGuid(), context, false);
 
             await serverSentEventsService.OnConnectAsync(context.Request, serverSentEventsClient);
 
