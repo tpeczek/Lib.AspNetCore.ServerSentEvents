@@ -19,19 +19,19 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient
   fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient
   nameWithType: ServerSentEventsClient
-- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Disconnect
-  name: Disconnect()
-  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Disconnect
-  commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Disconnect
-  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Disconnect()
-  nameWithType: ServerSentEventsClient.Disconnect()
-- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Disconnect*
-  name: Disconnect
-  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_Disconnect_
-  commentId: Overload:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Disconnect
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.DisconnectAsync
+  name: DisconnectAsync()
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_DisconnectAsync
+  commentId: M:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.DisconnectAsync
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.DisconnectAsync()
+  nameWithType: ServerSentEventsClient.DisconnectAsync()
+- uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.DisconnectAsync*
+  name: DisconnectAsync
+  href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_DisconnectAsync_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.DisconnectAsync
   isSpec: "True"
-  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.Disconnect
-  nameWithType: ServerSentEventsClient.Disconnect
+  fullName: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.DisconnectAsync
+  nameWithType: ServerSentEventsClient.DisconnectAsync
 - uid: Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.GetProperty*
   name: GetProperty
   href: api/Lib.AspNetCore.ServerSentEvents.Internals.ServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_Internals_ServerSentEventsClient_GetProperty_
@@ -153,19 +153,19 @@ references:
   commentId: T:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient
   fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient
   nameWithType: IServerSentEventsClient
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Disconnect
-  name: Disconnect()
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_Disconnect
-  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Disconnect
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Disconnect()
-  nameWithType: IServerSentEventsClient.Disconnect()
-- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Disconnect*
-  name: Disconnect
-  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_Disconnect_
-  commentId: Overload:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Disconnect
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.DisconnectAsync
+  name: DisconnectAsync()
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_DisconnectAsync
+  commentId: M:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.DisconnectAsync
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.DisconnectAsync()
+  nameWithType: IServerSentEventsClient.DisconnectAsync()
+- uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.DisconnectAsync*
+  name: DisconnectAsync
+  href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_DisconnectAsync_
+  commentId: Overload:Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.DisconnectAsync
   isSpec: "True"
-  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.Disconnect
-  nameWithType: IServerSentEventsClient.Disconnect
+  fullName: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.DisconnectAsync
+  nameWithType: IServerSentEventsClient.DisconnectAsync
 - uid: Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.GetProperty*
   name: GetProperty
   href: api/Lib.AspNetCore.ServerSentEvents.IServerSentEventsClient.html#Lib_AspNetCore_ServerSentEvents_IServerSentEventsClient_GetProperty_
