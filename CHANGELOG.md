@@ -1,3 +1,11 @@
+## Lib.AspNetCore.ServerSentEvents 9.0.0
+- `IServerSentEventsClient.Disconnect` has been replaced by `IServerSentEventsClient.DisconnectAsync`, which will attempt to gracefully complete the underlying HTTP response when disconnecting a client
+- Dropped support for .NET Core 3.1 and .NET 5
+
+## Lib.AspNetCore.ServerSentEvents 8.3.1
+### Bug Fixes
+- Fix for scenario when reconnect interval happens to be shorter than connection timeout, which results in client being prevented from reconnecting.
+
 ## Lib.AspNetCore.ServerSentEvents 8.3.0
 ### Additions and Changes
 - Added support for scenario when multiple types are provided as `Accept` header value (thanks to @krebil)
