@@ -130,6 +130,26 @@ namespace Lib.AspNetCore.ServerSentEvents
         }
 
         /// <summary>
+        /// removes a client from the specified group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// /// <param name="client">The client to remove from a group.</param>
+        /// <returns>The task object representing the result of asynchronous operation</returns>
+        public ServerSentEventsRemoveFromGroupResult RemoveFromGroup(string groupName, IServerSentEventsClient client)
+        {
+            ServerSentEventsRemoveFromGroupResult result = ServerSentEventsRemoveFromGroupResult.NotFoundGroup;
+
+            if (_groups.TryGetValue(groupName, out ConcurrentDictionary<Guid, IServerSentEventsClient> group))
+            {
+                result = ServerSentEventsRemoveFromGroupResult.NotInGroup;
+                if (group.TryRemove(client.Id, out _))
+                    result = ServerSentEventsRemoveFromGroupResult.RemovedFromExistingGroup;
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Changes the interval after which clients will attempt to reestablish failed connections.
         /// </summary>
         /// <param name="reconnectInterval">The reconnect interval.</param>
@@ -138,7 +158,7 @@ namespace Lib.AspNetCore.ServerSentEvents
         {
             return ChangeReconnectIntervalAsync(reconnectInterval, CancellationToken.None);
         }
-    
+
         /// <summary>
         /// Changes the interval after which clients will attempt to reestablish failed connections.
         /// </summary>
