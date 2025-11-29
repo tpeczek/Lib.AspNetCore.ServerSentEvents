@@ -58,6 +58,14 @@ namespace Lib.AspNetCore.ServerSentEvents
         /// <param name="client">The client to add to a group.</param>
         /// <returns>The result of operation.</returns>
         ServerSentEventsAddToGroupResult AddToGroup(string groupName, IServerSentEventsClient client);
+        
+        /// <summary>
+        /// removes a client from the specified group.
+        /// </summary>
+        /// <param name="groupName">The group name.</param>
+        /// <param name="client">The client to remove from a group.</param>
+        /// <returns>The result of operation.</returns>
+        ServerSentEventsRemoveFromGroupResult RemoveFromGroup(string groupName, IServerSentEventsClient client);
 
         /// <summary>
         /// Changes the interval after which clients will attempt to reestablish failed connections.
