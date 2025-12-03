@@ -24,7 +24,7 @@ namespace Test.AspNetCore.ServerSentEvents.Functional.Infrastructure
             services.AddServerSentEvents(ConfigureServerSentEventsOption);
         }
 
-#if !NET461
+#if !NET462
         public void Configure(IApplicationBuilder app)
         {
             app.UseRouting()

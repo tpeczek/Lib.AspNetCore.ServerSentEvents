@@ -9,6 +9,8 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Infrastructure
 {
     internal class NoOpHttpContext : HttpContext
     {
+        private CancellationToken _requestAborted = CancellationToken.None;
+
         public override IFeatureCollection Features => throw new NotImplementedException();
 
         public override HttpRequest Request => throw new NotImplementedException();
@@ -25,7 +27,7 @@ namespace Benchmark.AspNetCore.ServerSentEvents.Infrastructure
         
         public override IServiceProvider RequestServices { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         
-        public override CancellationToken RequestAborted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public override CancellationToken RequestAborted { get { return _requestAborted; } set { _requestAborted = value;  } }
         
         public override string TraceIdentifier { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         

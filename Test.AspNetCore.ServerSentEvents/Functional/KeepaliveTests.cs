@@ -110,7 +110,7 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
             using FakeServerSentEventsServerrApplicationFactory<KeepaliveNeverServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new();
             HttpClient serverSentEventsClient = serverSentEventsServerApplicationFactory.CreateClient();
 
-            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient).ConfigureAwait(false);
+            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient);
 
             Assert.Equal(String.Empty, serverSentEvents);
         }
@@ -121,7 +121,7 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
             using FakeServerSentEventsServerrApplicationFactory<KeepaliveDefultAlwaysServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new ();
             HttpClient serverSentEventsClient = serverSentEventsServerApplicationFactory.CreateClient();
 
-            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient).ConfigureAwait(false);
+            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient);
 
             Assert.Matches($"^({DEFAULT_KEEPALIVE})+$", serverSentEvents);
         }
@@ -132,7 +132,7 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
             using FakeServerSentEventsServerrApplicationFactory<KeepaliveCustomCommentAlwaysServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new();
             HttpClient serverSentEventsClient = serverSentEventsServerApplicationFactory.CreateClient();
 
-            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient).ConfigureAwait(false);
+            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient);
 
             Assert.Matches($"^({CUSTOM_KEEPALIVE_COMMENT})+$", serverSentEvents);
         }
@@ -143,7 +143,7 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
             using FakeServerSentEventsServerrApplicationFactory<KeepaliveCustomEventAlwaysServerSentEventsServerStartup> serverSentEventsServerApplicationFactory = new();
             HttpClient serverSentEventsClient = serverSentEventsServerApplicationFactory.CreateClient();
 
-            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient).ConfigureAwait(false);
+            string serverSentEvents = await GetServerSentEvents(serverSentEventsClient);
 
             Assert.Matches($"^({CUSTOM_KEEPALIVE_EVENT})+$", serverSentEvents);
         }
@@ -154,13 +154,13 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
             string serverSentEventsResponseContent = String.Empty;
 
             serverSentEventsClient.DefaultRequestHeaders.Add("Accept", "text/event-stream");
-            using (HttpResponseMessage serverSentEventsResponse = await serverSentEventsClient.GetAsync(FakeServerSentEventsServerStartup.SERVER_SENT_EVENTS_ENDPOINT, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false))
+            using (HttpResponseMessage serverSentEventsResponse = await serverSentEventsClient.GetAsync(FakeServerSentEventsServerStartup.SERVER_SENT_EVENTS_ENDPOINT, HttpCompletionOption.ResponseHeadersRead))
             {
                 serverSentEventsResponse.EnsureSuccessStatusCode();
 
                 keepaliveStopwatch.Start();
 
-                using (Stream responseStream = await serverSentEventsResponse.Content.ReadAsStreamAsync().ConfigureAwait(false))
+                using (Stream responseStream = await serverSentEventsResponse.Content.ReadAsStreamAsync())
                 {
                     do
                     {
@@ -170,7 +170,7 @@ namespace Test.AspNetCore.ServerSentEvents.Functional
                         {
                             using CancellationTokenSource keepaliveCancellationTokenSource = new CancellationTokenSource(KEEPALIVE_TIMESPAN);
                             
-                            int bytesRead = await responseStream.ReadAsync(buffer, 0, buffer.Length, keepaliveCancellationTokenSource.Token).ConfigureAwait(false);
+                            int bytesRead = await responseStream.ReadAsync(buffer, 0, buffer.Length, keepaliveCancellationTokenSource.Token);
                             serverSentEventsResponseContent += Encoding.UTF8.GetString(buffer, 0, bytesRead);
                         }
                         catch (Exception ex) when (ex is OperationCanceledException || ex.InnerException is OperationCanceledException)

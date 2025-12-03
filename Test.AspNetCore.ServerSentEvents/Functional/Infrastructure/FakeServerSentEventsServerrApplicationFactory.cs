@@ -2,16 +2,20 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.Hosting;
 
 namespace Test.AspNetCore.ServerSentEvents.Functional.Infrastructure
 {
     internal class FakeServerSentEventsServerrApplicationFactory<TFakeServerSentEventsServerStartup> : WebApplicationFactory<TFakeServerSentEventsServerStartup> where TFakeServerSentEventsServerStartup : FakeServerSentEventsServerStartup
     {
-#if !NET461
-        protected override IWebHostBuilder CreateWebHostBuilder()
+#if !NET462
+        protected override IHostBuilder CreateHostBuilder()
         {
-            return WebHost.CreateDefaultBuilder()
-                .UseStartup<TFakeServerSentEventsServerStartup>();
+            return Host.CreateDefaultBuilder()
+                .ConfigureWebHostDefaults(webBuilder =>
+                {
+                    webBuilder.UseStartup<TFakeServerSentEventsServerStartup>();
+                });
         }
 #else
         protected override IWebHostBuilder CreateWebHostBuilder()

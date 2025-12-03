@@ -37,10 +37,10 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
             client.SetProperty(PROPERTY_1_NAME, PROPERTY_1_VALUE);
 
             // ACT
-            var expected = client.GetProperty<string>(PROPERTY_1_NAME);
+            var actual = client.GetProperty<string>(PROPERTY_1_NAME);
 
             // ASSERT
-            Assert.Equal(expected, PROPERTY_1_VALUE);
+            Assert.Equal(PROPERTY_1_VALUE, actual);
         }
 
         [Fact]
@@ -146,7 +146,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
 
             // ASSERT
             InvalidOperationException disconnectException = await Assert.ThrowsAsync<InvalidOperationException>(async () => await client.DisconnectAsync());
-            Assert.Equal(disconnectException.Message, $"Disconnecting a {nameof(ServerSentEventsClient)} requires registering implementations of {nameof(IServerSentEventsClientIdProvider)} and {nameof(IServerSentEventsNoReconnectClientsIdsStore)}.");
+            Assert.Equal($"Disconnecting a {nameof(ServerSentEventsClient)} requires registering implementations of {nameof(IServerSentEventsClientIdProvider)} and {nameof(IServerSentEventsNoReconnectClientsIdsStore)}.", disconnectException.Message);
         }
 
         [Fact]
@@ -168,7 +168,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
             // ARRANGE
             HttpContext context = new DefaultHttpContext();
 
-#if NET461
+#if NET462
             Mock<IHttpRequestLifetimeFeature> httpRequestLifetimeFeatureMock = new Mock<IHttpRequestLifetimeFeature>();
             context.Features.Set(httpRequestLifetimeFeatureMock.Object);
 #else
@@ -185,7 +185,7 @@ namespace Test.AspNetCore.ServerSentEvents.Unit
             Assert.False(client.IsConnected);
             Assert.True(client.DisconnectAsync().IsCompleted);
 
-#if NET461
+#if NET462
             httpRequestLifetimeFeatureMock.Verify(o => o.Abort(), Times.Once);
 #else
             httpResponseBodyFeatureMock.Verify(o => o.CompleteAsync(), Times.Once);
