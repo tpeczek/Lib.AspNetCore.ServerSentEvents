@@ -10,10 +10,7 @@
           "src": ".."
         }
       ],
-      "dest": "api",
-      "properties": {
-        "TargetFramework": "net6.0"
-      }
+      "dest": "api"
     }
   ],
   "build": {
@@ -40,7 +37,7 @@
         ]
       }
     ],
-    "dest": "wwwroot",
+    "dest": "_artifact",
     "globalMetadata": {
       "_appTitle": "Lib.AspNetCore.ServerSentEvents",
       "_appFooter": "Copyright © 2017 - 2025 Tomasz Pęczek",

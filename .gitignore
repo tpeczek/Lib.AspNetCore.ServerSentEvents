@@ -28,9 +28,8 @@ bld/
 #wwwroot/
 
 # DocFX generated stuff
-DocFx.AspNetCore.ServerSentEvents/log.txt
-DocFx.AspNetCore.ServerSentEvents/api/
-DocFx.AspNetCore.ServerSentEvents/wwwroot/
+/docs/api
+/docs/_artifact
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

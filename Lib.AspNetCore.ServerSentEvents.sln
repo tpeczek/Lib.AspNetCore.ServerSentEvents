@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lib.AspNetCore.ServerSentEvents", "Lib.AspNetCore.ServerSentEvents\Lib.AspNetCore.ServerSentEvents.csproj", "{A0373515-C536-4C8E-B7AD-5878F357556A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocFx.AspNetCore.ServerSentEvents", "DocFx.AspNetCore.ServerSentEvents\DocFx.AspNetCore.ServerSentEvents.csproj", "{10C3D8E6-BED2-4FBE-B1FE-1AB050B7AEC3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Benchmark.AspNetCore.ServerSentEvents", "Benchmark.AspNetCore.ServerSentEvents\Benchmark.AspNetCore.ServerSentEvents.csproj", "{C502D468-F253-4574-917B-E31C6EFC28F6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.AspNetCore.ServerSentEvents", "Test.AspNetCore.ServerSentEvents\Test.AspNetCore.ServerSentEvents.csproj", "{98E0FAC2-06DD-411B-9707-9EF46E322829}"
