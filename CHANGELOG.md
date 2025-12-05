@@ -1,3 +1,6 @@
+## Lib.AspNetCore.ServerSentEvents 9.1.0
+- Added support for removing clients from groups (thanks to @Mr-Yavar)
+
 ## Lib.AspNetCore.ServerSentEvents 9.0.0
 - `IServerSentEventsClient.Disconnect` has been replaced by `IServerSentEventsClient.DisconnectAsync`, which will attempt to gracefully complete the underlying HTTP response when disconnecting a client
 - Dropped support for .NET Core 3.1 and .NET 5
