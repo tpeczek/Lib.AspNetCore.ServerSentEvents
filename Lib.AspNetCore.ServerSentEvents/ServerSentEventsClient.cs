@@ -41,7 +41,7 @@ namespace Lib.AspNetCore.ServerSentEvents.Internals
         #endregion
 
         #region Constructor
-        internal ServerSentEventsClient(Guid id, HttpContext context, bool clientDisconnectServicesAvailable)
+        public ServerSentEventsClient(Guid id, HttpContext context, bool clientDisconnectServicesAvailable)
         {
             if (context is null)
             {
