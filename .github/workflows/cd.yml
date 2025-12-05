@@ -3,27 +3,30 @@ on:
   push:
     tags:
     - "v[0-9]+.[0-9]+.[0-9]+"
+permissions:
+  contents: read
+  id-token: write
 jobs:
   deployment:
     runs-on: windows-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
     - name: Extract VERSION
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
       shell: bash
-    - name: Setup .NET 6.0 SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '6.0.x'
-    - name: Setup .NET 7.0 SDK
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '7.0.x'
     - name: Setup .NET 8.0 SDK
-      uses: actions/setup-dotnet@v4
+      uses: actions/setup-dotnet@v5
       with:
         dotnet-version: '8.0.x'
+    - name: Setup .NET 9.0 SDK
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: '9.0.x'
+    - name: Setup .NET 10.0 SDK
+      uses: actions/setup-dotnet@v5
+      with:
+        dotnet-version: '10.0.x'
     - name: Restore
       run: dotnet restore
     - name: Build
@@ -32,8 +35,13 @@ jobs:
       run: dotnet test --configuration Release --no-build
     - name: Pack
       run: dotnet pack --configuration Release --no-build
+    - name: Log in to NuGet
+      uses: NuGet/login@v1
+      id: nuget-login
+      with:
+        user: ${{ secrets.NUGET_USER }}
     - name: NuGet Push Lib.AspNetCore.ServerSentEvents
       run: dotnet nuget push Lib.AspNetCore.ServerSentEvents/bin/Release/Lib.AspNetCore.ServerSentEvents.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${NUGET_API_KEY}
       shell: bash
       env:
-        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        NUGET_API_KEY: ${{ steps.nuget-login.outputs.NUGET_API_KEY }}
