@@ -40,7 +40,7 @@
     "dest": "_artifact",
     "globalMetadata": {
       "_appTitle": "Lib.AspNetCore.ServerSentEvents",
-      "_appFooter": "Copyright © 2017 - 2025 Tomasz Pęczek",
+      "_appFooter": "Copyright © 2017 - 2026 Tomasz Pęczek",
       "_appLogoPath": "resources/svg/logo.svg",
       "_appFaviconPath": "resources/ico/favicon.ico",
       "_disableBreadcrumb": true,
